@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+/* Gmarket sans */
+@font-face {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-weight: 200;
+    src:  url(../fonts/GmarketSansLight.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-weight: 400;
+    src:  url(../fonts/GmarketSansMedium.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-weight: 600;
+    src:  url(../fonts/GmarketSansBold.otf) format("opentype");
+}
+
+/* Pretendard */
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 100;
+    src:  url(../fonts/Pretendard-Thin.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 200;
+    src:  url(../fonts/Pretendard-ExtraLight.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 300;
+    src:  url(../fonts/Pretendard-Light.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    src:  url(../fonts/Pretendard-Regular.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    src:  url(../fonts/Pretendard-Medium.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    src:  url(../fonts/Pretendard-SemiBold.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    src:  url(../fonts/Pretendard-Bold.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 800;
+    src:  url(../fonts/Pretendard-ExtraBold.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 900;
+    src:  url(../fonts/Pretendard-Black.otf) format("opentype");
+}
+
+
+*{padding:0px; margin: 0px; line-height: 1; color: #333333;
+    font-family: 'Pretendard', sans-serif;
+    letter-spacing: 0;
+    word-spacing: 0;
+    -webkit-font-smoothing: antialiased;}
+body{overflow-x: hidden; overflow-y: auto;}
+a{text-decoration: none;}
+button{cursor: pointer; border: none;}
+ul{list-style: none;}
+em{font-style: normal;}
+
+.fw500{font-weight: 500 !important;}
+.fw800{font-weight: 800 !important;}
+
+.nxn{font-family: 'NexonGothic', sans-serif;}
+.gmt{font-family: 'GmarketSans', sans-serif;}
+.sds{font-family: 'SDSwagger', sans-serif;}
+.pColor{color: #d91b5c;}
+.redCol{color: #c80000;}
+
+
+input, select{outline: none;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.comImg{width: 100%;}
+.comImgH{height: 100%;}
+.bold{font-weight: bold;}
+.w100{width: 100%;}
+.nonPd{padding-left: 0px; padding-right: 0px;}
+.pd5{padding: 0 5%; box-sizing: border-box;}
+.flexC{display: flex; justify-content: center;}
+.mx600{max-width: 600px; margin: 0 auto;}
+.mx800{max-width: 800px; margin: 0 auto;}
+.mx1000{max-width: 1000px; margin: 0 auto;}
+.hidden{display: none;}
+
+.sa {
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.dy1 {
+     transition-delay: .1s;
+}
+
+.dy2 {
+     transition-delay: .2s;
+}
+
+.dy3 {
+     transition-delay: .3s;
+}
+.dy4 {
+    transition-delay: .4s;
+}
+.dy5 {
+    transition-delay: .5s;
+}
+.dy6 {
+    transition-delay: .6s;
+}
+.sa-up {
+    transform: translate(0, 100px);
+  }
+
+.sa.show {
+        opacity: 1;
+        transform: none;
+      }
+
+.hidden{display: none;}
+.fw600{font-weight: 600;}
+.wh600{width: 600px;}
+.wh800{width: 800px;}
+.wh1000{width: 1000px;}
+.wh1080{width: 1080px;}
+.wh49p{width: 49%;}
+
+.mb100{margin-bottom: 100px;}
+.mb200{margin-bottom: 200px;}
+
+.pb200{padding-bottom: 200px;}
+.ml10{margin-left: 10px;}
+.mt0{margin-top: 0px;}
+
+
+
+
+
+
+

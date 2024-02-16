@@ -134,6 +134,18 @@ p{margin: 0px;}
 .float_con .float_btn em{font-size: 2rem;
     color: #12691e;}
 .op5{opacity: 0.5;}
+.limit_con{width: 100%;
+    background-color: #012c0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;}
+.limit_con .tit{    font-size: 34px;
+    font-weight: 600;
+    color: white;}
+.limit_con .tit em{color: #55e280;
+    font-weight: 900;
+    font-size: 44px;}
 
 
 @media(max-width:579px){
@@ -146,6 +158,9 @@ p{margin: 0px;}
         word-break: keep-all;}
     .compl .coml_btn_con{margin-top: 30px;}
     .compl .coml_btn_con .coml_btn{font-size: 16px;}
+    .limit_con{height: 60px;}
+    .limit_con .tit{font-size: 20px;}
+    .limit_con .tit em{font-size: 30px;}
 
 
 }

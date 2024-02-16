@@ -139,13 +139,26 @@ p{margin: 0px;}
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90px;}
+    height: 90px;
+    background: linear-gradient(90deg,#014210,  #12691e, #008c8c, #126979, #014210);
+    /* background: linear-gradient(90deg, #EC37D0, #D92B2B, #FFAA0D, #EC37D0); */
+    background-size: 400%;
+    -webkit-animation: huerotator 5s linear infinite;
+    animation: huerotator 5s linear infinite;}
 .limit_con .tit{    font-size: 34px;
     font-weight: 600;
     color: white;}
 .limit_con .tit em{color: #55e280;
     font-weight: 900;
     font-size: 44px;}
+    
+
+
+@keyframes huerotator {
+    0% {background-position: 0%;}
+    100% {background-position: 400%;}
+}
+
 
 
 @media(max-width:579px){

@@ -151,13 +151,35 @@ p{margin: 0px;}
 .limit_con .tit em{color: #55e280;
     font-weight: 900;
     font-size: 44px;}
-    
 
 
 @keyframes huerotator {
     0% {background-position: 0%;}
     100% {background-position: 400%;}
 }
+
+.prog_list{    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;}
+.prog_list .unit{width: 48%;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;}
+.prog_list .unit .copy_con{padding: 15px 0;
+    border-bottom: 1px solid #dcdcdc;
+    width: 100%;}
+.prog_list .unit .copy_con .prog_tit{color: #014210;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;}
+.prog_list .unit .copy_con .prog_copy{font-size: 26px;
+    font-weight: 400;
+    color: #787878;}
+
+
 
 
 
@@ -174,6 +196,9 @@ p{margin: 0px;}
     .limit_con{height: 60px;}
     .limit_con .tit{font-size: 20px;}
     .limit_con .tit em{font-size: 30px;}
-
+    .prog_list .unit .copy_con .prog_tit{font-size: 22px;
+        margin-bottom: 6px;}
+    .prog_list .unit .copy_con .prog_copy{font-size: 16px;}
+    .prog_list .unit .copy_con{padding: 12px 0;}
 
 }

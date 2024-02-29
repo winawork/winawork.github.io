@@ -13,13 +13,12 @@ $(function () {
 
 	const interSet = null;
 	$.floatInterSet = function(){
-		console.log('1');
 		floatInterval();
 		interSet = setInterval(floatInterval(),1000);
 	}
 
 	setInterval(function() {
-		console.log("Hello, World!");
+
 		const chk = $('.float_p').hasClass('op5');
 		if(chk){
 			$('.float_p').removeClass('op5');
@@ -94,7 +93,6 @@ $(function () {
 			$('.map_btn').removeClass('act');
 			$(this).addClass('act');
 
-			console.log(idx);
 			$('.map_dtl').find('.map_unit').removeClass('act');
 			$('.map_dtl').find('.map_unit:eq('+idx+')').addClass('act');
 

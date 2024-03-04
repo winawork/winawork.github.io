@@ -98,6 +98,14 @@ $(function () {
 
 		})
 	}
+
+	$.video_click_event = function(){
+		$('.poster_click').on('click',function(){
+			var video = '<video class="" poster="https://winawork.github.io/images/interview_poster.jpg" src="https://winawork.github.io/images/interview_low.mp4" controls muted autoplay></video>'
+			$(this).hide();
+			$('.interview').append(video);
+		})
+	}
 	
 
 	$.initView = function () {
@@ -105,6 +113,7 @@ $(function () {
 		$.utm_set_meta();
 		$.utm_set_dg();
 		$.float_btn();
+		$.video_click_event();
 
 	};
 	$.initView();

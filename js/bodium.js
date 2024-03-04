@@ -101,7 +101,7 @@ $(function () {
 
 	$.video_click_event = function(){
 		$('.poster_click').on('click',function(){
-			var video = '<video class="" poster="https://winawork.github.io/images/interview_poster.jpg" src="https://winawork.github.io/images/interview_low.mp4" controls muted autoplay></video>'
+			var video = '<video class="" poster="https://winawork.github.io/images/interview_poster.jpg" src="https://winawork.github.io/images/interview_low.mp4" controls autoplay></video>'
 			$(this).hide();
 			$('.interview').append(video);
 		})

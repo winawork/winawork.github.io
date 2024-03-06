@@ -39,6 +39,7 @@ p{margin: 0px;}
 .maps_cont .map_btn_con .map_btn{font-size: 1.8rem;
     margin: 0.5%;
     background-color: rgba(223,234,224,0.5);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,6 +48,13 @@ p{margin: 0px;}
     color: #12691e;
     font-weight: 400;
     cursor: pointer;}
+.maps_cont .map_btn_con .map_btn .new{position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #ff8c00;
+    top: 2px;
+    right: 2px;
+    border-radius: 20px;}
 .maps_cont .map_btn_con .map_btn.act{background-color: #12691e;
     color: white;}
 .maps_cont .map_dtl{margin-top: 40px;}
@@ -178,7 +186,20 @@ p{margin: 0px;}
     font-weight: 400;
     color: #787878;}
 
-
+.sns_float_con{    position: fixed;
+    top: 0;
+    right: 30px;
+    height: 100vh;
+    display: flex;
+    align-items: center;}
+.sns_float_con .float_in{display: flex;
+    flex-direction: column;
+    width: 50px;}
+.sns_float_con .float_in .sns_href{    width: 100%;
+    margin-bottom: 10px;
+    display: flex;}
+.sns_float_con .float_in .sns_href:last-child{margin-bottom: 0px;}
+.sns_float_con .float_in .sns_href img{width: 100%;}
 
 
 

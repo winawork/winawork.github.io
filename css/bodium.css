@@ -278,7 +278,8 @@ p{margin: 0px;}
 
 .prog_list_02 .unit.line_unit{display: flex;
     align-items: center;
-    justify-content: space-between;}
+    justify-content: space-between;
+    margin-bottom: 0;}
 .prog_list_02 .unit.line_unit .line{width: 100%;
     height: 1px;
     background-color: #014210;}

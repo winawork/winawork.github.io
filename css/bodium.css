@@ -11,10 +11,14 @@ p{margin: 0px;}
 #w20240201ad5441f9b05af, form{max-width: 840px;
     margin: 0 auto;}
 
-.doz_sys #s202402011afb32ca071d8 .btn-primary, .doz_sys #s20240201eacc33cde0675 .btn-primary, .doz_sys #s20240307006f061e5db43 .btn-primary{    background-color: #12691e;
-    font-size: 20px;
-    padding: 15px 45px;
-    border-radius: 100px;}
+.doz_sys #s202402011afb32ca071d8 .btn-primary, .doz_sys #s20240201eacc33cde0675 .btn-primary, .doz_sys #s20240307006f061e5db43 .btn-primary, .doz_sys #s202403188114087720eaa .btn-primary{    background-color: #12691e;
+    font-size: 20px ;
+    padding: 15px 45px ;
+    border-radius: 100px ;}
+._input_form_submit{   background-color: #12691e !important;
+    font-size: 20px !important;
+    padding: 15px 45px !important;
+    border-radius: 100px !important;}
 .form_bottom{padding-bottom: 120px;}
 
 .land_cont{width: 100%;

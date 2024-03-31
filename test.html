@@ -8,28 +8,159 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<style>
+			.birth_con{position: relative;}
+		input[type='date']::-webkit-calendar-picker-indicator {
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  width: 100%;
+		  height: 100%;
+		  background: transparent; 
+		  color: transparent;
+		  cursor: pointer;
+		}
+		input[type='date']::before {
+			content: attr(placeholder);
+			color: #787878;
+			width: 100%;
+			height: 100%;
+			vertical-align: middle;
+			align-items: center;
+			display: flex;
+		}
+		input[type='date']:valid::before {
+		  display: none;
+		}
+		.com_input{width: 100%;
+			padding: 0 10px; height: 40px;
+			border: 1px solid #dcdcdc;
+			outline: none;}
+		.form_con{max-width: 500px;}
+		input::placeholder {
+		  color: #787878;
+		}
+		.unit{}
+		</style>
+
+
 	</head>
 
 	<body>
         
-		<!-- <table border="0" align="center" cellpadding="0" cellspacing="0" style="max-width: 750px;">
-			<tbody>
-				<tr>
-                    <td>
-                        <img src="https://cmail.daum.net/v2/mails/0000000000001Pq/attachments/MjoxLjI6MzYzMDoyMzExMTcyOmltYWdlL2pwZWc6YmFzZTY0OkNiX2N3ak01WnM3LU5mTjg1eUN6T3c/raw/%EA%B1%B4%EA%B0%95%EC%BB%A8%ED%85%90%EC%B8%A0.jpg?inlineContentType=image%2Fjpeg&inlineFileSize=1688933&inlineId=MjoxLjI6MzYzMDoyMzExMTcyOmltYWdlL2pwZWc6YmFzZTY0OkNiX2N3ak01WnM3LU5mTjg1eUN6T3c" usemap="#Map_750_01" style="border:0;" border="0" width="100%"/><br>
-                  </td>
-                </tr>
-			</tbody>
-		</table> -->
-	
-		<p class="">date</p>
-		<input type="date">
+		<!-- 본문 -->
+<div class="content">
+    <!-- 페이지 -->
+     <div class="land_con">
+        <div class="in">
 
-		<p class="">datetime</p>
-		<input type="datetime">
+        </div>
+     </div>
 
-		<p class="">datetime-local</p>
-		<input type="datetime-local">
+     <div class="form_con">
+        <!-- 입력폼 항목 -->
+        <div class="list">
+            
+            <!-- 이름 -->
+            <div class="unit">
+                <!-- required, 필수 여부에 따라 표기 -->
+                <p class="tit">이름<i class="required"></i></p>
+                <div class="items">
+                    <input class="com_input" type="text" placeholder="이름이요">
+                </div>
+            </div>
+
+             <!-- 연락처 -->
+             <div class="unit">
+                <p class="tit">연락처</p>
+                <div class="items">
+                    <input class="com_input" type="number">
+                </div>
+            </div>
+
+            <!-- 셀렉트 -->
+            <div class="unit">
+                <p class="tit">상담희망지점</p>
+                <div class="items">
+                    <select class="com_select">
+                        <option value="place001">인천점</option>
+                        <option value="place002">잠실점</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 셀렉트 -->
+            <div class="unit">
+                <p class="tit">체험유형</p>
+                <div class="items">
+                    <select class="com_select">
+                        <option value="exp001">무료 0원</option>
+                        <option value="exp002">퀵머슬 3만원</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 생년월일 -->
+            <div class="unit">
+                <p class="tit">생년월일</p>
+                <div class="items">
+                    <div class="birth_con">
+                        <input class="com_input birth_input" type="date" placeholder="생년월일" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 라디오,체크 -->
+            <div class="unit">
+                <p class="tit">체크</p>
+                <div class="items">
+                    <div class="birth_con">
+                       <div class="item">
+                            <label>
+                                <input class="chk_input" type="radio">
+                                <span class="chk_icon">
+                                    <span class="core"></span>
+                                </span>
+                                <span class="chk_copy">체크1</span>
+                            </label>
+                       </div>
+                       <div class="item">
+                            <label>
+                                <input class="chk_input" type="radio">
+                                <span class="chk_icon">
+                                    <span class="core"></span>
+                                </span>
+                                <span class="chk_copy">체크2</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="agree_con">
+            <div class="in">
+                약관
+            </div>
+            <label>
+                <input class="chk_input" type="checkbox">
+                <span class="chk_icon">
+                    <span class="core"></span>
+                </span>
+                <span class="chk_copy">개인정보수집동의</span>
+            </label>
+        </div>
+
+        <div class="btn_con">
+            <button class="land_btn">신청하기</button>
+        </div>
+
+     </div>
+
+
+</div>
 
 	</body>
 

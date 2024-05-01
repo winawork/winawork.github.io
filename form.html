@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- 스타일 -->
+  <style>
+
+	  .items-error{
+		  display: none;
+	  }
+
+	  .is-error :invalid ~ .items-error {
+		  display: block;
+	  }
+
+	  .is-error .list-error > .items-error {
+		  display: block;
+	  }
+
+  </style>
+ </head>
+ <body>
+	 <!-- 본문 -->
+	<div class="content">
+		<!-- 페이지 -->
+		 <div class="land_con">
+			<div class="in">
+
+			</div>
+		 </div>
+
+		 <div class="form_con">
+			<form id="iForm" name="iForm">
+				<!-- 입력폼 항목 -->
+				<div class="list">
+
+					<!-- 이름 -->
+					<div class="unit">
+						<!-- required, 필수 여부에 따라 표기 -->
+						<p class="tit">이름<i class="required"></i></p>
+						<div class="items">
+							<input class="com_input" type="text" required>
+							<div class="items-error"><span>이름을 입력해주세요</span></div>
+						</div>
+
+
+
+					</div>
+
+					 <!-- 연락처 -->
+					 <div class="unit">
+						<p class="tit">연락처</p>
+						<div class="items">
+							<input class="com_input" type="number" required>
+							<div class="items-error"><span>연락처를 입력해주세요</span></div>
+						</div>
+					</div>
+
+					<!-- 셀렉트 -->
+					<div class="unit">
+						<p class="tit">상담희망지점</p>
+						<div class="items">
+							<select class="com_select" required>
+        						<option value="">인천점</option>
+								<option value="place001">인천점</option>
+								<option value="place002">잠실점</option>
+							</select>
+							<div class="items-error"><span>상담희망지점을 입력해주세요</span></div>
+						</div>
+					</div>
+
+					<!-- 셀렉트 -->
+					<div class="unit">
+						<p class="tit">체험유형</p>
+						<div class="items">
+							<select class="com_select" required>
+								<option value="">선택</option>
+								<option value="exp001">무료 0원</option>
+								<option value="exp002">퀵머슬 3만원</option>
+							</select>
+							<div class="items-error"><span>체험유형을 입력해주세요</span></div>
+						</div>
+					</div>
+
+					<!-- 생년월일 -->
+					<div class="unit">
+						<p class="tit">생년월일</p>
+						<div class="items">
+							<div class="birth_con">
+								<input class="com_input birth_input" type="date" required>
+								<div class="items-error"><span>생년월일을 입력해주세요</span></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 라디오,체크 -->
+					<div class="unit">
+						<p class="tit">체크</p>
+						<div class="items">
+							<div class="item_list">
+							   <div class="item">
+									<label>
+										<input class="chk_input" type="radio" name="ra" required value="Y">
+										<span class="chk_icon">
+											<span class="core"></span>
+										</span>
+										<span class="chk_copy">체크1</span>
+									</label>
+							   </div>
+							   <div class="item">
+									<label>
+										<input class="chk_input" type="radio" name="ra" required value="N">
+										<span class="chk_icon">
+											<span class="core"></span>
+										</span>
+										<span class="chk_copy">체크2</span>
+									</label>
+								</div>
+							</div>
+							<div class="items-error"><span>[개인정보수집동의]을 입력해주세요</span></div>
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="agree_con">
+					<div class="in">
+						약관
+					</div>
+					<label>
+						<input class="chk_input" type="checkbox" required>
+						<span class="chk_icon">
+							<span class="core"></span>
+						</span>
+						<span class="chk_copy">개인정보수집동의</span>
+						<div class="items-error"><span>[개인정보수집동의]을 입력해주세요</span></div>
+					</label>
+
+				</div>
+
+				<div class="btn_con">
+					<button class="land_btn">신청하기</button>
+				</div>
+			</form>
+		 </div>
+
+
+	</div>
+
+	<!-- 스크립트 -->
+	<script>
+
+		const iForm = document.querySelector("#iForm");
+
+		iForm.addEventListener("submit", function(e){
+			e.preventDefault();
+
+
+		});
+
+		iForm.querySelectorAll("[required]").forEach(function(item){
+			item.addEventListener("invalid", function(e){
+				e.preventDefault();
+
+				if(e.target.type === "radio"){
+					document.querySelector("#iForm").classList.add("is-error");
+					e.target.closest(".items").classList.add("list-error");
+
+				}else{
+					document.querySelector("#iForm").classList.add("is-error");
+				}
+
+			});
+
+			item.addEventListener("input", function(e){
+				e.preventDefault();
+				if(e.target.type === "radio"){
+					e.target.closest(".items").classList.remove("list-error");
+				}
+			});
+		});
+
+
+
+	</script>
+
+ </body>
+</html>
+
+
+
+
+
+
+

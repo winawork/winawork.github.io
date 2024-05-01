@@ -91,6 +91,7 @@ $(function () {
 	}
 
 	
+	
 
 	$.initView = function () {
 		$.floatClickEvent();

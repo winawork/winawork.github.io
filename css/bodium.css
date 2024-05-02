@@ -193,7 +193,7 @@ p{margin: 0px;}
 
 .popup-banner-wrap #popup_S202311234f999cded5b26_215476{top:10% !important;}
 .sns_float_con{    position: fixed;
-    top: 0;
+    bottom: 30px;
     right: 30px;
     height: 100vh;
     display: flex;

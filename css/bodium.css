@@ -356,9 +356,25 @@ p{margin: 0px;}
 .faq_con.v_2405 .list .unit{background-color: #edf1ea;}
 .faq_con.v_2405 .tit{color: #405646;}
 .faq_con.v_2405 .list .copy{color: #667f6c;}
+
 .review_con{width: 100%; max-width: 925px; margin: 0 auto; margin-bottom: 10%;}
 .review_img{width: 100%;}
 .com_img{width: 100%;}
+.cont_btn_con{display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30%;}
+.cont_btn{    background-color: #405646;
+    color: white !important;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    border-radius: 40px;
+    font-size: 36px;
+    font-weight: 600;}
 
 
 
@@ -427,5 +443,6 @@ p{margin: 0px;}
     .prog_tit_con .prog_tit_02{font-size: 32px;}
     .map_tit_con{margin-bottom: 10px;}
     .map_tit_con .map_tit em{font-size: 32px;}
-
+    .cont_btn{font-size: 24px;
+        height: 58px;}
 }

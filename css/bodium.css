@@ -404,9 +404,9 @@ p{margin: 0px;}
         margin-bottom: 6px;}
     .prog_list .unit .copy_con .prog_copy{font-size: 16px;}
     .prog_list .unit .copy_con{padding: 12px 0;}
-    .maps_cont .map_btn_con .map_btn{padding: 10px 16px;
-        font-size: 1.6rem;
-        margin: 1%;}
+    .maps_cont .map_btn_con .map_btn{padding: 8px 12px;
+        font-size: 14px;
+        margin: 3px;}
     .new_top_con .top_gif .gif_unit img{border-radius: 20px;}
     .new_top_con .top_gif .coupon{max-width: 320px;
         margin-top: -30px;}

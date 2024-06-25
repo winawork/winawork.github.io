@@ -1,5 +1,6 @@
 
 
+
 $(function () {
 
 	$.floatInterval = function(){
@@ -37,6 +38,8 @@ $(function () {
         const land_h = $(idx_01).height();
         const h_01 = idx_01.innerHeight();
 
+		console.log(scr_top);
+
 		if(land_h<scr_top+win_h){
             $('.float_con').hide();
         }else{
@@ -56,9 +59,9 @@ $(function () {
 			const land_h = $(idx_01).height();
 
 			const form_move = land_h;
-			console.log(land_h)
+			console.log('form_move='+form_move)
 
-			$('html').animate({scrollTop : form_move}, 400);
+			$('body, html').animate({scrollTop : form_move}, 400);
 
 		})
 	}
@@ -107,6 +110,14 @@ $(function () {
 		})
 	}
 	
+	$.bs_switch = function(){
+		const urlParams = new URL(location.href).searchParams;
+		const media = urlParams.get('media');
+		if(media != 'bs'){
+			$('.bs_switch').show();
+		}
+	}
+	
 
 	$.initView = function () {
 		$.map_btn_click();
@@ -114,8 +125,10 @@ $(function () {
 		$.utm_set_dg();
 		$.float_btn();
 		$.video_click_event();
-
+		$.bs_switch();
 	};
 	$.initView();
 
 })
+
+

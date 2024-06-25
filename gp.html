@@ -1,0 +1,231 @@
+package com.base.pro.client.report;
+
+import com.base.pro.admin.home.popup.popup.vo.AdminPopupVO;
+import com.base.pro.client.board.vo.ClientBoardVO.ClientBoardVO;
+import com.base.pro.common.AESCrypt;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Properties;
+
+@Controller
+@RequestMapping({"/report"})
+public class ClientReportController
+{
+  private static final Logger log = LoggerFactory.getLogger(ClientReportController.class);
+
+    @RequestMapping({"/information.gp"})
+    public String information(ModelMap model, @ModelAttribute("common") AdminPopupVO param, Locale locale) throws Exception
+    {
+        String result = "report/information.client_main";
+        String lang = String.valueOf(locale);
+
+        if (lang.equals("en")) {
+            result = "/.client_main";
+        }
+
+        return result;
+    }
+
+    @RequestMapping({"/information1.gp"})
+    public String information1(ModelMap model, @ModelAttribute("common") AdminPopupVO param, Locale locale) throws Exception
+    {
+        String result = "report/information1.client_main";
+        String lang = String.valueOf(locale);
+        if (lang.equals("en")) {
+            result = "/.client_main";
+        }
+        return result;
+    }
+
+    @RequestMapping({"/information2.gp"})
+    public String information2(ModelMap model, @ModelAttribute("common") AdminPopupVO param, Locale locale) throws Exception
+    {
+        String result = "report/information2.client_main";
+        String lang = String.valueOf(locale);
+        if (lang.equals("en")) {
+            result = "/.client_main";
+        }
+        return result;
+    }
+
+    @RequestMapping({"/information3.gp"})
+    public String information3(ModelMap model, @ModelAttribute("common") AdminPopupVO param, Locale locale) throws Exception
+    {
+        String result = "report/information3.client_main";
+        String lang = String.valueOf(locale);
+        if (lang.equals("en")) {
+            result = "/.client_main";
+        }
+        return result;
+    }
+
+    @RequestMapping({"/information4.gp"})
+    public String information4(ModelMap model, @ModelAttribute("common") AdminPopupVO param, Locale locale) throws Exception
+    {
+        String result = "report/information4.client_main";
+        String lang = String.valueOf(locale);
+        if (lang.equals("en")) {
+            result = "/.client_main";
+        }
+        return result;
+    }
+
+    @RequestMapping({"/information5.gp"})
+    public String information5(ModelMap model, @ModelAttribute("common") AdminPopupVO param, Locale locale) throws Exception
+    {
+        String result = "report/information5.client_main";
+        String lang = String.valueOf(locale);
+        if (lang.equals("en")) {
+            result = "/.client_main";
+        }
+        return result;
+    }
+
+    @RequestMapping({"/principle.gp"})
+    public String principle(ModelMap model, @ModelAttribute("common") AdminPopupVO param, Locale locale) throws Exception
+    {
+        String result = "report/principle.client_main";
+        String lang = String.valueOf(locale);
+
+        if (lang.equals("en")) {
+            result = "/.client_main";
+        }
+
+        return result;
+    }
+
+  @RequestMapping({"/report.gp"})
+  public String report(ModelMap model, @ModelAttribute("common") AdminPopupVO param, Locale locale) throws Exception
+  {
+    String result = "report/report.client_main";
+      String lang = String.valueOf(locale);
+
+      if (lang.equals("en")) {
+          result = "/.client_main";
+      }
+
+    return result;
+  }
+
+    @RequestMapping({"/process.gp"})
+    public ModelAndView boardProcess(@Valid ReportVO param, BindingResult bindingResult) throws Exception {
+
+
+        HashMap resultMap = new HashMap();
+
+
+        String htmlContent = createHtmlContent(param);
+
+        sendEmail("dydzh2024@naver.com", "제보 정보", htmlContent);
+        resultMap.put("result", "success");
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("json", resultMap);
+        mav.setViewName("jsonView");
+        return mav;
+    }
+
+    public void sendEmail(String to, String subject, String content) {
+        final String username = "dydzh2024@naver.com";
+        final String password = "dudgh3975!";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.naver.com");
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+            message.setSubject(subject, "UTF-8");
+            message.setContent(content, "text/html; charset=UTF-8");
+
+            Transport.send(message);
+
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String createHtmlContent(ReportVO report) {
+
+       String contentWithBreaks = report.getContent9().replace("\n", "<br>");
+
+       return "<!DOCTYPE html>\n" +
+               "<html lang='ko'>\n" +
+               "<head>\n" +
+               "    <meta charset='UTF-8'>\n" +
+               "    <title>Email Form</title>\n" +
+               "    <style>\n" +
+               "        body {\n" +
+               "            font-family: Arial, sans-serif;\n" +
+               "            color: #333;\n" +
+               "        }\n" +
+               "        h1 {\n" +
+               "            background-color: #4CAF50;\n" +
+               "            color: white;\n" +
+               "            padding: 10px 0;\n" +
+               "            text-align: center;\n" +
+               "        }\n" +
+               "        p {\n" +
+               "            border-bottom: 1px solid #ddd;\n" +
+               "            padding: 10px 0;\n" +
+               "            margin-top: 10px;\n" +
+               "            margin-bottom: 10px;\n" +
+               "        }\n" +
+               "        p:last-child {\n" +
+               "            border-bottom: none;\n" +
+               "        }\n" +
+               "        strong {\n" +
+               "            color: #4CAF50;\n" +
+               "        }\n" +
+               "    </style>\n" +
+               "</head>\n" +
+               "<body>\n" +
+               "    <h1>제보 정보</h1>\n" +
+               "    <p><strong>제보 대상 유형:</strong> " + report.getContent1() + "</p>\n" +
+               "    <p><strong>제보 대상자:</strong> " + report.getContent2() + "</p>\n" +
+               "    <p><strong>부서 / 업무:</strong> " + report.getContent3() + "</p>\n" +
+               "    <p><strong>이메일:</strong> " + report.getContent4() + "@" + report.getContent5() + "</p>\n" +
+               "    <p><strong>핸드폰:</strong> " + report.getContent6() + "</p>\n" +
+               "    <p><strong>제목:</strong> " +  report.getContent7() + "</p>\n" +
+               "    <p><strong>제보유형:</strong> " + report.getContent8() + "</p>\n" +
+               "    <p><strong>제보내용:</strong> " + contentWithBreaks + "</p>\n" +
+               "    <p><strong>대상 회사와의 관계:</strong> " + report.getContent10() + "</p>\n" +
+               "</body>\n" +
+               "</html>";
+   }
+
+
+}
+
+/* Location:           C:\Users\bsik0\OneDrive\바탕 화면\g-platech\WEB-INF\classes\
+* Qualified Name:     com.base.pro.client.intro.ClientIntroController
+* JD-Core Version:    0.6.2
+*/

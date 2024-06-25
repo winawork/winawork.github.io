@@ -20,9 +20,17 @@
                 $('.header').load('list.html #1 .unit:nth-child(1n+2)');
             }
 
+            $.bs_switch = function(){
+                const urlParams = new URL(location.href).searchParams;
+                const media = urlParams.get('media');
+                if(media == 'bs'){
+                    $('.bs_switch').hide();
+                }
+            }
 
             $.initView = function () {
                 $.get_html();
+                $.bs_switch();
             };
             $.initView();
 
@@ -36,17 +44,19 @@
 
     <div class="land_cont">
         <div class="in">
-            <img class="com_img" src="https://winawork.github.io/images/240606_banner_01.jpg" class="">
+            <img class="com_img bs_switch" src="https://winawork.github.io/images/240606_banner_01.jpg" class="">
             <img class="com_img" src="https://winawork.github.io/images/ec_240607_10.jpg" class="">
             <img class="com_img" src="https://winawork.github.io/images/um_240607_01.jpg" class="">
-            <img class="com_img" src="https://winawork.github.io/images/um_240607_02.gif" class="">
+            <img class="com_img" src="https://winawork.github.io/images/240610_02.gif" class="">
             <img class="com_img" src="https://winawork.github.io/images/um_240607_11.jpg" class="">
             <img class="com_img" src="https://winawork.github.io/images/um_240607_03.jpg" class="">
             <!-- <img class="com_img" src="https://winawork.github.io/images/um_240607_04.gif" class=""> -->
-            <img class="com_img" src="https://winawork.github.io/images/240608_01.gif" class="">
+            <img class="com_img" src="https://winawork.github.io/images/240609_02.gif" class="">
+            <!-- <img class="com_img" src="https://winawork.github.io/images/240608_01.gif" class=""> -->
             <img class="com_img" src="https://winawork.github.io/images/um_240607_05.jpg" class="">
             <img class="com_img" src="https://winawork.github.io/images/240606_16.gif" class="">
             <img class="com_img" src="https://winawork.github.io/images/um_240607_10.jpg" class="">
+            <img class="com_img" src="https://winawork.github.io/images/umfit_01.gif" class="">
             <img class="com_img" src="https://winawork.github.io/images/240606_08.gif">
             <img class="com_img" src="https://winawork.github.io/images/um_240607_07.jpg" class="">
             <img class="com_img" src="https://winawork.github.io/images/240606_19.gif">
@@ -57,6 +67,7 @@
             <img class="com_img" src="https://winawork.github.io/images/240606_04.jpg" class="">
             <img class="com_img" src="https://winawork.github.io/images/240606_14.gif" class="">
             <img class="com_img" src="https://winawork.github.io/images/ec_240607_11.jpg" class="">
+            <img class="com_img" src="https://winawork.github.io/images/240609_03.jpg" class="">
 
             <!-- 지도 -->
             <div class="maps_cont ver_2405">
@@ -72,27 +83,31 @@
                     <span class="map_btn" data-idx="5">인천점</span>
                     <span class="map_btn" data-idx="6">천안점(9월 오픈)</span>
                     <span class="map_btn" data-idx="7">대구북구점</span>
-                    <span class="map_btn" data-idx="8">울산점(6월 오픈)</span>
+                    <span class="map_btn" data-idx="8">울산점</span>
                     <span class="map_btn" data-idx="9">양산점</span>
                     <span class="map_btn" data-idx="10">전주점</span>
                     <span class="map_btn" data-idx="11">광주점</span>
                     <span class="map_btn" data-idx="12">제주점</span>
                 </div>
                 <div class="map_dtl">
-
+    
                     <div class="map_unit act">
                         <p class="map_title">서초본점(6월 오픈)</p>
                         <div class="copy_con">
                             <div class="copy_unit">
                                 <p class="copy fw600">6월 26일(수) 오픈예정</p>
                             </div>
-                            <!-- <div class="copy_unit">
+                            <div class="copy_unit">
+                                <p class="copy fw600">주소</p>
+                                <p class="copy">서울시 서초동 1555-2 트러스트힐 6층,7층</p>
+                            </div>
+                            <div class="copy_unit">
                                 <p class="copy fw600">연락처</p>
-                                <a class="copy" href="">-</a>
-                            </div> -->
+                                <a class="copy" href="tel:02-6243-0621">02-6243-0621</a>
+                            </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">잠실점</p>
                         <div class="copy_con">
@@ -106,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">강남도곡점</p>
                         <div class="copy_con">
@@ -120,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">노원점</p>
                         <div class="copy_con">
@@ -134,7 +149,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">수원점(8월 오픈)</p>
                         <div class="copy_con">
@@ -147,7 +162,7 @@
                             </div> -->
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">인천점</p>
                         <div class="copy_con">
@@ -161,7 +176,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">천안점(9월 오픈)</p>
                         <div class="copy_con">
@@ -174,7 +189,7 @@
                             </div> -->
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">대구북구점</p>
                         <div class="copy_con">
@@ -188,20 +203,21 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
-                        <p class="map_title">울산점(6월 오픈)</p>
+                        <p class="map_title">울산점</p>
                         <div class="copy_con">
                             <div class="copy_unit">
-                                <p class="copy fw600">6월 10일(월) 오픈예정</p>
+                                <p class="copy fw600">주소</p>
+                                <p class="copy">울산광역시 남구 정동로86번길 20 2층</p>
                             </div>
-                            <!-- <div class="copy_unit">
+                            <div class="copy_unit">
                                 <p class="copy fw600">연락처</p>
-                                <a class="copy" href="">-</a>
-                            </div> -->
+                                <a class="copy" href="tel:052-266-1101">052-266-1101</a>
+                            </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">양산점</p>
                         <div class="copy_con">
@@ -215,7 +231,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">전주점</p>
                         <div class="copy_con">
@@ -229,7 +245,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">광주점</p>
                         <div class="copy_con">
@@ -243,7 +259,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="map_unit">
                         <p class="map_title">제주점</p>
                         <div class="copy_con">
@@ -257,12 +273,13 @@
                             </div>
                         </div>
                     </div>
-
+    
                     
-
+    
                 </div>
             </div>
-            <img src="https://winawork.github.io/images/240523_01.jpg" class="">
+            <img class="com_img" src="https://winawork.github.io/images/240523_01.jpg" class="">
+
             <!-- faq -->
             <div class="faq_con">
                 <p class="tit">FAQ</p>

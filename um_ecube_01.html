@@ -17,7 +17,7 @@
         $(function () {
 
             $.get_html = function(){
-                $('.header').load('list.html #1 .unit:nth-child(1n+2)');
+                $('.header').load('list.html <em>#</em>1 .unit:nth-child(1n+2)');
             }
 
 
@@ -31,6 +31,21 @@
 
     </script>
 
+    <style>
+        .slide_um{padding: 10px;
+            background-color: black;
+            color: white;
+            font-size: 28px;
+        }
+        .slide_um em{color: #41a05a;}
+
+        @media(max-width:579px) {
+            .slide_um{font-size: 20px;
+        padding: 8px 0;}
+        } 
+
+    </style>
+
 </head>
 <body>
 
@@ -38,6 +53,7 @@
         <div class="in">
             <img class="com_img" src="https://winawork.github.io/images/quick_2408_01_01.jpg" class="">
             <img class="com_img" src="https://winawork.github.io/images/240818_01.jpg" class="">
+            <marquee class="slide_um"><em>#</em>국내유일 <em>#</em>지방분해 <em>#</em>셀룰라이트감소 <em>#</em>튼살개선 <em>#</em>E큐브스파 <em>#</em>움핏뱀부레이저</marquee>
             <img class="com_img" src="https://winawork.github.io/images/240818_02.jpg" class="">
             <img class="com_img" src="https://winawork.github.io/images/240818_03.gif" class="">
             <img class="com_img" src="https://winawork.github.io/images/240818_04.jpg" class="">

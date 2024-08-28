@@ -1,0 +1,13 @@
+.popup-banner-wrap #popup_S202311234f999cded5b26_243579{}
+.popup-banner-wrap #popup_S202311234f999cded5b26_243580{left: calc(50% + 460px) !important;}
+.popup-banner-wrap #popup_S202311234f999cded5b26_243577{left: calc(50% - 460px) !important;}
+.pop-container{top: 120px !important;}
+
+
+@media (max-width: 767px) {
+    .popup-banner-wrap #popup_S202311234f999cded5b26_243580{left: 0 !important}
+    .popup-banner-wrap #popup_S202311234f999cded5b26_243577{left: 0!important;
+        top: 100px !important;}
+    .pop-container{top: 900px !important;}
+    
+}

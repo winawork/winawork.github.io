@@ -5,9 +5,12 @@
 
 
 @media (max-width: 767px) {
-    .popup-banner-wrap #popup_S202311234f999cded5b26_243580{left: 0 !important}
     .popup-banner-wrap #popup_S202311234f999cded5b26_243577{left: 0!important;
-        top: 100px !important;}
+        top: 200px !important;}
+    .popup-banner-wrap #popup_S202311234f999cded5b26_243579{top: 450px !important;}
+    .popup-banner-wrap #popup_S202311234f999cded5b26_243580{left: 0 !important;
+        top: 655px !important;}
+   
     .pop-container{top: 900px !important;}
     
 }

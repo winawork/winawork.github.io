@@ -387,6 +387,73 @@ select {
 .duplicated .dupl_in .con p{font-size: 20px;
     color: #969696;}
 
+.form{padding: 0 5%;
+    box-sizing: border-box;
+    margin-top: 40px;}
+.form_list{max-width: 840px;}
+.form_list .form_unit{display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;}
+.form_list .form_unit .tit{    min-width: 140px;
+    font-size: 16px;
+    font-weight: 400;}
+.form_list .form_unit .tit .red{color: red;}
+.form_list .form_unit .input_con{width: 100%;}
+.form_input, .form_select{    height: 40px;
+    border: 1px solid #dcdcdc;
+    padding: 0 10px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;}
+.form_con .form_btn_con{margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+.form_btn{width: 220px;
+    height: 54px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
+    color: white;
+    background-color: #508aff;}
+.form_btn.green_01{background-color: #12691e;}
+.form_btn.bk_01{background-color: #1e1e1e;}
+.agree{margin-top: 20px;}
+.agree .agree_con{font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #787878;
+    max-height: 140px;
+    overflow: auto;
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;}
+/* check label */
+.chk_label{display: flex;
+    align-items: center;
+    box-sizing: border-box;}
+.chk_label .chk_box{display: none;}
+.chk_label .chk_span{    width: 14px;
+    min-width: 14px;
+    height: 14px;
+    border: 1px solid #dcdcdc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: white;;
+    cursor: pointer;
+    margin-right: 6px;}
+.chk_label .chk_span .chk_act{    background-color: #508aff;
+    padding: 0px;
+    border-radius: 10px;
+    transition: all .2s;}
+.chk_label .chk_box:checked+.chk_span{border-color: #508aff;}
+.chk_label .chk_box:checked+.chk_span .chk_act{padding: 4px;}
+
 
 
 
@@ -459,7 +526,14 @@ select {
     .coml_btn_con{margin-top: 40px;}
     .compl .coml_btn{font-size: 18px;
         min-width: 100px;}
-
+    .form_list .form_unit{flex-wrap: wrap;}
+    .form_list .form_unit .tit{width: 100%;
+        margin-bottom: 5px;
+        font-size: 14px;}
+    .form_input, .form_select{font-size: 14px;}
+    .agree .agree_con{max-height: 100px;}
+    .chk_label{font-size: 14px;}
+    .privacy_copy{font-size: 13px;}
 }
 
 

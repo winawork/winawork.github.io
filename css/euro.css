@@ -130,7 +130,8 @@ p{margin: 0px;}
     margin-bottom: 20px;}
 .form_box{padding: 0 5%;
     box-sizing: border-box;
-    overflow: hidden;}
+    overflow: hidden;
+    transition: all .4s ease-in-out;}
 .form_box .form_in{padding: 5%;
     background-color: #f2f3f5;
     border-radius: 40px;}
@@ -163,15 +164,17 @@ p{margin: 0px;}
 .point_title_box{display: flex;
     position: relative;}
 .point_title_box .point_coin{position: absolute;}
-.point_title_box .point_coin.coin_01{top: -50%;
-    left: 12%;
-    width: 66px;}
-.point_title_box .point_coin.coin_02{top: 40%;
-    width: 60px;
+.point_title_box .point_coin{top: 50%; left: 50%;
+    transition: all .4s ease-in-out;}
+.point_title_box .point_coin.coin_01{width: 66px;}
+.point_title_box .point_coin.coin_02{width: 60px;}
+.point_title_box .point_coin.coin_03{width: 60px;}
+.point_title_box.show .point_coin.coin_01{top: -50%;
+    left: 12%;}
+.point_title_box.show .point_coin.coin_02{top: 40%;
     left: 5%;}
-.point_title_box .point_coin.coin_03{top: 30%;
-    right: 7%;
-    width: 60px;}
+.point_title_box.show .point_coin.coin_03{top: 30%;
+    left: 85%;}
 
 .com_section.bk{background-color: #222427;}
 .com_section.bt_more{margin-bottom: 120px;}
@@ -323,7 +326,7 @@ footer{width: 100%;
     footer .foot_in .foot_logo{width: 90px;
         margin-bottom: 20px;}
         footer .foot_in .foot_copy_con .copy{font-size: 13px;}
-
+        .point_list{gap: 10px;}
 
 
 }

@@ -59,6 +59,8 @@ $(function () {
                 }
             }
         })
+
+
 	}
 	$.scrollEvent();
 

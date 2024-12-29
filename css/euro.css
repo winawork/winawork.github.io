@@ -338,6 +338,7 @@ footer{width: 100%;
         margin-bottom: 20px;}
         footer .foot_in .foot_copy_con .copy{font-size: 13px;}
         .point_list{gap: 10px;}
-
+    .land_cont .agree .agree_con{max-height: 80px;}
+    .privacy_copy{line-height: 1.2;}
 
 }

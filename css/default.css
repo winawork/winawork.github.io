@@ -155,6 +155,24 @@ input::-webkit-inner-spin-button {
 .sa-up {
     transform: translate(0, 100px);
   }
+.sa-down {
+    transform: translate(100px, 100px);
+    transform: scale(1.4);
+  }
+.sa-scale {
+    transform: scale(1.4);
+}
+
+.sa-ro-sc{
+    transform: scale(1.4);
+    transform: perspective();
+}
+
+.sa-flip{
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
 
 .sa.show {
         opacity: 1;

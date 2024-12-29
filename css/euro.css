@@ -199,7 +199,13 @@ p{margin: 0px;}
 .simul_box .select_list .unit .select_title{color: white;
     margin-bottom: 10px;
     font-size: 22px;}
-.simul_box .select_list .unit .simul_select{border: 1px solid white;
+.simul_box .select_list .unit .select_cover{border: 1px solid white;
+    width: 220px;
+    border-radius: 100px;
+    padding-right: 10px;
+    box-sizing: border-box;}
+.simul_box .select_list .unit .simul_select{
+    border: none;
     background-color: transparent;
     color: white;
     font-size: 28px;
@@ -262,8 +268,12 @@ footer{width: 100%;
     margin: 0;
     color: #787878;}
     footer .foot_in .foot_copy_con .copy.right{margin-top: 20px;}
-
-
+.news_img{    max-width: 90%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 6px;}
 
 
 
@@ -290,7 +300,7 @@ footer{width: 100%;
     .form_box .form_in{padding: 10% 5%;
         border-radius: 20px;}
     .form_box .form_in .form_top .form_title{font-size: 24px;}
-    .com_section.bt_section{}
+    .com_section.bt_section{padding-top: 40px;}
     .land_cont .in .point_dot{width: 28px;
         margin-bottom: 10px;}
     .com_section{padding: 80px 0;}
@@ -304,6 +314,7 @@ footer{width: 100%;
     .com_section.bt_more{margin-bottom: 80px;}
     .simul_box .select_list .unit{        width: 44%;
         box-sizing: border-box;}
+    .simul_box .select_list .unit .select_cover{width: 100%;}
     .simul_box .select_list .unit .simul_select{width: 100%;
         font-size: 20px;
         height: initial;

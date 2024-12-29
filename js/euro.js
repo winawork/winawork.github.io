@@ -83,11 +83,100 @@ $(function () {
 		})
 	}
 
+	function countUp(targetElement, targetValue) {
+		let currentValue = 0; // Start from 0
+		const increment = Math.ceil(targetValue / 100); // Increment value for smoother animation
+		const interval = setInterval(function () {
+		  currentValue += increment; // Increment the current value
+		  if (currentValue >= targetValue) {
+			currentValue = targetValue; // Ensure it ends exactly at the target value
+			clearInterval(interval); // Stop the animation
+		  }
+		  targetElement.text(currentValue.toLocaleString()); // Update the element with formatted value
+		}, 10); // Adjust speed (10ms interval)
+	}
+
+	const pensionData = [
+		{
+		  join_age: 10,
+		  str_age: {
+			60: { mm_money: 10360305, tot_money: 414412200 },
+			65: { mm_money: 12937523, tot_money: 452813305 },
+			70: { mm_money: 15490248, tot_money: 464707440 },
+			75: { mm_money: 18795140, tot_money: 469878500 },
+		  },
+		},
+		{
+		  join_age: 20,
+		  str_age: {
+			60: { mm_money: 8902305, tot_money: 356092200 },
+			65: { mm_money: 10835218, tot_money: 379232630 },
+			70: { mm_money: 13094274, tot_money: 392828220 },
+			75: { mm_money: 16611140, tot_money: 415278500 },
+		  },
+		},
+		{
+		  join_age: 30,
+		  str_age: {
+			60: { mm_money: 7168590, tot_money: 286743600 },
+			65: { mm_money: 8854414, tot_money: 309904490 },
+			70: { mm_money: 11251524, tot_money: 337545720 },
+			75: { mm_money: 13911885, tot_money: 347797125 },
+		  },
+		},
+		{
+		  join_age: 40,
+		  str_age: {
+			60: { mm_money: 4434300, tot_money: 177372000 },
+			65: { mm_money: 7274914, tot_money: 254621990 },
+			70: { mm_money: 9060301, tot_money: 271809030 },
+			75: { mm_money: 11368630, tot_money: 284215750 },
+		  },
+		},
+		{
+		  join_age: 50,
+		  str_age: {
+			65: { mm_money: 4138088, tot_money: 144833080 },
+			70: { mm_money: 5604463, tot_money: 168133890 },
+			75: { mm_money: 9340630, tot_money: 233515750 },
+		  },
+		},
+	  ];
+
+	$.select_chk = function(){
+		$('.simul_select').on('change',function(){
+
+			var age = parseInt($('.age_select').val());
+			var start_age = parseInt($('.start_select').val());
+
+			const result = $.grep(pensionData, function (item) {
+				return item.join_age === age;
+			  });
+
+			if (result.length > 0 && result[0].str_age[start_age]) {
+				const data = result[0].str_age[start_age];
+			
+				console.log('연금액 : '+data.mm_money);
+
+				countUp($('.mm_money'),data.mm_money);
+				countUp($('.tot_money'),data.tot_money);
+			}else{
+				$('.mm_money').html('-');
+				$('.tot_money').html('-');
+			}
+
+			
+
+
+		})
+	}
+
 
 	
 
 	$.initView = function () {
 		$.float_btn();
+		$.select_chk();
 
 	};
 	$.initView();

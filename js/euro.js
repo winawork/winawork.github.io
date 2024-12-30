@@ -72,11 +72,10 @@ $(function () {
 	$.float_btn = function(){
 		$('.float_btn').on('click',function(){
 			const win_h = window.innerHeight;
-			const idx_01 = $('.land_cont');
-			const land_h = $(idx_01).height();
+			const idx_01 = $('.form_box');
+			const land_h = $(idx_01).offset().top;
 
-			const form_move = land_h;
-			console.log('form_move='+form_move)
+			const form_move = land_h-100;
 
 			$('body, html').animate({scrollTop : form_move}, 400);
 

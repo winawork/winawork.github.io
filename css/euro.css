@@ -52,7 +52,7 @@ p{margin: 0px;}
     cursor: pointer;}
 
 .float_con{    position: fixed;
-    bottom: 50px;
+    bottom: 0px;
     left: 0px;
     width: 100%;
     display: flex;
@@ -60,19 +60,14 @@ p{margin: 0px;}
     justify-content: center;
     z-index: 2;}
 .float_con .float_btn{
-    padding: 15px 45px;
     border-radius: 100px;
-    
     font-weight: 800;
     cursor: pointer;
-    border: 2px solid #12691e;
-    line-height: 1;
-    background-color: #c8ff3c;}
+    line-height: 1;}
 .float_con .float_btn.img{padding: 0px;
+    display: flex;
     background-color: transparent;
-    border: none;
-    max-width: 680px;
-    margin: 0 5%;}
+    border: none;}
 .float_con .float_btn .float_p{font-size: 2rem; color: #12691e;}
 .float_con .float_btn em{font-size: 2rem;
     color: #12691e;}
@@ -292,7 +287,6 @@ footer{width: 100%;
 
     .cont_btn{font-size: 24px;
         height: 58px;}
-    .float_con{bottom: 20px;}
     .main_top{margin-top: 40px;}
     .logo{max-width: 120px;
         margin-bottom: 40px;}

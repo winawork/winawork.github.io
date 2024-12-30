@@ -1,0 +1,532 @@
+@font-face {
+    font-family: 'GGOTHICSSI';
+    font-style: normal;
+    font-weight: 100;
+    src: url(../fonts/HGGGOTHICSSI_00G.TTF) format("truetype");
+}
+
+@font-face {
+    font-family: 'GGOTHICSSI';
+    font-style: normal;
+    font-weight: 200;
+    src: url(../fonts/HGGGOTHICSSI_20G.TTF) format("truetype");
+}
+
+@font-face {
+    font-family: 'GGOTHICSSI';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/HGGGOTHICSSI_40G.TTF) format("truetype");
+}
+
+@font-face {
+    font-family: 'GGOTHICSSI';
+    font-style: normal;
+    font-weight: 600;
+    src: url(../fonts/HGGGOTHICSSI_60G.TTF) format("truetype");
+}
+
+@font-face {
+    font-family: 'GGOTHICSSI';
+    font-style: normal;
+    font-weight: 800;
+    src: url(../fonts/HGGGOTHICSSI_80G.TTF) format("truetype");
+}
+
+@font-face {
+    font-family: 'GGOTHICSSI';
+    font-style: normal;
+    font-weight: 900;
+    src: url(../fonts/HGGGOTHICSSI_99G.TTF) format("truetype");
+}
+
+*{font-family: 'GGOTHICSSI';}
+.landing_font{font-family: 'GGOTHICSSI'; padding:0; margin: 0; text-decoration: none;transform: skew(-0.001deg); line-height: 1;}
+
+
+
+
+
+/* header */
+.header{position: fixed;height: 80px; width: 100%; padding: 0 5%; box-sizing: border-box;border-bottom: 1px solid #eee; top:0; left: 0; background-color: white;z-index: 99;}
+.headerInner{max-width: 1260px; display: flex; justify-content: space-between; align-items: center; height: 100%; margin: 0 auto;}
+.headLogoHref{height: 50px;}
+.headLogo{}
+.moIcon{}
+.headMenuBox{width: 70%; min-width: 880px;}
+.headMenuInner{display: flex; justify-content: space-between; align-items: center;}
+.headMenuUnit{position: relative;}
+.headMenu{font-size: 16px; font-weight: 300; color: #393a3f; font-family: 'Noto Sans'; line-height: 80px; display: inline-block;cursor: pointer;transition: all .2s;}
+.headContactBtn{font-size: 12px; color: white; padding: 9px 20px; background-color: #21afff; border-radius: 5px; font-weight: 400;font-family: 'Noto Sans'; cursor: pointer;transition: all .2s;display: flex;}
+
+
+.headMenuCellList{display: none; position: absolute; width: 180px;margin-left: -15px;}
+.headMenuCellInner{border-radius: 5px; box-shadow: 0px 8px 18px 0px rgb(61 56 71 / 12%); margin-top: -10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); z-index: 1; background-color: white;}
+.headMenuCell{font-family: 'Noto Sans'; font-size: 15px; font-weight: 300; padding: 15px 20px; color: #333333; display: block;line-height: 26px}
+.headMenuCell:hover{background-color: #ededed; cursor: pointer;}
+
+
+/* footer */
+.footer{width: 100%; box-sizing: border-box;background-color: #1b2032;}
+.footerInner{padding:0 5%; box-sizing: border-box;}
+.footerContent{max-width: 1260px; margin: 0 auto; display: flex; justify-content: space-between; padding:30px 0 50px 0;}
+.footerCopyContent{max-width: 1260px; margin: 0 auto;}
+.footerLogo{width: 130px; min-width: 130px;}
+.footerConList{width: 75%; display: flex;}
+.footerConUnit{min-height: 170px;}
+.footerConList .footerConUnit:nth-child(1){ max-width: 270px; padding-right: 50px;}
+.footerConList .footerConUnit:nth-child(2){ max-width: 220px; padding-right: 50px;}
+.footerConList .footerConUnit:nth-child(3){ max-width: 270px;}
+.footerConHead{font-family: 'Noto Sans'; color: white; font-size: 18px; font-weight: 500; margin-bottom: 20px;}
+.footerConSub{font-family: 'Noto Sans'; color: #999999; font-size: 16px; font-weight: 300; line-height: 1.6;}
+.footerBtn{display: flex; width: fit-content; align-items: center; margin-top: 20px; cursor: pointer;}
+.footerBtnImg{width: 13px;}
+.footerBtnText{font-family: 'Noto Sans'; color: white; font-size: 12px;font-weight: 400; margin-left: 10px;}
+.footerCopyBox{background-color: #171520; padding: 20px 0 30px 0;}
+.footerCopy{color: #8f9195;font-family: 'Noto Sans'; font-size: 13px; font-weight: 300;}
+
+
+/* body */
+.contentBody{width: 100%; }
+.contentInner{padding:0 5%; box-sizing: border-box;}
+.mainBannerBox_01{width: 100%; height: 60vh; padding: 30px 0;box-sizing: border-box; max-width: 1260px; margin: 0 auto;display: flex; justify-content: space-between; align-items: center; min-height: 500px;}
+.mainBannerCon{min-width: 45%;}
+.mainBannerHeadBox{margin-bottom: 50px;}
+.mainBannerSub{font-size: 34px; color: #393a3f; font-weight: 300; margin-bottom: 10px;}
+.mainBannerHead{font-size: 74px; color: #393a3f; font-weight: 900;}
+.mainBannerBtn_01_box{}
+.mainBannerBtn_01{display: flex; background-color: #21afff; width: fit-content; align-items: center; justify-content: center;padding:17px 34px; border-radius: 8px; cursor: pointer;}
+.mainBannerBtnText{color: white; font-size: 22px;font-weight: 800; margin: 0px 10px 0 0 !important;}
+.mainBannerBtnIcon{height: 18px;}
+.mainBannerImg{width: 45%;}
+
+.motionBox{background-image: url("../images/motionBack.png"); border-bottom: 1px solid #1c2031;background-size: cover;}
+.content1260{max-width: 1260px; margin: 0 auto;}
+.subHeadBox{text-align: center; padding:80px;}
+.subHeadWhite{font-size: 40px; font-weight: 800; color: white;}
+.motionBody{background-color: #505564; max-width: 1000px;  margin: 0 auto; border-radius: 20px 20px 0 0; width: 100%;}
+.motionInner{padding:30px 30px 0 30px; box-sizing: border-box;}
+.motionBox *{font-family: 'Noto Sans';}
+.talkUnit{display: flex; align-items: flex-end; width: 100%;}
+.talkLeft{}
+.talkConBox{}
+.talkWho{font-size: 18px; font-weight: 400; color: white; margin-bottom: 15px;}
+.talkCon{background-color: white; padding: 16px 24px; box-sizing: border-box; display: inline-block; border-radius: 10px; font-size: 22px; font-weight: 300; line-height: 1.4; color: #393a3f; min-width: 500px;}
+.talkTime{margin-left: 10px !important; font-size: 14px; font-weight: 200; color: #b3b3b3; margin-bottom: 5px!important;}
+.alertLineBox{position: relative; padding: 20px 0;}
+.alertLineBox_01{margin-top: 20px;}
+.alertCopyBox{text-align: center; position: relative; background-color: #505564;width: fit-content; margin: 0 auto; z-index: 2; padding: 0 20px;}
+.alertCopy{font-size: 20px; font-weight: 400; color: #21afff; margin: 0px !important;}
+.alertLine{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.alertLineInner{display: flex; width: 100%; align-items: center;height: 100%;}
+.alertLineCon{border-top: 1px dashed white; width: 100%;}
+.alertConBox{text-align: center;}
+.alertConUnit{padding: 6px 0; font-size: 20px; font-weight: 400; color: white; margin: 0px !important;}
+.alertConUnit:nth-child(1){opacity: 1}
+.alertConUnit:nth-child(2){opacity: 0.8}
+.alertConUnit:nth-child(3){opacity: 0.6}
+.alertConUnit:nth-child(4){opacity: 0.4}
+.alertConUnit:nth-child(5){opacity: 0.3}
+.alertConUnit:nth-child(6){opacity: 0.2}
+.alertConUnit:nth-child(7){opacity: 0.1}
+.talkRight{text-align: right; justify-content: flex-end;}
+.talkRight .talkTime{margin-left: 0px!important; margin-right: 10px!important;}
+.talkRight .talkCon{background-color: #21afff; color: white; min-width: 300px;}
+.talkInsertBox{margin-top: 40px;}
+.talkInsertInner{display: flex; justify-content:  space-between;}
+.talkInsertCon{background-color: white; width: 100%;}
+.talkInsert{padding: 16px 30px; font-size: 22px; line-height: 1.4; color:#393a3f; font-weight: 300;word-break: keep-all;margin: 0px !important;}
+.talkInsertBtn{background-color: #21afff; width:92px; padding:18px; box-sizing: border-box; min-width: 92px;display: flex; align-items: center; justify-content: center;}
+
+.subHead{font-size: 40px; font-weight: 800; color: #393a3f; line-height: 1.2;}
+.csWhyBox{width: 380px;margin: 0 auto; padding-bottom: 80px;}
+
+.subHeadBox_02{text-align: center; padding: 80px; display: flex; justify-content: center;}
+.subArrow{height: 100px; padding: 0 20px;}
+.pointBox{background-color: #21afff;}
+.pointList{display: flex; justify-content: space-between; max-width: 1260px;
+margin: 0 auto; padding-bottom: 80px; flex-wrap: wrap;}
+.pointUnit{width: 32%;}
+.pointImg{max-width: 160px; margin: 0 auto; position: relative;}
+.pointDot{width: 8px; height: 8px; border-radius: 20px; background-color: white; margin: 20px auto;}
+.pointHead{text-align: center; color: white; font-size: 22px; font-weight: 800;}
+.pointSub{padding: 0 10px; box-sizing: border-box; color: white; font-size: 16px; line-height: 1.6; text-align: center; margin: 20px auto 0 auto !important; opacity: 0.7; font-family: 'Noto Sans'; font-weight: 300; max-width: 340px;word-break:keep-all;}
+.pointLineBox{width: 100%;position: relative;}
+.pointLineInner{position: absolute; width: 100%; top: 80px;}
+.pointLine{border-top: 1px dashed white; width: 100%;}
+.lineBack{background-image: url("../images/lineBack.png"); background-repeat: no-repeat; background-size: cover;}
+
+.needList{max-width: 800px; margin: 0 auto; padding-bottom: 80px;}
+.needUnit{display: flex; padding: 18px 40px; position: relative; background-color: white; border: 1px solid #b3b3b3; border-radius: 8px; margin-bottom: 12px;}
+.needNumBox{position: absolute;left: 0; height: 100%; top: 0; display: flex; align-items: center;}
+.neendNum{padding-left: 10px; font-size: 34px; color: #cccccc;margin: 0px !important;}
+.needConBox{width:100%; text-align: center; }
+.needCon{font-size: 20px; color: #393a3f; font-family: 'Noto Sans';}
+.m1260{max-width: 1260px; margin: 0 auto;}
+
+.clientCateList{display: flex; justify-content: center; flex-wrap: wrap; }
+.clientCateUnit{width: 20%; padding: 4px; box-sizing: border-box;}
+.clientCate{text-align: center; background-color: #f2f2f2; padding: 15px 10px; box-sizing: border-box; border-radius: 6px; cursor: pointer; color: #505050; font-size: 16px; font-weight: 400;font-family: 'Noto Sans'; margin: 0px !important;}
+.clientCateAct{}
+.clientCateAct .clientCate{background-color: #21afff !important; color: white !important;}
+.clientCate:hover{background-color: #e6e6e6;}
+
+.clientList{margin-top: 40px; margin-bottom: 80px;}
+.clientUnit{display: none; flex-wrap: wrap;}
+.clientAct{display: flex;}
+.clientCell{padding: 16px; box-sizing: border-box; width: 16.66%;}
+.couponBox{position: relative;}
+.couponLine{position: absolute; top: 0; left: 0; width: 100%; height: 80px; background-color: rgba(33,175,255,0.2);}
+.couponImg{max-width: 400px; margin: 0 auto; position: relative; padding-top: 25px;}
+.couponHeadBox{padding-bottom: 20px;}
+.verLine{width: 1px; height: 120px; background-color: #21afff; margin: 20px auto;}
+.formHeadBox{padding: 0px;}
+
+.formSubBox{text-align: center; padding: 50px 0;}
+.formSub{font-size: 16px; font-weight: 200; font-family: 'Noto Sans'; color: #808080; margin-bottom: 6px !important;}
+.formConBox{max-width: 600px; margin: 0 auto; margin-bottom: 120px;padding: 0 5%;}
+.formConList{}
+.formConUnit{display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #cccccc;}
+.formConHead{min-width: 140px; font-size: 16px; font-weight: 400; color: #393a3f;font-family: 'Noto Sans';}
+.formConInput{width: 100%; padding: 8px; box-sizing: border-box; border-radius: 6px; border: 1px solid #cccccc; background-color: #f0f0f0; outline: none; font-size:16px; font-weight: 400; color: #393a3f;font-family: 'Noto Sans';}
+.formBorderTop{border-top: 1px solid #cccccc;}
+.formRadioBox{display: flex; align-items: center; margin-top: 10px;}
+.contactAgree{margin: 0px;width: 14px; height: 14px;}
+.contactAgreeText{font-family: 'Noto Sans'; font-size: 14px; font-weight: 200; color: #393a3f; margin-left: 6px; cursor: pointer;}
+.contactAgreeSub{font-family: 'Noto Sans'; font-size: 14px; font-weight: 200; color: #808080;}
+.contactAgreeSubBox{margin-top: 10px;}
+.formBtn{background-color: #21afff; margin-top: 40px; cursor: pointer;}
+.formBtnText{color: white; padding: 16px 0;text-align: center; font-size: 20px; font-weight: 800;}
+
+.mainBannerBack_02{background-image: url("../images/mainBack_02.png");background-repeat: no-repeat; background-size: cover;}
+.mainBannerBtn_02{background-color: white; border-radius: 50px;}
+.mainBannerBtnText_02{color: #21afff; margin-right: 0px !important;}
+.mainBannerImg_02{height: 100%; padding: 6vh 0; box-sizing: border-box;}
+
+.motionMenuBox{max-width: 300px; margin: 0 auto; margin-bottom: 30px;}
+.motionMenuInner{display: flex; justify-content: center; border: 1px solid #21afff; width: 100%; border-radius: 50px; overflow: hidden;}
+.motionMenu{padding: 8px; width: 50%; box-sizing: border-box; text-align: center; color: #21afff; font-size: 18px;font-weight: 800;font-family: 'GGOTHICSSI'; cursor: pointer;}
+.motionAct{background-color: #21afff; color: white; border-radius: 50px;}
+.subCopyBox{margin-top: 30px;}
+.subCopy{font-size: 24px; font-weight: 200; color: #393a3f; line-height: 1.5;}
+.semiCopyBox{margin-bottom: 80px;}
+.semiCopyInner{text-align: center;}
+.semiImg{width: 24px; margin: 0 auto;}
+.semiCopy{font-size: 28px; font-weight: 800; color: #21afff; line-height: 1.4; padding: 20px 0;}
+.weakBox{padding: 80px 5%;}
+.weakList{max-width: 800px; margin: 0 auto;}
+.weakUnit{display: flex; align-items: center;margin-bottom: 20px;}
+.weakCopyBox{ width: 100%; margin: 0px;}
+.weakImg{height: 58px; margin-right: 10px;}
+.weakConBox{text-align: left;}
+.csLine{width: 1px; height: 100px; background-color: #cccccc; margin: 20px auto;}
+.csImg{width: 100%; max-width: 600px; margin: 0 auto; margin-bottom: 80px;}
+.motionHeadBox{padding-bottom: 40px;}
+.alertCopy_02{color:white;}
+.motionB{padding-bottom: 40px;}
+.motionA{padding-bottom: 40px; display: none;}
+.alertCopy_02{text-align: center; margin-top: 20px !important;}
+.motionPeopleBox{display: flex; justify-content:  space-between;}
+.motionPeopleUnit{display: flex; align-items: center;}
+.motionPeopleImg{width: 80px;}
+.motionPeopleNm{font-size: 18px; font-weight: 400; color: white; padding: 0 10px;}
+.motionCancelBox{}
+.motionCancelUnit{}
+.motionCancelCon{max-width: 400px; padding: 30px; box-sizing: border-box; background-color: #f2f2f2; border-radius: 12px; margin: 0 auto; position: relative; bottom: -50px; z-index: 2; transition: all .4s;}
+
+.motionCancelHead{max-width: 100px; margin: 0 auto;}
+.motionCancelBody{margin: 20px 0;}
+.motionCancelSub{font-size: 20px; font-weight: 800; color: #505564; margin-bottom: 8px;font-family: 'GGOTHICSSI';}
+.motionCancelBtn{background-color: #21afff; padding: 12px; color: white; text-align: center; border-radius: 8px; font-size: 18px; font-weight: 800;font-family: 'GGOTHICSSI';}
+.headMenuArrow{position: absolute; top: 0; right: 0; height: 100%; display: none}
+.headMenuArrowMid{display: flex; align-items: center; height: 100%; padding-right: 20px; width: 14px;}
+.ctaBtnBox{position: fixed;bottom: 0; left: 0; width: 100%; padding: 0 5%; box-sizing: border-box; z-index: 3; background-color: white; border-top: 1px solid #eee;transition: all .2s; height: 76px;}
+.ctaAct{bottom: -76px;}
+.ctaBtnInner{max-width: 1260px; margin: 0 auto; align-items: center; height: 100%;  display: flex; justify-content: center; align-items: center; }
+.ctaBtnText{font-size: 20px; font-weight: 800;font-family: 'GGOTHICSSI'; color: #393a3f;}
+.ctaBtn{background-color: #21afff; color: white; padding: 8px 26px; border-radius: 50px; font-size: 20px; font-weight: 800;font-family: 'GGOTHICSSI'; margin-left: 30px; cursor: pointer;}
+
+.contactPolicyBox{position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); padding: 0 5%; box-sizing: border-box; z-index: 999; display: none;}
+.contactPolicyInner{ display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; max-width: 800px; padding: 10% 0; box-sizing: border-box; margin: 0 auto;}
+.contactPolicyCon{width: 80vw; height: 70vh; position: relative;}
+.contactPolicyClose{position: absolute; z-index: 1; width: 30px; top: -15px; right: -15px; cursor: pointer;}
+#fancybox-frame{display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    -webkit-transform: translateZ(0px);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-perspective: 1000;}
+.motionBox .motionUnit{opacity: 0; transition: all .2s;}
+.motionText{opacity: 0;}
+.motionBox .motion_07_Act{opacity: 1 !important;}
+.motion_07_Act .motionCancelCon{bottom: 0px; opacity: 1;}
+
+.makeShopImg{width: 300px;margin-bottom: 12px;}
+.mainBannerSub_02{font-size: 34px;
+    font-weight: 800;
+    color: #0071b9 !important;margin-bottom: 30px !important;}
+.pointColor_02{color:#ffffdc;}
+
+
+
+
+@media(min-width:1260px){
+    .headMenuUnit:hover .headMenu{color: #21afff;}
+    .headMenuUnit:hover .headMenuCellList{display: block;}
+    .headContactBtn:hover{background-color: #8c64f0;}
+}
+
+/* 1260이하 */
+@media(max-width:1259px){
+    .moIcon{display: flex; width: 50px; height: 50px; padding: 17px 16px;box-sizing: border-box; align-content: space-between; flex-wrap: wrap; cursor: pointer;}
+    .moLine{width: 100%; height: 3px; border-radius: 2px; background-color: #d5d8df;}
+    .headMenuBox{position: absolute;top: 80px; left: 0; width: 100%; background-color: white; min-width: initial;}
+    .headMenuInner{flex-wrap: wrap; transition: all .2s; max-height: 0px; overflow: hidden;}
+    .headMenuUnit{width: 100%; border-bottom: 1px solid #f7f7f7; align-items: center; justify-content: center; position: relative;}
+    .headMenu{line-height: 1; font-weight: 400;width: 100%; text-align: center; line-height: 65px;}
+    .headContactBtn{ background-color: transparent; color: #393a3f; padding: 0px; font-size: 16px; font-weight: 400; display: block; line-height: 65px; text-align: center;}
+    .headMenuArrow{display: block;}
+    .headMenuUnitMid{position: relative; }
+    .headMenuCellList{display: block; position: initial;max-height: 0px; overflow: hidden; width: 100%; margin-left: 0px; transition: all .2s;}
+    .headMenuCellInner{border: none; width: 100%;margin-top: 0px;border-top: 1px solid #f7f7f7;}
+    .headerAct .headMenuInner{max-height: 100vh;}
+    .headCellAct .headMenuCellList{max-height: 260px;}
+    .headMenuCell{background-color: #f9f9f9; border-bottom: 1px solid #fcfcfc; padding: 0px; text-align: center; line-height: 65px; font-size: 16px;font-weight: 400;}
+    .headMenuCell:hover{background-color: #f5f5f5;}
+    
+    .mainBannerHead{font-size: 64px;}
+    .mainBannerSub{font-size: 28px;}
+}
+
+@media (max-width:839px){
+    .mainBannerBox_01{flex-wrap: wrap; height: 75vh;}
+    .mainBannerCon{width: 100%;padding: 2vh 0;}
+    .mainBannerImg_02{height:40%;}
+    .mainBannerHead{font-size: 54px; line-height: 1.1;}
+    .mainBannerSub{font-size: 24px; margin-bottom: 6px;}
+    .mainBannerHeadBox{margin-bottom: 30px;}
+    .mainBannerBtn_01{padding:14px 28px;}
+    .mainBannerBtnText{font-size: 20px;}
+    .mainBannerImg_02{height: 50%; padding: 0 0 2vh 0; margin: 0 auto;}
+    .subHead{font-size: 34px;}
+    .motionPeopleImg{width: 70px;}
+    .talkCon{font-size: 20px; padding:14px 20px;min-width: initial;}
+    .alertCopy{font-size: 18px;}
+    .subCopy{font-size: 22px;}
+    .csImg{max-width: 500px;}
+    .pointList{flex-wrap: wrap;}
+    .pointUnit{width: 100%;  }
+    .pointSub{border-bottom: 1px dashed white;padding-bottom: 30px; margin: 0 auto 30px auto !important;}
+    .pointLastUnit .pointSub{border: none; padding-bottom: 0px; margin-bottom: 0px;}
+    .pointLineBox{display: none;}
+    .subArrow{height: 80px;}
+    .needCon{font-size: 18px;}
+    .neendNum{font-size: 30px;}
+    .subHeadBox{padding: 60px 0;}
+    .motionHeadBox{padding-bottom: 30px;}
+    .semiCopy{font-size: 26px;}
+    .semiImg{width: 20px;}
+    .weakImg{height: 54px;}
+    .clientCate{padding: 12px 8px; font-size: 15px;}
+    .couponHeadBox{padding-bottom: 20px;}
+    .formHeadBox{padding: 0px;}
+    .footerContent{flex-wrap: wrap; padding-top: 50px;}
+    .footerConList{width: 100%; flex-wrap: wrap;}
+    .footerConUnit{max-width: initial; width: 100%;}
+    .footerConList .footerConUnit:nth-child(1){max-width: initial; padding-right: 0px;}
+    .footerConList .footerConUnit:nth-child(2){max-width: initial; padding-right: 0px;}
+    .footerConList .footerConUnit:nth-child(3){max-width: initial;}
+    .footerConHead{font-size: 16px;}
+    .footerLogo{margin-bottom: 20px;}
+    .footerCopy{line-height: 1.8; text-align: center;}
+    .motionCancelSub{font-size: 18px;}
+    .motionCancelHead{width: 90px;}
+    .motionCancelCon{max-width: 360px;}
+    .subHead{font-size: 30px;}
+    .subCopy{font-size: 20px;}
+    .semiCopyBox{margin-bottom: 60px;}
+    .couponImg{max-width: 360px;}
+    
+    .mainBannerImg{width: 65%; margin: 0 auto;}
+    .talkWho{font-size: 16px;}
+    .talkCon, .alertConUnit{font-size: 18px;}
+    .talkInsertBtn{min-width: 82px;}
+    .talkInsert{font-size: 18px;}
+    .csWhyBox{max-width: 300px; padding-bottom: 60px;}
+    .clientCell{padding:10px;width: 20%;}
+    
+    .mainBannerSub_02{font-size: 32px; margin-bottom: 24px !important;}
+    .makeShopImg{width: 260px;}
+    .pointFirstList{padding-bottom: 0px !important;}
+    
+
+}
+
+
+
+@media(max-width:669px){
+
+}
+
+
+@media(max-width:579px){
+    .mainBannerHead{font-size: 44px;}
+    .mainBannerSub{font-size: 20px;}
+    .mainBannerBtnText{font-size: 18px;}
+    .subHead{font-size: 26px;word-break: keep-all;}
+    .motionMenu{font-size: 16px;}
+    .motionPeopleImg{width: 50px;}
+    .motionPeopleNm{font-size: 14px;}
+    .talkCon{font-size: 16px;padding: 12px 16px;}
+    .alertCopy{font-size: 14px;}
+    .motionCancelCon{max-width: 320px;}
+    .motionCancelHead{width: 70px;}
+    .motionCancelSub{font-size: 16px;}
+    .motionCancelBtn{font-size: 16px;}
+    .subCopy{font-size: 16px;}
+    .semiCopy{font-size: 20px;}
+    .subCopyBox{margin-top: 16px;}
+    .needCon{font-size: 14px;}
+    .needUnit{padding: 14px 20px;}
+    .weakImg{height: 42px;}
+    .csImg{padding: 0 5%; box-sizing: border-box; margin-bottom: 60px;}
+    .weakBox{padding: 60px 5%;}
+    .subHeadBox_02{padding: 60px 0; }
+    .subArrow{height: 60px;}
+    .pointImg{width: 120px;}
+    .pointHead{font-size: 20px;}
+    .pointSub{font-size: 14px;}
+    .pointList{padding-bottom: 60px;}
+    .neendNum{font-size: 26px;}
+    .needList{padding-bottom: 60px;}
+    .clientCateUnit{width: 33.33%;}
+    .clientCate{font-size: 13px; padding:10px 6px;}
+    .clientCateUnit{padding:3px;}
+    .clientCell{width: 33.33%;}
+    .clientList{margin-bottom: 60px;}
+    .couponImg{max-width: 320px;}
+    
+    .mainBannerImg{width: 75%;}
+    .mainBannerBtnIcon{height: 14px;}
+    .talkRight .talkCon{min-width: 120px;}
+    .alertConUnit{font-size: 16px; padding: 4px;}
+    .talkInsert{font-size: 16px;padding: 16px;}
+    .csWhyBox{max-width: 240px;}
+    .talkInsertBtn{min-width: 60px; width: 60px; padding: 15px;}
+    
+    .ctaBtnBox{height: 66px;}
+    .ctaBtnText{font-size: 16px;}
+    .ctaBtn{font-size: 16px; margin-left: 20px;}
+    .ctaAct{bottom: -66px;}
+    
+    .mainBannerSub_02{font-size: 26px; margin-bottom: 20px !important;}
+    .makeShopImg{width: 220px;}
+    
+}
+
+@media(max-width:414px){
+    .mainBannerHead{font-size: 36px;}
+    .mainBannerSub{font-size: 17px;}
+    .mainBannerBtnText{font-size: 16px;}
+    .motionInner{padding: 20px 20px 0 20px;}
+    .motionPeopleImg{width: 40px;}
+    .motionPeopleNm{font-size: 12px;}
+    .alertCopy{font-size: 12px;}
+    .talkCon{font-size: 14px;}
+    .alertCopyBox{padding:0 10px;}
+    .motionCancelCon{max-width: 260px; padding: 22px;}
+    .motionCancelSub, .motionCancelBtn{font-size: 14px;}
+    .motionA{padding-bottom: 30px;}
+    .subHead{font-size: 20px;}
+    .subHeadBox{padding:50px 0;}
+    .motionHeadBox{padding-bottom: 20px;}
+    .motionMenu{font-size: 14px;}
+    .motionMenuBox{max-width: 260px; margin-bottom: 20px;}
+    .subCopy{font-size: 14px;}
+    .semiImg{width: 14px;}
+    .semiCopy{font-size: 16px;padding: 10px 0;}
+    .semiCopyBox{margin-bottom: 50px;}
+    .needCon{font-size: 11px;}
+    .needUnit{padding:12px 20px;word-break: keep-all;}
+    .neendNum{font-size: 22px;}
+    .needList{padding-bottom: 50px;}
+    .weakImg{height: 36px;}
+    .weakUnit{margin-bottom: 14px;}
+    .weakBox{padding: 50px 5%;}
+    .csImg{margin-bottom: 50px;}
+    .csLine{height: 70px;}
+    .subHeadBox_02{padding: 50px 0;}
+    .subArrow{height: 50px;}
+    .pointImg{width: 100px;}
+    .pointHead{font-size: 18px;}    
+    .pointSub{font-size: 13px; margin-top: 10px !important;}
+    .pointDot{width: 6px; height: 6px; margin: 16px auto;}
+    .pointList{padding-bottom: 50px;}
+    .clientCate{font-size: 12px;}
+    .clientCateUnit{width: 33.33%;}
+    .clientCell{width: 33.33%;}
+    .couponHeadBox{padding-bottom: 20px;}
+    .couponImg{max-width: 260px; padding-top: 30px;}
+    .formHeadBox{padding: 0px;}
+    .verLine{height: 80px;}
+    .formSub{font-size: 14px;}
+    .formConHead{font-size: 14px; min-width: 120px;}
+    .formConInput{padding: 6px; font-size: 14px;}
+    .formConUnit{font-size: 13px;}
+    .contactAgreeSub, .contactAgreeText{font-size: 12px;}
+    .formBtnText{padding: 14px 0; font-size: 18px;}
+    ..mainBannerHeadBox{margin-bottom: 20px;}
+    .talkTime{font-size: 11px; margin-left: 5px !important;min-width: 50px;}
+    .talkRight .talkTime{margin-left: 0px !important; margin-right: 5px !important;}
+    .alertConUnit{font-size: 14px;}
+    .talkInsert{font-size: 14px; padding: 14px;}
+    .talkInsertBtn{min-width: 50px; width: 50px; padding: 12px;}
+    .mainBannerImg{width: 85%;}
+    .talkWho{font-size: 12px; margin-bottom: 8px;}
+    .csWhyBox{min-width: 200px;}
+    .needUnit_02{padding-left: 40px;}
+    
+    .ctaBtnText{font-size: 13px;}
+    .ctaBtn{font-size: 14px; margin-left: 10px;}
+    
+    .mainBannerSub_02{font-size: 20px; margin-bottom: 10px !important;}
+    .makeShopImg{width: 180px;}
+    .mainBannerBox_02{padding: 10px 0 20px 0;}
+}
+
+
+.comImgH{height: 100%;}
+.comImg{width: 100%;}
+.mainColor{color: #21afff;}
+.whiteColor{color: white;}
+.redColor{color: red;}
+.op05{opacity: 0.5;}
+.op10{opacity: 1;}
+.bold800{font-weight: 800;}
+.bold600{font-weight: 600;}
+.bold400{font-weight: 400;}
+.bold200{font-weight: 200;}
+.pt00{padding-bottom: 0px;}
+.mt00{margin-top: 0px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

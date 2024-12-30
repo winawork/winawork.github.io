@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/cloudgate.css">
+
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/cloudgate.js"></script>
+
+    <script>
+
+        $(function () {
+
+            $.get_html = function(){
+                $('.header').load('list.html #1 .unit:nth-child(1n+2)');
+            }
+
+
+            $.initView = function () {
+                $.get_html();
+            };
+            $.initView();
+
+        })
+ 
+
+    </script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('html').animate({scrollTop : 0}, 000);
+            $.bannerCtaBtn = function(){
+                $('.bannerCtaBtn').on('click',function(){
+                    var form = $('.formArea').outerHeight();
+                    var top = $('.formArea').offset().top;
+                    $('html').animate({scrollTop : top-100}, 400);
+                })
+            }
+            
+            $.motionMenu = function(){
+                $('.motionMenu').on('click',function(){
+                    var type = $(this).attr('data-type');
+                    $('.motionBox').attr('data-cnt','1');
+                    
+                    $('.motionMenu').removeClass('motionAct');
+                    $(this).addClass('motionAct');
+                    
+                    $('.motionUnit').css('opacity','0');
+                    $('.motion_07').removeClass('motion_07_Act');
+                    $.motionCom();
+                    if(type == 'B'){
+                        $('.motionB').show();
+                        $('.motionA').hide();
+                        $.motionB();
+                    }else{
+                        $('.motionB').hide();
+                        $('.motionA').show();
+                        $.motionA();
+                    }
+                })
+            }
+            
+            $.motionCom = function(){
+                $('.motionBox').attr('data-cnt','1');
+                            
+                var speed = 400;
+                $('.motion_01').animate({opacity:1},speed);
+                $('.motion_02').delay(speed*2).animate({opacity:1},speed);
+                $('.motion_03').delay(speed*4).animate({opacity:1},speed);
+                $('.motion_04').delay(speed*6).animate({opacity:1},speed);
+            
+            }
+            
+            $.motionB = function(){
+                var speed = 400;
+                $('.motion_05').delay(speed*10).animate({opacity:1},speed);
+                $('.motion_06').delay(speed*12).animate({opacity:1},speed);
+            }
+            
+            $.motionA = function(){
+                var speed = 400;
+                setTimeout(motion07Cancel,speed*10);
+                function motion07Cancel(){
+                    $('.motion_07').addClass('motion_07_Act');
+                }
+                
+                setTimeout(motion07Click,speed*12);
+                function motion07Click(){
+                    var textCnt_04 = 0;
+                    var tyInt_04 = setInterval(typing_04,400); // 반복동작 
+                    function typing_04(){ 
+                        if(textCnt_04 == 0){
+                            $('.motionCancelBtn').css('background-color','#1491e6');
+                            textCnt_04=1;
+                        }else{
+                            $('.motionCancelBtn').css('background-color','#21afff');
+                        }
+                    }
+                }
+                $('.motion_08').delay(speed*14).animate({opacity:1},speed);
+            }
+            
+            $(window).scroll(function(){
+                    var top = $(document).scrollTop();
+                    var motion = $('.motionInner').offset().top; //motion
+                    var motionH = $('.motionInner').height();//motion
+                    var height = window.innerHeight; //디스플레이 높이
+                    var cnt = $('.motionBox').attr('data-cnt');
+                    var type = $('.motionAct').attr('data-type');
+                
+                    var motion_01 = (motion+(motionH/2)) - height+80;
+                    
+                    if(top>motion_01){
+                        if(cnt == 0){
+                            $.motionCom();
+                            if(type == 'B'){
+                                $('.motionB').show();
+                                $('.motionA').hide();
+                                $.motionB();
+                            }else{
+                                $('.motionB').hide();
+                                $('.motionA').show();
+                                $.motionA();
+                            }
+                        }
+                    }
+                        
+                })
+            
+            $.clientCateUnit = function(){
+                $('.clientCateUnit').on('click',function(){
+                    $('.clientCateUnit').removeClass('clientCateAct');
+                    $(this).addClass('clientCateAct');
+                    
+                    var view = $(this).attr('data-view');
+                    $('.clientUnit').removeClass('clientAct');
+                    $('.'+view).addClass('clientAct');
+                })
+            }
+            
+            
+
+            $.initView = function () {
+                $.bannerCtaBtn();
+                $.motionMenu();
+                $.clientCateUnit();
+                
+            };
+            $.initView();
+
+        })
+            
+    </script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            
+            $.ctaBtn = function(){
+                $('.ctaBtn').on('click',function(){
+                    var form = $('.formArea').outerHeight();
+                    var top = $('.formArea').offset().top;
+                    $('html').animate({scrollTop : top-100}, 400);
+                })
+            }
+            
+            $(window).scroll(function(){
+                //스크롤 이동시 작동코드
+                var top = $(document).scrollTop();
+                var form = $('.formArea').offset().top;
+                var height = window.innerHeight;
+                
+                if(top<form-height){
+                    $('.ctaBtnBox').removeClass('ctaAct');
+                }else{
+                    $('.ctaBtnBox').addClass('ctaAct');
+                }
+            });
+            
+            
+
+            $.initView = function () {
+                $.ctaBtn();
+            };
+            $.initView();
+
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <div class="land_cont">
+        <div class="in">
+            
+            <!--   body영역  -->
+            <div class="contentBody landing_font">
+                
+                <!--   메인 배너    -->
+                <div class="contentInner mainBannerBack_02">
+                    <div class="mainBannerBox_01">
+                        <div class="mainBannerCon">
+                            <div class="mainBannerHeadBox">
+                                <div class="makeShopImg">
+                                    <img class="comImg" src="../images/makeShopCom.png">
+                                </div>
+                                <p class="mainBannerSub_02 whiteColor">메이크샵이 추천하는!</p>
+                                <b class="mainBannerHead whiteColor">CS통합솔루션<br>
+                                    월 3만원대!</b>
+                            </div>
+
+                            <a class="mainBannerBtn_01_box">
+                                <span class="mainBannerBtn_01 mainBannerBtn_02 bannerCtaBtn">
+                                    <p class="mainBannerBtnText mainBannerBtnText_02">2주 무료체험하기</p>
+            <!--
+                                    <div class="mainBannerBtnIcon">
+                                        <img class="comImgH" src="../images/btnArrow.png">
+                                    </div>
+            -->
+                                </span>
+                            </a>
+                        </div>
+                        <div class="mainBannerImg_02">
+                            <img class="comImgH" src="../images/mainBanner_02.png">
+                        </div>
+                    </div>
+                </div>
+                
+                <!--   모션    -->
+                <div class="motionBox" data-cnt="0">
+                    <div class="contentInner">
+                        <div class="content1260">
+                            <div class="subHeadBox motionHeadBox">
+                            <b class="subHead whiteColor ">만렙 상담사의<b class="subHead mainColor">  업무스킬</b></b>
+                            </div>
+                            
+                            <div class="motionMenuBox">
+                                <div class="motionMenuInner">
+                                    <div class="motionMenu motionAct" data-type="B">도입 전</div>
+                                    <div class="motionMenu" data-type="A">도입 후</div>
+                                </div>
+                            </div>
+                            
+                            <!-- 모션 컨텐츠 -->
+                            <div class="motionBody">
+                            <div class="motionInner">
+                                
+                                <div class="motionPeopleBox motionUnit motion_01">
+                                    <div class="motionPeopleUnit">
+                                        <div class="motionPeopleImg">
+                                            <img class="comImg" src="../images/motionPeople_01.png">
+                                        </div>
+                                        <p class="motionPeopleNm">A고객</p>
+                                    </div>
+                                    <div class="motionPeopleUnit">
+                                        <p class="motionPeopleNm">고객관리팀 매니저</p>
+                                        <div class="motionPeopleImg">
+                                            <img class="comImg" src="../images/motionPeople_02.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="motionCom">
+                                    
+                                        <div class="alertLineBox alertLineBox_01 op05 mt00 motionUnit  motion_02">
+                                            <div class="alertCopyBox">
+                                                <p class="alertCopy whiteColor">통화 연결이 되었습니다.</p>
+                                            </div>
+                                            <div class="alertLine">
+                                                <div class="alertLineInner">
+                                                    <div class="alertLineCon"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="talkUnit talkLeft motionUnit motion_03">
+                                            <div class="talkConBox">
+                                                <span class="talkCon">오늘 2시에 주문했는데 취소 좀 해주세요</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="alertLineBox alertLineBox_01 op05 mt00 motionUnit motion_04">
+                                            <div class="alertCopyBox">
+                                                <p class="alertCopy whiteColor">뚝</p>
+                                            </div>
+                                            <div class="alertLine">
+                                                <div class="alertLineInner">
+                                                    <div class="alertLineCon"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="motionB">
+                                            <div class="talkUnit talkRight motionUnit motion_05">
+                                                <div class="talkConBox">
+                                                    <span class="talkCon">여보세요 고객님…?</span>
+                                                </div>
+                                            </div>
+                                            <p class="alertCopy whiteColor op05 alertCopy_02 motionUnit motion_06">다시 전화해서 고객하고 실랑이 벌이다가 30분간 싸움</p>
+                                        </div>
+                                        <div class="motionA">
+                                            <div class="motionCancelBox motionUnit motion_07">
+                                                <div class="motionCancelUnit">
+                                                    <div class="motionCancelCon">
+                                                        <div class="motionCancelHead">
+                                                            <img class="comImg" src="../images/defaultLogo.png">
+                                                        </div>
+                                                        <div class="motionCancelBody">
+                                                            <p class="motionCancelSub">A고객 구매내역</p>
+                                                            <img class="comImg" src="../images/motionAfter.png">
+                                                        </div>
+                                                        <div class="motionCancelBtn">
+                                                            주문 취소
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="alertLineBox alertLineBox_01 op05 mt00 motionUnit motion_08">
+                                                <div class="alertCopyBox">
+                                                    <p class="alertCopy whiteColor">주문 취소가 완료되었습니다.</p>
+                                                </div>
+                                                <div class="alertLine">
+                                                    <div class="alertLineInner">
+                                                        <div class="alertLineCon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            <!--    단순 cs업무    -->
+                <div class="sectionBox">
+                    <div class="contentInner">
+                        <div class="subHeadBox">
+                        <b class="subHead ">CS고객관리란?</b>
+                        <div class="subCopyBox">
+                            <b class="subCopy">판매가 아니라 고객을 <b class="subCopy bold800">확보</b>하고 <b class="subCopy bold800">유지</b>하는 일</b>
+                        </div>
+                        </div>
+
+                        <div class="semiCopyBox">
+                            <div class="semiCopyInner">
+                                <div class="semiImg">
+                                    <img class="comImg" src="../images/semi_01.png">
+                                </div>
+                                <p class="semiCopy">고객관리를 수동으로 할 경우,<br>
+                                    이런 문제점이 발생합니다.</p>
+                                <div class="semiImg">
+                                    <img class="comImg" src="../images/semi_02.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <!--    cs문제점 7가지    -->
+                <div class="section weakBox lineBack">
+                    <div class="content1260">
+                        <div class="weakList">
+                        
+                            <div class="weakUnit">
+                                <div class="weakImg">
+                                    <img class="comImgH" src="../images/weak_01.png">
+                                </div>
+                                <div class="needUnit weakCopyBox">
+                                    <div class="needConBox weakConBox">
+                                        <b class="needCon ">
+                                            <b class="needCon bold200">정확한 고객 유입</b>&nbsp;<b class="needCon bold800">루트 파악 어려움</b>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="weakUnit">
+                                <div class="weakImg">
+                                    <img class="comImgH" src="../images/weak_02.png">
+                                </div>
+                                <div class="needUnit weakCopyBox">
+                                    <div class="needConBox  weakConBox">
+                                        <b class="needCon">
+                                            <b class="needCon bold200">투입 인력 대비</b>&nbsp;<b class="needCon bold800">업무 범위 제한적</b>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="weakUnit">
+                                <div class="weakImg">
+                                    <img class="comImgH" src="../images/weak_03.png">
+                                </div>
+                                <div class="needUnit weakCopyBox">
+                                    <div class="needConBox  weakConBox">
+                                        <b class="needCon">
+                                            <b class="needCon bold200">중복 고객</b>&nbsp;<b class="needCon bold800">데이터 필터링 불가</b>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="weakUnit">
+                                <div class="weakImg">
+                                    <img class="comImgH" src="../images/weak_04.png">
+                                </div>
+                                <div class="needUnit weakCopyBox">
+                                    <div class="needConBox weakConBox">
+                                        <b class="needCon ">
+                                            <b class="needCon bold200">바쁜 시간대 문의량 폭주 시</b>&nbsp;<b class="needCon bold800">동시 응대 불가</b>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="weakUnit">
+                                <div class="weakImg">
+                                    <img class="comImgH" src="../images/weak_05.png">
+                                </div>
+                                <div class="needUnit weakCopyBox">
+                                    <div class="needConBox weakConBox">
+                                        <b class="needCon">
+                                            <b class="needCon bold200">스트레스로 인한</b>&nbsp;<b class="needCon bold800">직원의 잦은 퇴사율</b>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="weakUnit">
+                                <div class="weakImg">
+                                    <img class="comImgH" src="../images/weak_06.png">
+                                </div>
+                                <div class="needUnit weakCopyBox">
+                                    <div class="needConBox  weakConBox">
+                                        <b class="needCon">
+                                            <b class="needCon bold200">서비스 불만족으로</b>&nbsp;<b class="needCon bold800">고객 이탈률 증가</b>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="weakUnit">
+                                <div class="weakImg">
+                                    <img class="comImgH" src="../images/weak_07.png">
+                                </div>
+                                <div class="needUnit weakCopyBox">
+                                    <div class="needConBox weakConBox">
+                                        <b class="needCon ">
+                                            <b class="needCon bold200">답변 지연 및 부정확한 답변 내용에 의한</b>&nbsp;<b class="needCon bold800">고객 클레임 증가</b>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!--    단순 cs업무    -->
+                <div class="sectionBox">
+                    <div class="contentInner">
+                        <div class="subHeadBox pt00">
+                        <b class="subHead ">CS팀의 영향력은 <b class="subHead mainColor">CEO보다 큽니다</b></b>
+                        <div class="subCopyBox">
+                            <b class="subCopy"><b class="subCopy bold800">월 3만원대 합리적인 비용</b>으로 클라우드게이트<br>CS자동화 솔루션을 사용해 보세요</b>
+                        </div>
+                        </div>
+                        
+                        <div class="content1260">
+                            <div class="csLine"></div>
+
+                            <div class="csImg">
+                                <img class="comImg" src="../images/csBetter.png">
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>
+                
+            <!--    클라우드게이트가 특별한 3가지 이유    -->
+                <div class="sectionBox pointBox">
+                    
+                        <div class="subHeadBox_02">
+                        <div class="subArrow">
+                            <img class="comImgH" src="../images/subArrow_01.png">
+                        </div>
+                        <b class="subHead whiteColor ">
+                            <b class="subHead whiteColor op05">클라우드게이트가 특별한</b><br><b class="subHead whiteColor op10">3가지 이유</b>
+                            </b>
+                            <div class="subArrow">
+                            <img class="comImgH" src="../images/subArrow_02.png">
+                        </div>
+                        </div>
+                        
+                        <div class="pointLineBox">
+                            <div class="pointLineInner">
+                                <div class="pointLine"></div>
+                            </div>
+                        </div>
+                        <div class="contentInner">    
+                            <div class="pointList">
+
+                                <div class="pointUnit">
+                                    <div class="pointImg">
+                                        <img class="comImg" src="../images/point_01.png">
+                                    </div>
+                                    <div class="pointDot"></div>
+                                    <p class="pointHead">다양한 채널 데이터 통합</p>
+                                    <p class="pointSub">전화, 카카오상담톡, 네이버톡톡, 이메일, 챗봇, 웹챗, 페이스북 메신저 등 복잡하게 흩어져있는 고객 창구를 한곳에서 통합 관리 할 수 있습니다.</p>
+                                </div>
+
+                                <div class="pointUnit">
+                                    <div class="pointImg">
+                                        <img class="comImg" src="../images/point_02.png">
+
+                                    </div>
+                                    <div class="pointDot"></div>
+                                    <p class="pointHead">자동 데이터 관리 시스템</p>
+                                    <p class="pointSub">카테고리별 상담사 업무 자동할당 및 온라인상에서 내부 협업이 가능하고 상담 데이터가 자동 저장되어 관리 및 활용에 용이합니다.</p>
+                                </div>
+
+                                <div class="pointUnit">
+                                    <div class="pointImg">
+                                        <img class="comImg" src="../images/point_03.png">
+                                    </div>
+                                    <div class="pointDot"></div>
+                                    <p class="pointHead">편리하고 합리적인 서비스</p>
+                                    <p class="pointSub">별도의 설치 없이 웹로그인 방식으로 이용 가능하고 월 구독형 방식으로 비용 부담이 적습니다.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+                
+            <!--    이런 업종에 필요합니다    -->
+                <div class="sectionBox lineBack">
+                    <div class="contentInner">
+                        <div class="subHeadBox">
+                        <b class="subHead ">클라우드게이트는<br><b class="subHead mainColor">이런 업종에 필요합니다!</b></b>
+                        </div>
+
+                        <div class="needList">
+                        
+                            <div class="needUnit needUnit_02">
+                                <div class="needNumBox">
+                                    <p class="neendNum bold800">01</p>
+                                </div>
+                                <div class="needConBox">
+                                    <b class="needCon">
+                                        <b class="needCon bold800">여러 채널로 많은 문의</b><b class="needCon bold200">를 소화해야 하는 커머스 기업</b>
+                                    </b>
+                                </div>
+                            </div>
+                            
+                            <div class="needUnit needUnit_02">
+                                <div class="needNumBox">
+                                    <p class="neendNum bold800">02</p>
+                                </div>
+                                <div class="needConBox">
+                                    <b class="needCon">
+                                        <b class="needCon bold800">비대면 시장 확대로</b>&nbsp;<b class="needCon bold200">고객 문의가 늘어난 O2O 기업</b>
+                                    </b>
+                                </div>
+                            </div>
+                            
+                            <div class="needUnit needUnit_02">
+                                <div class="needNumBox">
+                                    <p class="neendNum bold800">03</p>
+                                </div>
+                                <div class="needConBox">
+                                    <b class="needCon">
+                                        <b class="needCon bold800">상황별 다양한 문의</b><b class="needCon bold200">가 많은 모빌리티 기업</b>
+                                    </b>
+                                </div>
+                            </div>
+                            
+                            <div class="needUnit needUnit_02">
+                                <div class="needNumBox">
+                                    <p class="neendNum bold800">04</p>
+                                </div>
+                                <div class="needConBox">
+                                    <b class="needCon">
+                                        <b class="needCon bold800">1인 다역이 필요한</b>&nbsp;<b class="needCon bold200">스타트업</b>
+                                    </b>
+                                </div>
+                            </div>
+                            
+                            <div class="needUnit needUnit_02">
+                                <div class="needNumBox">
+                                    <p class="neendNum bold800">05</p>
+                                </div>
+                                <div class="needConBox">
+                                    <b class="needCon">
+                                        <b class="needCon bold800">재택근무에 적합한 상담솔루션</b><b class="needCon bold200">이 필요한 기업</b>
+                                    </b>
+                                </div>
+                            </div>
+                            
+                            <div class="needUnit needUnit_02">
+                                <div class="needNumBox">
+                                    <p class="neendNum bold800">06</p>
+                                </div>
+                                <div class="needConBox">
+                                    <b class="needCon">
+                                        <b class="needCon bold800">단순 CS 업무를 효율</b><b class="needCon bold200">적으로 처리하고 싶은 B2C 기업</b>
+                                    </b>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <!--    고객사    -->
+                <div class="sectionBox">
+                    <div class="contentInner">
+                    <div class="m1260">
+                            <div class="subHeadBox">
+                            <b class="subHead ">이미 수많은 기업들이<br><b class="subHead mainColor">클라우드게이트와 함께</b>하고 있습니다.</b>
+                            </div>
+
+                            <div class="clientCateList">
+                                <div class="clientCateUnit clientCateAct" data-view="clientUnit_01">
+                                    <p class="clientCate">커머스</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_02">
+                                    <p class="clientCate">패션/뷰티/잡화</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_03">
+                                    <p class="clientCate">O2O</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_04">
+                                    <p class="clientCate">모빌리티</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_05">
+                                    <p class="clientCate">금융/핀테크</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_06">
+                                    <p class="clientCate">정부단체</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_07">
+                                    <p class="clientCate">교육</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_08"> 
+                                    <p class="clientCate">푸드테크</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_09">
+                                    <p class="clientCate">의료/법률</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_10"> 
+                                    <p class="clientCate">부동산</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_11"> 
+                                    <p class="clientCate">플랫폼</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_12"> 
+                                    <p class="clientCate">펫 비즈니스</p>
+                                </div>
+                                <div class="clientCateUnit" data-view="clientUnit_13"> 
+                                    <p class="clientCate">협력사</p>
+                                </div>
+                            </div>
+                            
+                            <div class="clientList">
+                            
+                                <div class="clientUnit clientUnit_01 clientAct">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_03.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_04.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_05.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_06.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_07.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_08.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_09.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_10.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_11.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_01_12.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_02">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_03.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_04.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_05.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_06.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_07.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_08.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_09.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_10.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_11.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_12.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_13.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_02_14.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_03">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_03.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_04.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_05.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_06.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_07.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_08.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_09.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_10.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_11.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_12.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_13.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_14.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_15.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_03_16.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_04">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_01.png">
+                                    </div>
+                                <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_03.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_04.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_05.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_06.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_07.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_08.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_09.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_10.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_11.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_12.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_04_13.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_05">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_03.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_04.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_05.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_06.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_07.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_08.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_05_09.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_06">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_06_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_06_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_06_03.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_06_04.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_06_05.png">
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_07">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_07_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_07_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_07_03.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_07_04.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_07_05.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_07_06.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_08">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_08_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_08_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_08_03.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_08_04.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_08_05.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_09">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_09_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_09_02.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_10">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_10_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_10_02.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_11">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_11_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_11_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_11_03.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_12">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_12_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_12_02.png">
+                                    </div>
+                                </div>
+                                
+                                <div class="clientUnit clientUnit_13">
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_13_01.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_13_02.png">
+                                    </div>
+                                    <div class="clientCell">
+                                        <img class="comImg" src="../images/clientUnit_13_03.png">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--    무료체험 form    -->
+                <div class="sectionBox">
+                    <div class="contentInner">
+                    <div class="m1260">
+                            <div class="subHeadBox couponHeadBox">
+                            <b class="subHead "><b class="subHead mainColor">2주 무료체험</b> 이벤트!</b>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="couponBox">
+                        <div class="couponLine"></div>
+                        <div class="couponImg">
+                            <img class="comImg" src="../images/coupon_02.png">
+                        </div>
+                    </div>
+                    
+                    <div class="verLine"></div>
+                    
+                    <div class="m1260">
+                        <div class="subHeadBox formHeadBox formArea">
+                            <b class="subHead bold200">월 합리적인 비용으로<br><b class="subHead mainColor bold800">CS 자동화 솔루션</b><b class="subHead bold800 "> 시작하세요!</b></b>
+                        </div>
+                        
+                        <div class="formSubBox">
+                            <p class="formSub">간략하게 회사 정보를 입력해주세요.</p>
+                            <p class="formSub">빠른 시일 내에 연락 드리겠습니다.</p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="form_bottom"></div>
+
+</body>
+</html>

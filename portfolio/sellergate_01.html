@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/sellergate.css">
+
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/cloudgate.js"></script>
+
+    <script type="text/javascript">
+        
+        $(function () {
+
+            // 스크롤 애니메이션
+            const saTriggerMargin = 200;
+            const saElementList = document.querySelectorAll('.sa');
+
+            const saFunc = function() {
+                for (const element of saElementList) {
+                    if (!element.classList.contains('show')) {
+                        if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+                        element.classList.add('show');
+                        }
+                    }
+                }
+            }
+
+            window.addEventListener('load', saFunc);
+            window.addEventListener('scroll', saFunc);
+            
+            // 이용약관 팝업 열기
+            $.agreePopShow = function(){
+                $('.agreePopShow').on('click',function(){
+                    $('body').addClass('agreePopAct')
+                })
+            }
+
+            // 이용약관 팝업 닫기 
+            $.agreePopClose = function(){
+                $('.agreePopClose').on('click',function(){
+                    $('body').removeClass('agreePopAct');
+                })
+            }
+
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            // 신청하기 버튼 클릭
+            $.insertUser = function(){
+                $('.submitBtn').on('click',function(e){
+                    e.preventDefault();
+
+                    // 신청하기 ga트래킹
+                    gtag('event', '신청', {
+                        'event_category': '프로모션',
+                        'event_label': '신청하기버튼'
+                        });
+
+                    var validation = true;
+
+                    var store = $('input[name=store]').val();
+                    var mail = $('input[name=mail]').val();
+                    var tel = $('input[name=tel]').val();
+                    var agree_01 = $('input[name=agree_01]:checked').val();
+                    var agree_02 = $('input[name=agree_02]:checked').val();
+                    
+                    // input 및 동의여부 유효성 검사
+                    if(store == '' || store.length < 3){
+                        alert('쇼핑몰 명을 정확히 입력해주세요.');
+                        return false;
+                    }
+
+                    if(tel == '' || tel.length < 10){
+                        alert('휴대폰 번호를 정확히 입력해주세요.');
+                        return false;
+                    }
+
+                    if(mail == '' || !re.test(mail)){
+                        alert('이메일 주소를 정확히 입력해주세요.');
+                        return false;
+                    }
+                   
+                    if(agree_01 == null || agree_01 == '' || agree_01 == 'N'){
+                        alert('개인정보 수집 및 이용에 동의 후 신청 가능합니다.');
+                        return false;
+                    }
+                    if(agree_02 == null || agree_02 == ''){
+                        alert('셀러게이트 서포터즈 추가 응모 여부를 선택해주세요.');
+                        return false;
+                    }
+
+                    // 이벤트 연결 중지
+                    $('.submitBtn').off();
+                    $.ajax({
+                        type : "GET",
+                        url : "https://script.google.com/macros/s/AKfycbypJ2-K9MFNmZmP-5fkToAYebKriit60StW1fXaXGmy7Pihtlo3HBZhtHSxymiUbs1_Jw/exec",
+                        data:{
+                            // "컬럼명" : 데이터로 기재, 컬럼명은 실재 시트 상 컬럼과 이름 맞춰야함 
+                            "스마트스토어명" : store,
+                            "이메일" : mail,
+                            "전화번호" : tel,
+                            "(필수)개인정보처리방침 동의여부" : agree_01,
+                            "(선택)서포터즈 응모" : agree_02,
+                        },
+                        success:function(data){
+                            // 완료페이지 url 기재
+                            window.location.href='';
+                        },
+                        error:function(data){
+                            // 에러 발생 시 문구 기재
+                            alert('');
+                        }
+                    })
+                    // 이벤트 재연결
+                    $.insertUser();
+                })
+            }
+
+            // 하단 입력폼 스크롤 이벤트
+            $.scollEvt = function(){
+                $('.scollEvt').on('click',function(){
+                    var form = $('.formBox').offset().top;
+                    var formH = $('.formBox').innerHeight();
+                    var height = window.innerHeight;
+                    var no = $(this).data('no');
+                    
+                    // 스크롤 이벤트 ga트래킹
+                    if(no == 1){
+                        gtag('event', '히어로섹션', {
+                            'event_category': '프로모션',
+                            'event_label': '신청하기앵커'
+                            });
+                    }else if(no == 2){
+                        gtag('event', '기능소개', {
+                            'event_category': '프로모션',
+                            'event_label': '신청하기앵커_서포터즈'
+                            });
+                    }else if(no == 3){
+                        gtag('event', '기능소개', {
+                            'event_category': '프로모션',
+                            'event_label': '신청하기앵커_3개월무료'
+                            });
+                    }
+
+                    $('html, body').animate({scrollTop : (form-height/2)+formH/2}, 400);
+                })
+            }
+
+            $.youtubeClick = function(){
+                $('.ytp-large-play-button').on('click',function(){
+                    console.log('1');
+                })
+            }
+
+            $.sellerDtlBtn = function(){
+                $('.sellerDtlBtn').on('click',function(){
+                    gtag('event', '기능소개', {
+                        'event_category': '프로모션',
+                        'event_label': '셀러게이트자세히보기'
+                        });
+                })
+            }
+
+            $.comInputFocus = function(){
+                $('.comInput').on('focus',function(){
+                    var name = $(this).attr('name');
+                    if(name == 'store'){
+                        gtag('event', '신청', {
+                            'event_category': '프로모션',
+                            'event_label': '스마트스토어명입력클릭'
+                            });
+                    }else if(name == 'mail'){
+                        gtag('event', '신청', {
+                            'event_category': '프로모션',
+                            'event_label': '이메일입력클릭'
+                            });
+                    }else if(name == 'tel'){
+                        gtag('event', '신청', {
+                            'event_category': '프로모션',
+                            'event_label': '전화번호입력클릭'
+                            });
+                    }
+                })
+            }
+
+            $.init = function(){
+                $.agreePopShow();
+                $.agreePopClose();
+                $.insertUser();
+                $.scollEvt();
+                $.youtubeClick();
+                $.sellerDtlBtn();
+                $.comInputFocus();
+            }
+            $.init();
+            
+        })
+        
+    </script>
+
+</head>
+<body>
+
+    <div class="land_cont">
+        <div class="in">
+        
+
+            <div class="content">
+       
+                <!--   mainBanner    -->
+               <div class="mainBanner">
+                   <div class="mainBannerInner">
+                       <div class="bannerTxtBox sa sa-up">
+                           <div class="bannerLogoBox">
+                                <img class="comImg" src="../images/sellerLogo_wh.png">
+                           </div>
+                           
+                           <div class="bannerHeadBox">
+                               <b class="bannerHead">스마트스토어</b><br>
+                               <b class="bannerHead">셀러님들&nbsp;</b>
+                               <span class="bannerDecoBox">
+                                   <b class="bannerHead bannerPoint bold">다모여라</b>
+                                   <span class="bannerDeco">
+                                       <img class="comImg" src="../images/bannerDeco.png">
+                                   </span>
+                               </span>
+                               <div class="bannerCopyBox">
+                                   <img class="comImg" src="../images/bannerCopy.png">
+                               </div>
+                               
+                           </div>
+        
+                       </div>
+                       <div class="bannerImg sa dy1 sa-up">
+                           <img class="comImgH" src="../images/bannerModel.png">
+                       </div>
+                   </div>
+                   
+                   <div class="bannerSupBox ">
+                       <div class="bannerSupInner">
+                          <div class="bannerSupUnit">
+                               <b class="bannerSup bold ">셀러게이트&nbsp;</b>
+                               <b class="bannerSup bold pColor">서포터즈</b>
+                               <b class="bannerSup">를 모집합니다!</b>
+                           </div>
+                           <div class="bannerSupLineBox">
+                               <div class="bannerSupLineInner">
+                                   <div class="bannerSupLine"></div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   
+               </div>
+               
+                <!--   cta    -->
+               <div class="ctaSection">
+                   <div class="ctaBox">
+                       <div class="ctaHeadBox">
+                           <div class="ctaHeadIcon">
+                               <img class="comImgH" src="../images/ctaBell.png">
+                           </div>
+                           <div class="ctaHeadUnit">
+                               <p class="ctaHead">셀러게이트&nbsp;</p>
+                               <p class="ctaHead bold">3개월&nbsp;</p>
+                               <p class="ctaHead bold pColor">무료이용</p>
+                           </div>
+                       </div>
+                       
+                       <a class="ctaBtn scollEvt" data-no='1'>
+                           <p class="ctaBtnTxt">신청하기</p>
+                           <span class="ctaIcon"> 
+                               <img class="comImgH" src="../images/ctaBtnIcon.png">
+                           </span>
+                        </a>
+                       
+                   </div>
+               </div>
+        
+               <!--   youtube    -->
+               <div class="section ">
+                <div class="contentInner">
+                
+                    <div class="comHeadBox sa sa-up">
+        
+                        <div class="comHeadUnit">
+                             <p class="comHead bold">셀러라면,&nbsp;</p>
+                             <span class="comHeadPoint">
+                                <p class="comHead bold wh">셀러게이트!</p>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="sectionCon ">
+        
+                        <div class="promoCopyBox sa sa-up">
+                            <p class="promoCopy">모든 상담 내역을 한눈에 조회하고</p>
+                            <p class="promoCopy bold">한곳에서 관리하세요!</p>
+                        </div>
+                        
+                        <div class="promoBtnBox sa sa-up youtBox">
+                            <div class="youtUnit" >
+                                <div id="ytFrame"></div>
+                            </div>
+                         </div>                    
+        
+                    </div>
+                
+                </div>
+            </div>
+               
+                <!--   supporters    -->
+               <div class="section supSection ">
+                   <div class="contentInner">
+                   
+                       <div class="comHeadBox sa sa-up">
+        
+                           <div class="comHeadUnit">
+                                <p class="comHead bold w100">“사장님, 혹시</p>
+                                <span class="comHeadPoint">
+                                    <p class="comHead bold wh">스마트스토어 셀러</p>
+                                </span>
+                                <p class="comHead bold">세요?”</p>
+                           </div>
+                       </div>
+                       
+                       <div class="sectionCon ">
+        
+                           <div class="promoCopyBox sa sa-up">
+                               <p class="promoCopy">지금, 서포터즈 신청하시면,</p>
+                               <p class="promoCopy bold">12개월 무료 이용!</p>
+                           </div>
+                           
+                           <div class="promoBtnBox sa sa-up promoModelBox">
+                               <p class="promoRef">간단한 서포터즈 미션만 수행하세요</p>
+                               <div class="supPromoBtn">
+                                   <div class="supPromoBtnInner">
+                                        <a class="promoBtn scollEvt" data-no='2'>
+                                           서포터즈 신청하기
+                                            <span class="promoIcon">
+                                                <img class="comImgH" src="../images/submitIcon_01.png"> 
+                                            </span>
+                                        </a>  
+                                    </div>
+                                </div>
+                                <span class="promoModelImg">
+                                    <img class="comImg" src="../images/subModel.png">
+                                </span> 
+                            </div>                    
+        
+                       </div>
+                   
+                   </div>
+               </div>
+               
+                <!--   promotion    -->
+               <div class="section">
+                   <div class="contentInner">
+                   
+                       <div class="waitBox sa sa-up">
+                           <span class="waitUnit">
+                               <p class="waitCopy">잠깐,</p>
+                               <span class="waitBack">
+                                   <img class="comImg" src="../images/waitBack.png">
+                               </span>
+                           </span>
+                       </div>
+                       
+                       <div class="sectionCon ">
+        
+                          <div class="comHeadBox sa sa-up">
+        
+                               <div class="promoCopyBox comHeadUnit">
+                                    <p class="comHead bold w100">서포터즈로 신청하지 않아도,</p>
+                                    <p class="comHead bold w100">모두에게 드리는</p>
+                                    <span class="comHeadPoint">
+                                        <p class="comHead bold wh">3개월 무료이용 혜택</p>
+                                    </span>
+                               </div>
+                           </div>
+                           
+                           <div class="promoBtnBox sa sa-up">
+        
+                                <a class="promoBtn scollEvt" data-no='3'>
+                                   3개월 무료 이용 신청하기
+                                    <span class="promoIcon">
+                                        <img class="comImgH" src="../images/submitIcon_02.png"> 
+                                    </span>
+                                </a>   
+                            </div>                    
+        
+                       </div>    
+                   
+                   </div>
+               </div>
+               
+                <!--   supporters Info_01    -->
+               <div class="section supInfoSection">
+                   <div class="contentInner">
+                   
+                       <div class="comHeadBox sa sa-up">
+                           <div class="comHeadUnit">
+                                <p class="comHead bold wh">서포터즈 모집 내용 </p>
+                           </div>
+                       </div>
+                    </div>
+                      
+                   <div class="sectionCon ">
+                       <div class="supInfoList sa sa-up">
+                            <div class="supInfoUnit">
+                                <span class="supInfoIcon">
+                                    <img class="comImg" src="../images/recruIcon_01.png">
+                                </span>
+                                <div class="supInfoBox">
+                                    <p class="supInfoHead pColor">응모 기간</p>
+                                    <p class="supInfoSub">2021. 8. 30 ~ 9. 30</p>
+                                </div>
+                            </div>
+                            
+                            <div class="supInfoUnit">
+                                <span class="supInfoIcon">
+                                    <img class="comImg" src="../images/recruIcon_02.png">
+                                </span>
+                                <div class="supInfoBox">
+                                    <p class="supInfoHead pColor">선정 발표</p>
+                                    <p class="supInfoSub">2021. 10. 7(선정자 개별연락)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="supInfoUnit">
+                                <span class="supInfoIcon">
+                                    <img class="comImg" src="../images/recruIcon_03.png">
+                                </span>
+                                <div class="supInfoBox">
+                                    <p class="supInfoHead pColor">활동기간</p>
+                                    <p class="supInfoSub">2021. 10. 14 ~ 11.30 약 7주</p>
+                                </div>
+                            </div>
+                            
+                            <div class="supInfoUnit">
+                                <span class="supInfoIcon">
+                                    <img class="comImg" src="../images/recruIcon_04.png">
+                                </span>
+                                <div class="supInfoBox">
+                                    <p class="supInfoHead pColor">모집인원</p>
+                                    <p class="supInfoSub">서포터즈 30명</p>
+                                </div>
+                            </div>
+                            
+                       </div>
+                       
+                       <div class="supRefBox sa sa-up">
+                           *인원은 모집 상황에 따라 달라질 수 있음
+                       </div>
+                       
+                    </div>
+                   
+                   
+                   
+                   
+               </div>
+               
+                <!--   supporters content_02    -->
+               <div class="section supConSection">
+                   <div class="supConList">
+                      
+                       <div class="supConUnit sa sa-up">
+                           <p class="supConHead">모집 대상</p>
+                           <ul class="supConInfoBox">
+                               <li class="supConInfo">네이버 스마트스토어를 운영하는 셀러님들이면 누구나</li>
+                               <li class="supConInfo">쇼핑몰 계정으로 SNS, 블로그, 유튜브 활동을 활발히 하고 계신 셀러님들</li>
+                               <li class="supConInfo">적극적인 미션 활동과 소통이 가능하신 분</li>
+                           </ul>
+                       </div>
+                       
+                       <div class="supConUnit sa sa-up">
+                           <p class="supConHead">서포터즈 활동 내용</p>
+                           <ul class="supConInfoBox">
+                               <li class="supConInfo">사용 리뷰를 SNS(페이스북, 인스타그램에 한정), 블로그 포스팅, 유튜브 영상 업로드 해 주세요!</li>
+                               <li class="supConInfo">셀러게이트 한달 사용 리뷰 1회</li>
+                               <li class="supConInfo">서면 인터뷰 1회, 설문조사 참여 1회까지 완료하면 활동 끝!</li>
+                           </ul>
+                       </div>
+                       
+                       <div class="supConUnit sa sa-up">
+                           <p class="supConHead">서포터즈 응모방법</p>
+                           <ul class="supConInfoBox">
+                               <li class="supConInfo">네이버 스마트스토어 셀러라면 누구나 셀러게이트 서포터즈에 응모 가능합니다.</li>
+                               <li class="supConInfo">신청서 작성 시 “셀러게이트 서포터즈 신청”을 체크하시면 자동 응모됩니다.</li>
+                           </ul>
+                       </div>
+                       
+                       
+                   </div>
+               </div>
+               
+                <!--   input Section    -->
+               <div class="section">
+                   <div class="contentInner">
+                   
+                        <div class="sellerDtlBox sa sa-up">
+                            <span class="formLogo">
+                                <img class="comImg" src="../images/sellergateLogo.png">
+                            </span>
+        
+                            <a class="promoBtn sellerDtlBtn" href="https://www.thecloudgate.co.kr/sellergate/" target="_blank">
+                                셀러게이트 자세히 보기
+                                 <span class="promoIcon">
+                                     <img class="comImgH" src="../images/submitIcon_03.png"> 
+                                 </span>
+                             </a> 
+        
+                        </div>
+                   
+                       <div class="formHeadBox sa sa-up">
+                            
+                           <div class="clientLogoList">
+                                <span class="clientLogoUnit">
+                                    <img class="comImg" src="../images/clientLogo_01.png">
+                                </span>
+                                <span class="clientLogoUnit">
+                                    <img class="comImg" src="../images/clientLogo_02.png">
+                                </span>
+                                <span class="clientLogoUnit">
+                                    <img class="comImg" src="../images/clientLogo_03.png">
+                                </span>
+                           </div>
+                           <div class="formHeadBox">
+                               <p class="formHead">모두 연동되는</p>
+                               <p class="formHead">셀러게이트 무료 이용 신청</p>
+                           </div>
+                       </div>
+                       
+                       <div class="formBox sa sa-up">
+                           <div class="inputList">
+                               <div class="inputUnit">
+                                   <p class="inputHead">쇼핑몰 명</p>
+                                   <input class="comInput" type="text" name="store" placeholder="운영하고 있는 쇼핑몰 이름을 입력해주세요.">
+                               </div>
+                               
+                               <div class="inputUnit">
+                                    <p class="inputHead">휴대폰 번호</p>
+                                    <input class="comInput" type="text" name="tel" placeholder="010-1234-5678">
+                                </div>
+        
+                                <div class="inputUnit">
+                                   <p class="inputHead">이메일 주소</p>
+                                   <input class="comInput" type="text" name="mail" placeholder="sellergate@thewc.co.kr">
+                               </div>
+                               
+                           </div>
+                       </div>
+                       
+                       <div class="agreeBox sa sa-up">
+                           <div class="agreeList">
+                               <div class="agreeUnit">
+                                   <div class="agreeCopyBox">
+                                       <b class="agreeCopy">(필수)개인정보 수집 및 이용에 동의합니다.<a class="agreeCopy agreePopShow">(약관보기)</a></b>
+                                       
+                                   </div>
+                                   
+                                   <div class="agreeInputBox">
+                                        
+                                        <label class="agreePickBox">
+                                           <input type="radio" name="agree_01" class="hidden" value="Y">
+                                            <div class="agreePick">
+                                                <div class="agreePicker"></div>
+                                            </div>
+                                            <p class="agreeCopy">예</p>
+                                        </label>
+                                        
+                                        
+                                        <label class="agreePickBox">
+                                           <input type="radio" name="agree_01" class="hidden" value="N">
+                                            <div class="agreePick">
+                                                <div class="agreePicker"></div>
+                                            </div>
+                                            <p class="agreeCopy">아니오</p>
+                                        </label>
+                                   </div>
+                               </div>
+                               
+                               <div class="agreeUnit">
+                                   <div class="agreeCopyBox">
+                                       <p class="agreeCopy">(선택)셀러게이트 서포터즈에도 추가 응모 하시겠습니까? </p>
+                                   </div>
+                                   
+                                   <div class="agreeInputBox">
+                                        
+                                        <label class="agreePickBox">
+                                           <input type="radio" name="agree_02" class="hidden" class="hidden" value="Y">
+                                            <div class="agreePick">
+                                                <div class="agreePicker"></div>
+                                            </div>
+                                            <p class="agreeCopy">예</p>
+                                        </label>
+                                        
+                                        
+                                        <label class="agreePickBox">
+                                           <input type="radio" name="agree_02" class="hidden" class="hidden" value="N">
+                                            <div class="agreePick">
+                                                <div class="agreePicker"></div>
+                                            </div>
+                                            <p class="agreeCopy">아니오</p>
+                                        </label>
+                                   </div>
+                               </div>
+                               
+                           </div>
+                       </div>
+                       
+                       <div class="submitBtnBox sa sa-up">
+                           <p class="submitCopy">셀러게이트 서포터즈 모집</p>
+                           <button class="submitBtn">신청하기</button>
+                       </div>
+        
+                   </div>
+               </div>
+               
+                <!--   notice    -->
+               <div class="section noticeSection">
+                   <div class="contentInner">
+                   
+                       <div class="comHeadBox">
+                           <div class="comHeadUnit">
+                                <p class="comHead w100">셀러게이트 신청 전</p>
+                                <p class="comHead bold pColor">꼭&nbsp;</p>
+                                <p class="comHead bold ">확인하세요!</p>
+                           </div>
+                       </div>
+                       
+                       <div class="sectionCon flexC">
+                           <ul class="noticeList">
+                              
+                               <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox noticeAct">
+                                       <b class="noticeText">프로모션 신청은 스마트스토어 1개 몰 당 1번만 가능합니다.</b>
+                                   </span>
+                               </li>
+                               
+                               <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox">
+                                       <b class="noticeText">부적절한 방법을 통한 이벤트 참여나 서포터즈 활동은 혜택 대상에서 제외될 수 있습니다.</b>
+                                   </span>
+                               </li>
+                               
+                               <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox">
+                                       <b class="noticeText">캠페인/이벤트 내용이나 일정은 사정에 따라 변경되거나 일시중단 또는 조기종료될 수 있습니다.</b>
+                                   </span>
+                               </li>
+                               
+                               <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox">
+                                       <b class="noticeText">서포터즈 선정자의 경우 미션 수행을 위한 자세한 안내를 참여한 이메일과 전화번호로 별도의 안내를 드릴 예정입니다.</b>
+                                   </span>
+                               </li>
+                               
+                               <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox">
+                                       <b class="noticeText">서포터즈 당첨자 안내 후 1주 이내 개인정보 수집에 대한 동의 등 메일에 대한 응답이 없을 경우 당첨에서 제외될 수 있습니다.</b>
+                                   </span>
+                               </li>
+                               
+                               <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox">
+                                       <b class="noticeText">활동 기간 내 미션 수행이 진행되지 않을 경우, 무료 혜택이 중단될 수 있습니다.</b>
+                                   </span>
+                               </li>
+                               
+                               <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox">
+                                       <b class="noticeText">서포터즈 활동 내용이 셀러게이트 서비스 정책과 맞지 않을 경우 무료 혜택이 중단 될 수 있습니다.</b>
+                                   </span>
+                               </li>
+                               
+                                <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox">
+                                       <b class="noticeText">서포터즈에 선정되더라도 연락이 안되거나, 미션을 수행하기 어렵다고 판단될 경우 서포터즈 선정과 혜택이 취소될 수 있습니다.</b>
+                                   </span>
+                               </li>
+                               
+                                <li class="noticeUnit">
+                                   <span class="noticeIcon">
+                                       <img class="comImg" src="../images/noticeIcon.png">
+                                   </span>
+                                   <span class="noticeTextBox">
+                                       <b class="noticeText">이벤트 관련 문의 사항이 있으신 경우, 셀러게이트 고객센터(1533-4989)로 연락 해 주세요.</b>
+                                   </span>
+                               </li>
+                               
+                           </ul>
+                       </div>
+                   
+                   </div>
+               </div>
+               
+                <!-- agreePopup -->
+                <div class="agreePopBox">
+                    <div class="agreePopInner">
+                        <div class="agreePopConBox">
+                            <div class="agreePopClose">
+                                <img class="comImg" src="../images/closeIcon.png">
+                            </div>
+        
+                            <div class="agreePopCon">
+                                <p class="agreePopHead">더화이트커뮤니케이션(주)<br>개인정보처리 방침</p>
+                                
+                                <p class="agreeMidCopy">더화이트커뮤니케이션(이하 회사)는 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법, 통신비밀보호법, 전기통신사업법 등 정보통신서비스제공자가 준수하여야 할 관련 법령상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보처리방침을 정하여 이용자 권익 보호에 최선을 다하고 있습니다. 본 개인정보처리방침은 회사가 제공하는 서비스 이용에 적용되며, 다음과 같은 내용을 담고 있습니다.</p>
+                                <ul class="agreeIndexBox">
+                                    <li class="agreePopCopy">제1조 개인정보의 처리목적 및 수집방법</li>
+                                    <li class="agreePopCopy">제2조 개인정보의 처리 및 보유기간</li>
+                                    <li class="agreePopCopy">제3조 개인정보의 제3자 제공</li>
+                                    <li class="agreePopCopy">제4조 정보주체의 권리, 의무 및 행사방법</li>
+                                    <li class="agreePopCopy">제5조 처리하는 개인정보 항목</li>
+                                    <li class="agreePopCopy">제6조 개인정보의 파기</li>
+                                    <li class="agreePopCopy">제7조 개인정보의 안전성 확보조치</li>
+                                    <li class="agreePopCopy">제8조 개인정보 보호책임자</li>
+                                    <li class="agreePopCopy">제9조 개인정보처리방침 변경</li>
+                                </ul>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">총칙</p>
+                                    <p class="agreeMidSub">회사는 “개인정보보호법” 제 30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보처리방침을 수립, 공개합니다.</p>
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제1조 개인정보의 처리목적 및 수집방법</p>
+                                    <p class="agreeMidSub">[처리목적] 회사는 서비스의 원활한 제공을 위해 파트너사의 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보보호법 제 18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
+                                    
+                                    <div class="agreeUlList">
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">1. 고객 문의 응대</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">서비스를 이용하는 고객이 접수하는 모든 응대 업무 처리</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">2. 이벤트·마케팅·광고에 활용</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">이벤트 정보 및 참여기회 제공, 광고성 정보 제공(뉴스레터) 등의 업무 처리</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">3. 온라인 서비스 운영업무</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">클라이언트사 어드민 툴을 활용하여 클라이언트사의 운영업무 처리</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">[수집방법] 회사는 다음과 같은 방법으로 개인정보를 수집합니다.</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">서비스 이용 과정에서 서면양식, 팩스, 전화, 고객센터 1:1문의, 이메일, 이벤트 응모를 통해 파트너사로부터 직접 입력받아 수집</li>
+                                                <li class="agreePopCopy">협력회사로부터의 제공</li>
+                                            </ul>
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제2조 개인정보의 처리 및 보유기간</p>
+                                    <p class="agreeMidSub">정보주체의 개인정보는 원칙적으로 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 보존 이유를 위해 명시한 기간 동안 보존합니다.</p>
+                                    <div class="agreeUlList">
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">1. 고객 문의 응대</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">보존항목: 성명, 연락처, 주소, 이메일주소, 아이디, 파트너사가 제공하는 개인정보 등</li>
+                                                <li class="agreePopCopy">보존이유: 의사소통, 문의처리</li>
+                                                <li class="agreePopCopy">보존기간: 문의일로부터 2년</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">2. 이벤트 처리</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">보존항목: 성명, 연락처, 주소, 이메일주소, 아이디, 파트너사가 제공하는 개인정보 등</li>
+                                                <li class="agreePopCopy">보존이유: 당첨 및 배송 처리</li>
+                                                <li class="agreePopCopy">보존기간: 이벤트 종료 후 60일</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">3. 뉴스레터</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">보존항목: 성명, 이메일주소</li>
+                                                <li class="agreePopCopy">보존이유: TWC 소식 이메일 발송</li>
+                                                <li class="agreePopCopy">보유 기간 : 뉴스레터 수신을 거부하거나 철회의사를 밝힌 경우 해당 개인정보는 즉시 파기됩니다.</li>
+                                            </ul>
+                                        </div>
+        
+                                    </div>
+                                    <p class="agreeMidSub">회사는 정보통신망 이용촉진 및 정보보호 등에 관한 법률 및 기타 관계법령에 따른 개인정보 보관 규칙을 성실하게 수행하고 있습니다.</p>
+                                    
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제3조 개인정보의 제3자 제공</p>
+                                    <p class="agreeMidSub">회사는 정보주체의 개인정보를 제1조 개인정보의 처리목적에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 개인정보보호법 제17조 및 제18조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다. 개인정보를 제 3자에게 제공할 경우에는 정보를 제공받는 자, 정보를 제공 받는 자의 이용 목적, 제공하는 개인정보의 항목, 정보를 제공받는 자의 정보 보유 및 기간, 정보의 제 3자 제공에 대하여 동의를 거부할 권리가 있다는 사실 및 동의 거부에 따른 불이익의 내용을 알려드립니다.</p>
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제4조 정보주체의 권리, 의무 및 행사방법</p>
+                                    <div class="agreeUlList">
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">1. 정보주체는 회사에 대해 언제든지 다음 각 호의 개인정보보호 관련 권리를 행사할 수 있습니다.</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">개인정보 열람요구</li>
+                                                <li class="agreePopCopy">오류 등이 있을 경우 정정 요구</li>
+                                                <li class="agreePopCopy">삭제요구</li>
+                                                <li class="agreePopCopy">처리정지요구</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">2. 제1항에 따른 권리 행사는 회사에 대해 서면, 전화, 이메일, 팩스 등을 통하여 하실 수 있으며, 회사는 이에 대해 지체없이 조치하겠습니다.</p>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">3. 정보주체가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 회사는 정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하거나 제공하지 않습니다.</p>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">4. 제1항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 개인정보보호법 기행규칙 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.</p>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">5. 정보주체는 개인정보보호법 등 관계법령을 위반하여 회사가 처리하고 있는 정보주체 본인이나 타인의 개인정보 및 사생황을 침해하여서는 아니됩니다.</p>
+                                        </div>
+        
+        
+                                    </div>
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제5조 처리하는 개인정보 항목</p>
+                                    <p class="agreeMidSub">회사는 다음의 개인정보 항목을 처리하고 있습니다.</p>
+                                    
+                                    <div class="agreeUlList">
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">1. 고객 문의 응대</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">수집항목: 성명, 연락처, 주소, 이메일주소, 아이디, 파트너사가 제공하는 개인정보 등</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">2. 이벤트·마케팅·광고에 활용</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">수집항목: 성명, 연락처, 주소, 이메일주소, 아이디, 파트너사가 제공하는 개인정보 등</li>
+                                            </ul>
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제6조 개인정보의 파기</p>
+                                    <p class="agreeMidSub">회사는 다음의 개인정보 항목을 처리하고 있습니다.</p>
+                                    
+                                    <div class="agreeUlList">
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">1. 회사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기합니다.</p>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">2. 개인정보주체로부터 동의받은 개인정보 보유기간이 경과하거나 처리목적이 달성되었음에도 불구하고 다른 법령에 따라 개인정보를 계속 보존하여야 하는 경우에는, 해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.</p>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">3. 개인정보 파기 방법은 다음과 같습니다.</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">전자적 파일 형태로 기록, 저장된 개인정보는 기록을 재생할 수 없도록 완전 삭제 또는 로우레벨포맷 등의 방법을 이용해 파기하며, 종이 문서에 기록, 저장된 개인정보는 분쇄기로 분쇄하거나 소각하여 파기합니다.</li>
+                                            </ul>
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제7조 개인정보의 안전성 확보조치</p>
+                                    <p class="agreeMidSub">회사는 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다.</p>
+                                    
+                                    <div class="agreeUlList">
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">1. 관리적 조치: 내부관리계획 수립, 시행, 정기적 직원 교육</p>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">2. 기술적 조치: 개인정보처리시스템 등의 접근권한 관리, 접근통제시스템 설치, 보조저장매체 저장 차단, 고유식별정보 등의 암호화, 모든PC에 보안프로그램 설치 및 패스워드 적용</p>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">3. 물리적 조치: 사무실 출입통제, 로컬서버 시건, 금고 설치</p>
+                                        </div>
+        
+                                    </div>
+        
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제8조 개인정보 보호책임자</p>
+                                    <p class="agreeMidSub">1. 회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+                                    
+                                    <div class="agreeUlList">
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">개인정보 보호책임자</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">성명: 황정아</li>
+                                                <li class="agreePopCopy">직책: CISO/CPO</li>
+                                                <li class="agreePopCopy">이메일: <a href="mailto:jahwang@thewc.co.kr">jahwang@thewc.co.kr</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+        
+                                    <p class="agreeMidSub">2. 정보주체께서는 회사의 서비스를 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다. 회사는 정보주체의 문의에 대해 지체없이 답변 및 처리해드릴 것입니다.</p>
+                                    <p class="agreeMidSub">3. 아래의 기관은 회사와는 별개의 기관으로서, 회사의 자체적인 개인정보 불만처리, 피해구제 결과에 만족하지 못하시거나 보다 자세한 도움이 필요하시면 문의하여 주시기 바랍니다.</p>
+                                    <div class="agreeUlList">
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">개인정보 침해 신고센터(한국인터넷진흥원 운영)</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">소관업무: 개인정보 침해사실 신고, 상담 신청</li>
+                                                <li class="agreePopCopy">홈페이지: <a href="https://privacy.kisa.or.kr">https://privacy.kisa.or.kr</a></li>
+                                                <li class="agreePopCopy">전화: (국번없이) 118</li>
+                                                <li class="agreePopCopy">주소: (58324) 전남 나주시 진흥길 9(빛가람동 301-2) 3층 개인정보침해신고센터</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">개인정보 분쟁조정위원회(한국인터넷진흥원 운영)</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">소관업무: 개인정보 분쟁조정신청, 집단분쟁조정 (민사적 해결)</li>
+                                                <li class="agreePopCopy">홈페이지: <a href="https://www.kopico.go.kr">https://www.kopico.go.kr</a></li>
+                                                <li class="agreePopCopy">전화: (국번없이) 1833-6972</li>
+                                                <li class="agreePopCopy">주소: (03171)서울특별시 종로구 세종대로 209 정부서울청사 4층</li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">대검찰청 사이버범죄수사단</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">전화: 02-3480-3573</li>
+                                                <li class="agreePopCopy">홈페이지: <a href="http://www.spo.go.kr">http://www.spo.go.kr</a></li>
+                                            </ul>
+                                        </div>
+        
+                                        <div class="agreeUlUnit">
+                                            <p class="agreeUlHead">경찰청 사이버안전국</p>
+                                            <ul class="agreePopUlUnit">
+                                                <li class="agreePopCopy">전화: (국번없이) 182</li>
+                                                <li class="agreePopCopy">홈페이지: <a href="http://cyberbureau.police.go.kr">http://cyberbureau.police.go.kr</a></li>
+                                            </ul>
+                                        </div>
+        
+                                    </div>
+                                </div>
+        
+                                <div class="agreePopUnit">
+                                    <p class="agreeSub">제9조 개인정보처리방침 변경</p>
+                                    <p class="agreeMidSub">1. 이 개인정보처리방침은 2020. 10. 16부터 적용됩니다.</p>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div> 
+               
+               
+                </div>
+        
+           </div>
+        
+           <!-- footer -->
+           <div class="footer landing_font">
+                <div class="footerInner">
+                    <div class="footerContent">
+                        <div class="footerLogo">
+                            <img class="comImg" src="../images/defaultLogo.png">
+                        </div>
+                        <div class="footerConList">
+                        
+                            <div class="footerConUnit">
+                                <p class="footerConHead">THE WHITE COMMUNICATION</p>
+                                <p class="footerConSub">전문가와 기술력을 통해 최적화된 비지니스 운영 서비스를 제공합니다.</p>
+                                <a href="https://drive.google.com/file/d/1pTaEj_iHB_50oE7X7kGFfHGbeIO0mX1b/view?usp=sharing" class="footerBtn" >
+                                    <img class="footerBtnImg" src="../images/footer_01.png">
+                                    <span class="footerBtnText">소개서 다운로드</span>
+                                </a>
+                            </div>
+                            
+                            <div class="footerConUnit">
+                                <p class="footerConHead">GET SUPPORT</p>
+                                <p class="footerConSub">TWC<br>T.02-468-1112<br>E.help@thewc.co.kr</p>
+                                <p class="footerConSub" style="margin-top: 10px;">셀러게이트<br>T.1533-4989<br>E. sellergate@thewc.co.kr</p>
+                                <a href="https://www.thecloudgate.co.kr/contact/" class="footerBtn">
+                                    <img class="footerBtnImg" src="../images/footer_02.png">
+                                    <span class="footerBtnText">문의하기</span>
+                                </a>
+                            </div>
+                            
+                            <div class="footerConUnit">
+                                <p class="footerConHead">FIND US</p>
+                                <p class="footerConSub">서울특별시 성동구 성수이로24길 32</p>
+                                <a href="https://www.thecloudgate.co.kr/?page_id=1505" class="footerBtn">
+                                    <img class="footerBtnImg" src="../images/footer_03.png">
+                                    <span class="footerBtnText">오시는길</span>
+                                </a>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footerCopyBox">
+                    <div class="footerInner">
+                    <div class="footerCopyContent">
+                            <div class="footerCopy">
+                                더화이트커뮤니케이션(주)&nbsp;&nbsp;&nbsp;
+                                대표이사 : 박민영&nbsp;&nbsp;&nbsp;
+                                사업자등록번호 : 192-86-00356&nbsp;&nbsp;&nbsp;
+                                통신판매업신고번호 : 제 2020-서울성동-00308호&nbsp;&nbsp;&nbsp;
+                                개인정보담당자 : 황정아&nbsp;&nbsp;&nbsp;
+                                <span class="footerCopy bold">
+                                    개인정보처리방침
+                                    <a class="footerCopy bold agreePopShow">[보기]</a>
+                                </span>
+                                <br>
+                                © Copyright 2019 The White Communication
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- youtube embed script -->
+<script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('ytFrame', {
+        height: '360',
+        width: '640',
+        //videoId에 셀러게이트 url삽입
+        videoId: 'aiJNdUoeV-U', 
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+    function onPlayerStateChange(event) {
+        if(event.data == YT.PlayerState.PLAYING){
+            gtag('event', '기능소개', {
+                'event_category': '프로모션',
+                'event_label': '유튜브재생'
+                });
+        }
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+  </script>
+
+
+
+    <div class="form_bottom"></div>
+
+</body>
+</html>

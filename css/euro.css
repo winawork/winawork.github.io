@@ -62,6 +62,7 @@ p{margin: 0px;}
 .float_con .float_btn{
     border-radius: 100px;
     font-weight: 800;
+    max-width: 840px;
     cursor: pointer;
     line-height: 1;}
 .float_con .float_btn.img{padding: 0px;
@@ -115,7 +116,7 @@ p{margin: 0px;}
 
 
 
-.main_top{    margin-top: 60px;
+.main_top{    margin-top: 120px;
     display: grid;}
 .logo{    max-width: 240px;
     margin: 0 auto;
@@ -142,7 +143,10 @@ p{margin: 0px;}
     margin-bottom: 10px;
     padding: 4px 6px;}
 .form_box .form_in .form_top .form_title{font-size: 34px;
-    font-weight: 700;}
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;}
+.form_box .form_in .form_top .form_title .blue{color: #2f6bff;}
 .form_list .form_unit .tit .essential{color: #ff3c3c;}
 .form_box .form{padding: 0px;}
 .form_input, .form_select{border: none;}
@@ -150,7 +154,7 @@ p{margin: 0px;}
     border: none;}
 .form_box .form_btn{font-weight: 700;}
 .com_section{padding: 120px 0;}
-.point_list{    margin-top: 40px;
+.point_list{    margin-top: 60px;
     display: flex;
     flex-direction: column;
     gap: 14px;}
@@ -270,8 +274,8 @@ footer{width: 100%;
     overflow: hidden;
     margin: 0 auto;
     margin-top: 6px;}
-
-
+.euro_icon_list{padding: 80px 0;}
+.icon_title{margin-top: 20px;}
 
 
 
@@ -294,7 +298,7 @@ footer{width: 100%;
         padding: 2px 4px;}
     .form_box .form_in{padding: 10% 5%;
         border-radius: 20px;}
-    .form_box .form_in .form_top .form_title{font-size: 24px;}
+    .form_box .form_in .form_top .form_title{font-size: 20px;}
     .com_section.bt_section{padding-top: 40px;}
     .land_cont .in .point_dot{width: 28px;
         margin-bottom: 10px;}
@@ -326,14 +330,15 @@ footer{width: 100%;
         margin-right: 8px;}
     .line{height: 80px;
         margin: 20px 0;}
-    .review_list{margin-top: 40px;}
+    .review_list{margin-top: 30px;}
     .form_bottom{padding-bottom: 60px;}
     footer .foot_in{flex-wrap: wrap;}
     footer .foot_in .foot_logo{width: 90px;
         margin-bottom: 20px;}
         footer .foot_in .foot_copy_con .copy{font-size: 13px;}
-        .point_list{gap: 10px;}
+        .point_list{gap: 10px; margin-top: 20px;}
     .land_cont .agree .agree_con{max-height: 80px;}
     .privacy_copy{line-height: 1.2;}
+    .euro_icon_list{padding: 40px 0;}
 
 }

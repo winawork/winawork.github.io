@@ -170,13 +170,57 @@ $(function () {
 		})
 	}
 
+	$.pop_close = function(){
+		$('.pop_close').on('click',function(){
+			$('.agree_pop').hide();
+		})
+	}
 
+	$.pop_open = function(){
+		$('.pop_open').on('click',function(){
+			$('.agree_pop').show();
+		})
+	}
+
+	$.all_btn = function(){
+		$('.all_btn').on('click',function(){
+			$('.agree_stat').attr('checked',true)
+			$('.chk_true').prop('checked',true)
+		})
+	}
+
+	$.agree_chk = function(){
+		$('.agree_chk').on('change',function(){
+			var chks = $('.agree_chk:checked');
+			var chk_true = 0;
+			
+			if(chks.length<2){
+				$('.agree_stat').attr('checked',false)
+			}else{
+				$(chks).each(function(idx,item){
+					if(item.value == 'true'){
+						chk_true++
+					}
+				})
+				console.log(chk_true);
+				if(chk_true == 2){
+					$('.agree_stat').attr('checked',true);
+				}else{
+					$('.agree_stat').attr('checked',false);
+				}
+			}
+
+		})
+	}
 	
 
 	$.initView = function () {
 		$.float_btn();
 		$.select_chk();
-
+		$.pop_close();
+		$.pop_open();
+		$.all_btn();
+		$.agree_chk();
 	};
 	$.initView();
 

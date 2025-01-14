@@ -3,7 +3,7 @@ html{font-size: 16px;}
 html, body{height: 100%;}
 *{line-height: 1;}
 p{margin: 0px;}
-
+em{font-size: inherit;}
 
 ._input_form_submit{   background-color: #12691e !important;
     font-size: 20px !important;
@@ -327,8 +327,10 @@ font-size: inherit;}
 .agree_pop .inner .agree_list .unit .tit_box .pop_tit .red{color: #ff3c3c;}
 .agree_pop .inner .agree_list .unit .tit_box .chk_list{display: flex;
     gap: 10px;
-    align-items: center;}
-.agree_pop .inner .agree_list .unit .tit_box .chk_list .chk_label{font-size: 14px;}
+    align-items: center;
+    flex-wrap: nowrap;}
+.agree_pop .inner .agree_list .unit .tit_box .chk_list .chk_label{font-size: 14px;
+    padding: 0px;}
 .agree_con{max-height: 100px;
     overflow-y: auto;
     border-bottom: 1px solid #dcdcdc;
@@ -360,6 +362,18 @@ font-size: inherit;}
     color: #508cff !important;
     font-size: 16px;}
 .form_btn.bk_01{background-color: #1e1e1e;}
+.agree_ref_box{margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;}
+.agree_ref_box .agree_ref{    font-size: 14px;
+    line-height: 1.2;
+    color: #747e8a;}
+
+
+
+
+
 
 
 @media (max-width: 991px){
@@ -439,7 +453,7 @@ font-size: inherit;}
         height: 40px;}
     .pop_btn_list{margin-top: 20px;}
     .land_con{padding-bottom: 0px;}
-
+    .agree_ref_box .agree_ref{font-size: 11px;}
 
 
 }

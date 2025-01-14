@@ -33,14 +33,14 @@ $(function () {
 	$.scrollEvent = function(){
 		var saTriggerMargin = 200;
         var saElementList = $('.sa');
-		const scr_top = $('html,body').scrollTop();
+		const scr_top = $('.land_con').scrollTop();
 		const win_h = window.innerHeight;
 
-		const idx_01 = $('.land_cont');
+		const idx_01 = $('.page');
         const land_h = $(idx_01).height();
         const h_01 = idx_01.innerHeight();
 
-		console.log(scr_top);
+		console.log('scr_top = '+scr_top);
 
 		if(land_h<scr_top+win_h){
             $('.float_con').hide();
@@ -178,7 +178,7 @@ $(function () {
 
 	$.pop_open = function(){
 		$('.pop_open').on('click',function(){
-			$('.agree_pop').show();
+			$('.agree_pop').css('display','flex')
 		})
 	}
 

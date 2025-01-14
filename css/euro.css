@@ -146,7 +146,8 @@ p{margin: 0px;}
     font-weight: 700;
     text-align: center;
     line-height: 1.2;}
-.form_box .form_in .form_top .form_title .blue{color: #2f6bff;}
+.form_box .form_in .form_top .form_title .blue{color: #2f6bff;
+    font-size: inherit;}
 .form_list .form_unit .tit .essential{color: #ff3c3c;}
 .form_box .form{padding: 0px;}
 .form_input, .form_select{border: none;}
@@ -286,7 +287,8 @@ footer{width: 100%;
 .gift_03 .title_box .gift_title{font-size: 28px;
     font-weight: 700;
     line-height: 1.2;}
-.gift_03 .title_box .gift_title em{color: #2f6cfd;}
+.gift_03 .title_box .gift_title em{color: #2f6cfd;
+font-size: inherit;}
 .gift_03 .gift_ref{    color: #747e8a;
     line-height: 1.2;
     font-size: 18px;}
@@ -303,7 +305,8 @@ footer{width: 100%;
     padding: 0 5%;
     box-sizing: border-box;
     max-width: 840px;
-    z-index: 3;}
+    z-index: 3;
+    display: none;}
 .agree_pop .inner{background-color: white;
     max-height: 90dvh;
     overflow-y: auto;
@@ -434,7 +437,7 @@ footer{width: 100%;
     .pop_btn_list .pop_btn{font-size: 16px;
         height: 40px;}
     .pop_btn_list{margin-top: 20px;}
-
+    .land_con{padding-bottom: 0px;}
 
 
 

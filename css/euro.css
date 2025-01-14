@@ -1,5 +1,6 @@
 
 html{font-size: 16px;}
+html, body{height: 100%;}
 *{line-height: 1;}
 p{margin: 0px;}
 
@@ -358,7 +359,7 @@ font-size: inherit;}
     border: none;
     color: #508cff !important;
     font-size: 16px;}
-
+.form_btn.bk_01{background-color: #1e1e1e;}
 
 
 @media (max-width: 991px){

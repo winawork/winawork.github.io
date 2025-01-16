@@ -370,7 +370,7 @@ font-size: inherit;}
     line-height: 1.2;
     color: #747e8a;}
 .tit_unit{display: flex;}
-
+.simul_sec{margin-top: 120px;}
 
 
 
@@ -403,7 +403,6 @@ font-size: inherit;}
     .point_title_box .point_coin.coin_01{width: 38px;}
     .point_title_box .point_coin.coin_02{width: 34px;}
     .point_title_box .point_coin.coin_03{width: 34px;}
-    .chart_title{margin-top: 80px;}
     .benefit_box{margin-top: 20px;
         gap: 10px;}
     .chart_title_02{margin-bottom: 20px;}

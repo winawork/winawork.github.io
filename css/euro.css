@@ -371,7 +371,13 @@ font-size: inherit;}
     color: #747e8a;}
 .tit_unit{display: flex;}
 .simul_sec{margin-top: 120px;}
-
+.certi_ref{    background-color: #e6e6e6;
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #787878;}
 
 
 
@@ -453,6 +459,6 @@ font-size: inherit;}
     .pop_btn_list{margin-top: 20px;}
     .land_con{padding-bottom: 0px;}
     .agree_ref_box .agree_ref{font-size: 11px;}
-
+    .certi_ref{font-size: 12px;}
 
 }

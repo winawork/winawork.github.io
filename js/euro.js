@@ -198,7 +198,7 @@ $(function () {
 				$('.agree_stat').attr('checked',false)
 			}else{
 				$(chks).each(function(idx,item){
-					if(item.value == 'true'){
+					if(item.value == 'Y'){
 						chk_true++
 					}
 				})
@@ -212,6 +212,20 @@ $(function () {
 
 		})
 	}
+
+	$.formMove = function(){
+		$('.form').addClass('del');
+		var formClone = $('.form').clone();
+		formClone.removeClass('del');
+		console.log('formClone = '+formClone);
+		$('.form_in').append(formClone);
+		$('.del').remove();
+
+		$.pop_open();
+		$.pop_close();
+		$.all_btn();
+		$.agree_chk();
+	}
 	
 
 	$.initView = function () {
@@ -221,6 +235,7 @@ $(function () {
 		$.pop_open();
 		$.all_btn();
 		$.agree_chk();
+		$.formMove();
 	};
 	$.initView();
 

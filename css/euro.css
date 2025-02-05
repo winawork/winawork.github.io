@@ -270,12 +270,9 @@ footer{width: 100%;
     margin: 0;
     color: #787878;}
     footer .foot_in .foot_copy_con .copy.right{margin-top: 20px;}
-.news_img{    max-width: 90%;
-    box-sizing: border-box;
-    border-radius: 20px;
+.news_img{
     overflow: hidden;
-    margin: 0 auto;
-    margin-top: 6px;}
+    margin: 0 auto;}
 .euro_icon_list{padding: 80px 0;}
 .icon_title{margin-top: 20px;}
 .gift_02{margin-top: 40px;
@@ -494,5 +491,5 @@ font-size: inherit;}
     .ref_top_box .ref_top{font-size: 14px;}
     .main_sub_tit .sub_tit{font-size: 20px;}
     .main_sub_tit{margin-top: 14px;}
-    .news_img{margin-top: 20px;}
+
 }

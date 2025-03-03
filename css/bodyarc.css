@@ -469,18 +469,36 @@ font-size: inherit;}
     margin-left: 1px;}
 
 
+.faq_con{width: 100%;
+    padding: 0 5%;
+    margin-top: 40px;}
+.faq_con .faq_tit{color: #303033;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;}
+.faq_con .list{margin-top: 20px;}
+.faq_con .list .unit{margin-bottom: 20px;}
+.faq_con .list .unit .faq_q{font-weight: 600;
+    color: #303033;
+    font-size: 14px;}
+.faq_con .list .unit .faq_q em{color: #9c836a;}
+.faq_con .list .unit .faq_a_con{margin-top: 5px;}
+.faq_con .list .unit .faq_a_con .faq_a{line-height: 1.2;
+    font-size: 14px;    
+    color: #303033;
+    opacity: 0.8;
+    word-break: keep-all;}
+.faq_con .list .unit .faq_a_con .faq_a_item{font-size: 14px;
+    line-height: 1.2;
+    opacity: 0.8;
+    margin-top: 6px;    
+    word-break: keep-all;}
+.faq_con .list .unit .faq_a_con .faq_a_item::before{content: '● ';
+        font-size: 6px;
+        padding-left: 6px;
+        color: #9c836a;}
 
-
-
-
-
-
-
-
-
-
-
-
+.faq_con .list .unit .faq_a_con .faq_a_item.lst{margin-bottom: 6px;}
 
 
 

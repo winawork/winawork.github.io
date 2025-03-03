@@ -407,8 +407,62 @@ font-size: inherit;}
     padding: 10px;
     text-align: center;}
 .ref_top_box .ref_top{color: #2f6bff;
-    font-size: 18px;}
+    font-size: 18px;
+    line-height: 1.2;}
 .ref_top_box .ref_top em{color: #2f6bff;}
+.form_reco{color: #747e8a;
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;}
+.form_reco em{color: #747e8a;
+    font-weight: 600;}
+
+
+
+
+/* success */
+.success_con{width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+    padding: 0 5%;
+    box-sizing: border-box;}
+.success_in{}
+.scs_logo{width: 120px;
+    margin: 0 auto;
+    margin-bottom: 30px;}
+.scs_tit{font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;}
+.scs_copy{text-align: center;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 300;
+    color: #969696;}
+.scs_copy.mt10{margin-top: 10px;}
+.scs_btn_con{    margin-top: 40px;
+    display: flex;
+    justify-content: center;}
+.scs_btn_con .com_btn.scs{height: 44px;
+    font-size: 16px;
+    min-width: 160px;
+    justify-content: center;
+    border-radius: 50px;
+    color: white;}
+.compl_logo_box{display: flex;
+    width: initial;}
+.compl_logo{font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #1e1e1e;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    max-width: 180px;
+    border-radius: 100px;
+    margin: 0 auto;}
 
 @media (max-width: 991px){
    
@@ -491,5 +545,7 @@ font-size: inherit;}
     .ref_top_box .ref_top{font-size: 14px;}
     .main_sub_tit .sub_tit{font-size: 20px;}
     .main_sub_tit{margin-top: 14px;}
-
+    .gift_02{margin-top: 30px;}
+    .form_reco{font-size: 14px;
+        margin-top: 8px;}
 }

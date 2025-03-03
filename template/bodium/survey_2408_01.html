@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/bodium.css">
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bodium.js"></script>
+
+    <script>
+
+        $(function () {
+
+            $.get_html = function(){
+                $('.header').load('list.html #1 .unit:nth-child(1n+2)');
+            }
+
+
+            $.initView = function () {
+                $.get_html();
+            };
+            $.initView();
+
+        })
+
+
+    </script>
+
+</head>
+<body>
+
+    <div class="land_cont">
+        <div class="in">
+            <img class="com_img" src="https://winawork.github.io/images/reward_2408_01.jpg">
+            <img class="com_img" src="https://winawork.github.io/images/survey_01.jpg">
+            <img class="com_img" src="https://winawork.github.io/images/survey_08.jpg">
+            <img class="com_img" src="https://winawork.github.io/images/240606_16.gif">
+            <img class="com_img" src="https://winawork.github.io/images/survey_03.jpg">
+            <img class="com_img" src="https://winawork.github.io/images/umfit_01.gif">
+            <img class="com_img" src="https://winawork.github.io/images/240726_nox_05.gif">
+            <img class="com_img" src="https://winawork.github.io/images/survey_02.jpg">
+            <img class="com_img" src="https://winawork.github.io/images/survey_04.gif">
+            <img class="com_img" src="https://winawork.github.io/images/survey_05.gif">
+            <img class="com_img" src="https://winawork.github.io/images/survey_06.gif">
+            <img class="com_img" src="https://winawork.github.io/images/survey_07.jpg">
+            <img class="com_img" src="https://winawork.github.io/images/240606_14.gif">
+            <img class="com_img" src="https://winawork.github.io/images/240726_nox_08.jpg">
+            <img class="com_img" src="https://winawork.github.io/images/240609_03.jpg">
+
+            <!-- faq -->
+            <div class="faq_con">
+                <p class="tit">FAQ</p>
+                <div class="list">
+                    <div class="unit">
+                        <p class="copy sub_tit">Q. 체험권은 무료인가요?</p>
+                        <p class="copy">본 이벤트는 삼성카드 회원만을 위한 전용 이벤트로 캐비테이션(지방 분해), EMS(근력 강화), EL(특수 갈바닉) 1종 무료체험권 뿐만 아니라 3in1 관리 50% 할인 혜택 및 50만원 상당의 제품을 증정드립니다. 무료 체험과 더불어 다신 없을 삼성카드만의 단독 혜택을 만나보세요!
+                        </p>
+                    </div>
+                    <div class="unit">
+                        <p class="copy sub_tit">Q. 관리 시 통증이 있나요?</p>
+                        <p class="copy">평소 운동량이 적은 분께서는 체험 후 약간의 근육 펌핑 효과가 있어 마치 운동한 것 처럼 경미한 근육통이 발생할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="float_con">
+            <span class="float_btn">
+                <p class="float_p">이벤트 <em>신청하기</em></p>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="form_bottom"></div>
+
+    <!-- header_sns -->
+    <div class="sns_float_con">
+        <div class="float_in">
+            <a href="https://www.instagram.com/bodium.diet" target="_blank" class="sns_href">
+                <img class="com_img" class="sns_img" src="https://winawork.github.io/images/insta.png">
+            </a>
+            <a href="https://blog.naver.com/cometrue112233"  class="sns_href">
+                <img class="com_img" class="sns_img" src="https://winawork.github.io/images/blog.png">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

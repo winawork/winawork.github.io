@@ -13,7 +13,8 @@ em{font-size: inherit;}
 
 .land_cont{width: 100%;
     font-size: 16px;
-    overflow: hidden;}
+    overflow: hidden;   
+    }
 .land_cont .in{max-width: 840px;
     margin: 0 auto;
     display: flex;
@@ -151,9 +152,7 @@ em{font-size: inherit;}
     font-size: inherit;}
 .essential{color: #ff3c3c;}
 .form_box .form{padding: 0px;}
-.form_input, .form_select{border: none;}
-.agree .agree_con{background-color: white;
-    border: none;}
+.agree .agree_con{background-color: white;}
 .form_box .form_btn{font-weight: 700;}
 .com_section{padding: 120px 0;}
 .point_list{    margin-top: 60px;
@@ -253,17 +252,19 @@ em{font-size: inherit;}
     background-color: #505050;}
 .review_list{margin-top: 60px;}
 footer{width: 100%;
-    background-color: #f5f5f5;
+    background-color: #f2efeb;
     padding: 0 5%;
     box-sizing: border-box;}
     footer .foot_in{    max-width: 1280px;
+    align-items: center;
+    flex-direction: column;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 30px 0;}
     footer .foot_in .foot_logo{width: 110px;
-    margin-right: 20px;}
-    footer .foot_in .foot_copy_con{}
+    margin-bottom: 20px;}
+    footer .foot_in .foot_copy_con{text-align: center;}
     footer .foot_in .foot_copy_con .copy{font-size: 14px;
     font-weight: 400;
     line-height: 1.4;
@@ -375,7 +376,6 @@ font-size: inherit;}
     font-size: 14px;
     line-height: 1.2;
     color: #787878;}
-.land_con{padding-bottom: 0px;}
 .comment_list{padding: 0 5%;
     box-sizing: border-box;
     width: 100%;
@@ -499,8 +499,16 @@ font-size: inherit;}
         color: #9c836a;}
 
 .faq_con .list .unit .faq_a_con .faq_a_item.lst{margin-bottom: 6px;}
+.land_con{padding-bottom: 0px;}
+.land_con .form{padding: 0px;}
+.land_con .form .form_con{margin-bottom: 80px;  
+    padding: 0 5%;
+    box-sizing: border-box;
+    width: 100%;}
 
-
+.chk_label .chk_box:checked+.chk_span{border-color: #9c836a;}
+.chk_label .chk_span .chk_act{background-color: #9c836a;}
+.form_btn{background-color: #9c836a;}
 
 
 

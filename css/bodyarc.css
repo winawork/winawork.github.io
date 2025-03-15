@@ -262,8 +262,9 @@ footer{width: 100%;
     display: flex;
     justify-content: center;
     padding: 30px 0;}
-    footer .foot_in .foot_logo{width: 110px;
-    margin-bottom: 20px;}
+    footer .foot_in .foot_logo{width: 130px;
+    margin-bottom: 20px;
+    margin-right: 0px;}
     footer .foot_in .foot_copy_con{text-align: center;}
     footer .foot_in .foot_copy_con .copy{font-size: 14px;
     font-weight: 400;
@@ -565,8 +566,6 @@ font-size: inherit;}
     .review_list{margin-top: 30px;}
     .form_bottom{padding-bottom: 60px;}
     footer .foot_in{flex-wrap: wrap;}
-    footer .foot_in .foot_logo{width: 90px;
-        margin-bottom: 20px;}
         footer .foot_in .foot_copy_con .copy{font-size: 13px;}
         .point_list{gap: 10px; margin-top: 20px;}
     .land_cont .agree .agree_con{max-height: 80px;}

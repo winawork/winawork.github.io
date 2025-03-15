@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바디아크 - Where Beauty Meets Balance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        body {
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: auto;
+        }
+        header {
+            background-color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #007BFF;
+        }
+        .hero {
+            height: 100vh;
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .content {
+            width: 90%;
+            max-width: 1400px;
+            margin: auto;
+        }
+        .reviews {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+        }
+        .review {
+            flex: 0 0 30%;
+            margin: 10px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="바디아크 로고">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#">바디아크 소개</a></li>
+                    <li><a href="#">바디아크 장점</a></li>
+                    <li><a href="#">맞춤형 관리</a></li>
+                    <li><a href="#">프로그램 소개</a></li>
+                    <li><a href="#">후기</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div>
+            <h1>Where Beauty Meets Balance</h1>
+            <p>과학적 웰니스 케어로 건강한 아름다움을 경험하세요.</p>
+            <a href="#" class="btn-primary">상담 예약</a>
+        </div>
+    </section>
+    <section class="section container">
+        <h2>바디아크 소개</h2>
+        <p>PPT 2페이지 내용</p>
+    </section>
+    <section class="section container">
+        <h2>바디아크의 차별점</h2>
+        <p>PPT 3페이지 내용</p>
+    </section>
+    <section class="section container">
+        <h2>맞춤형 관리</h2>
+        <p>PPT 6페이지 내용</p>
+    </section>
+    <section class="section container">
+        <h2>프로그램 소개</h2>
+        <p>PPT 7페이지 내용</p>
+    </section>
+    <section class="section container">
+        <h2>고객 후기</h2>
+        <div class="reviews">
+            <div class="review">고객 후기 슬라이드 1</div>
+            <div class="review">고객 후기 슬라이드 2</div>
+        </div>
+    </section>
+    <footer>
+        <p>상호명 : 바디아크 SPA&DIET 광주</p>
+        <p>사업자등록번호 : 184-13-01836</p>
+        <p>대표자 : 안정미</p>
+        <p>주소 : 광주광역시 서구 죽봉대로 76, 5층(농성동)</p>
+        <p>Copyright ⓒ BODYARC Co.,Ltd. All rights reserved.</p>
+    </footer>
+</body>
+</html>

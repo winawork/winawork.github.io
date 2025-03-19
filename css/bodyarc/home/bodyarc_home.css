@@ -21,14 +21,24 @@
 .arc_main .main_con .main_in{width: 100%;
     max-width: 680px;
     text-align: center;}
-.arc_main .main_con .main_in .main_logo{width: 320px;
+.arc_main .main_con .main_in .main_logo{width: 280px;
     margin-bottom: 40px;}  
 .arc_main .main_con .main_in .main_copy{color: white;
     font-size: 24px;
     word-break: keep-all;
     line-height: 1.4;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     font-weight: 300;}
+
+.arc_main .main_con .main_in .sub_copy{color: white;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 200;
+    word-break: keep-all;
+    opacity: 0.8;
+    max-width: 520px;
+    margin: 0 auto;
+    margin-bottom: 80px;}
 .contact_btn{    font-size: 24px;
     color: white;
     border: 1px solid white;
@@ -51,10 +61,28 @@
 
 
 
-
-
-
-
+.com_img{width: 100%;}
+footer{width: 100%;
+    background-color: #f2efeb;
+    padding: 0 5%;
+    box-sizing: border-box;}
+    footer .foot_in{    max-width: 1280px;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;}
+    footer .foot_in .foot_logo{width: 130px;
+    margin-bottom: 20px;
+    margin-right: 0px;}
+    footer .foot_in .foot_copy_con{text-align: center;}
+    footer .foot_in .foot_copy_con .copy{font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    color: #787878;}
+    footer .foot_in .foot_copy_con .copy.right{margin-top: 20px;}
 
 
 /* 전체화면 버튼 */ 

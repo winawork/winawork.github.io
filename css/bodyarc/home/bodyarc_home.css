@@ -1,4 +1,4 @@
-*{margin: 0px; padding: 0px;}
+*{margin: 0px; padding: 0px; line-height: 1;}
   
 .arc_main{    height: 100dvh;
     width: 100%;
@@ -55,9 +55,131 @@
 
 
 
+/* 배너 상단 영역 */
+.banner_top {position: relative;
+    width: 100%;
+    height: 540px;}
+.banner_top .banner_img_con {position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;}
+.banner_top .banner_img_con .img_cover{width: 100%;
+    height: 100%;
+    object-fit: cover;}
+.banner_top .banner_img_con .filer {position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;}
+.banner_top .banner_img_con .filer.brand {background-color: rgba(156, 131, 106, 0.8);}
+.mx1440 {max-width: 1440px;
+    margin: 0 auto;}
+.banner_con {width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+.banner_con .banner_con_in{display: flex;
+    position: relative;
+    flex-direction: column;
+    text-align: center;}
+.banner_con .brand_logo {width: 120px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    opacity: 0.3;}
+.banner_con .banner_tit {    color: white;
+    font-size: 38px;
+    font-weight: 200;}
+.banner_con .banner_copy {color: white;
+    font-weight: 200;
+    font-size: 22px;
+    margin-top: 10px;}
+
+/* 공용 히어로 영역 */
+.com_hero {margin-top: 120px;}
+.com_hero.lst{padding-bottom: 120px;}
+.com_hero .mx1440 {}
+.com_hero .barnd_intro {text-align: center;}
+.com_hero .barnd_intro .brand_banner {width: 100%;
+    border-radius: 500px;
+    height: 440px;
+    object-fit: cover;
+    max-width: 1080px;
+    margin: 0 auto;}
+.com_hero .barnd_intro .banner_tit {font-size: 26px;
+    max-width: 680px;
+    margin: 0 auto;
+    word-break: keep-all;
+    margin-top: 20px;
+    line-height: 1.4;
+    font-weight: 300;}
+.com_hero .barnd_intro .banner_tit em{font-weight: 600;
+    font-style: normal;}
+    .com_hero .barnd_intro .banner_tit em.point_color{color: #9c836a;}
+
+/* 핵심 케어 시스템 리스트 */
+.care_list {max-width: 1080px;
+    margin: 120px auto 0px;
+    display: flex;
+    justify-content: space-between;}
+.com_tit {font-size: 44px;
+    font-weight: 600;
+    line-height: 1.2;}
+.com_sub{font-size: 24px;
+    margin-top: 10px;
+    color: #9c836a;
+    line-height: 1.2;}
+.care_list .list {display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    width: 600px;}
+.care_list .list .unit {display: flex;
+    gap: 8px;
+    width: 100%;
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 20px;
+    flex-direction: column;}
+.care_list .list .unit .care_copy {font-size: 24px;}
+.care_list .list .unit .care_copy.eng {color: #9c836a;
+    font-size: 18px;}
+
+/* 서브 버튼 영역 */
+.sub_btn_con {text-align: center;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;}
+.sub_btn_con .sub_btn {font-size: 22px;
+    font-weight: 400;
+    border-radius: 100px;
+    border: 1px solid #9c836a;
+    padding: 0 30px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9c836a;}
+
+.com_tit_con{}
+.com_tit_con.center{margin: 0 auto;
+    align-items: center;
+    display: grid;
+    justify-content: center;}
+.com_tit_con.center .com_tit{text-align: center;}
+.com_tit_con.center .com_sub{text-align: center;}
 
 
 
+.pro_list{}
+.pro_list .unit{}
+.pro_list .unit .img_con{}
+.pro_list .unit .copy_con{}
+.pro_list .unit .copy_con .pro_tit_con{}
+.pro_list .unit .copy_con .pro_tit_con .pro_tit{}
+.pro_list .unit .copy_con .pro_tit_con .pro_sub{}
+.pro_list .unit .copy_con .pro_tit_con .pro_ref{}
+.pro_list .unit .copy_con .pro_info{}
+.pro_list .unit .copy_con .pro_info .info_copy{}
 
 
 .com_img{width: 100%;}

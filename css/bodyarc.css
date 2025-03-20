@@ -518,8 +518,10 @@ font-size: inherit;}
 .map_con .map_tit{font-size: 24px;
     font-weight: 600;
     margin-bottom: 10px;}
-.map_con .map{width: 100%; height: 200px;
-    margin-top: 10px;}
+.map_con .map{width: 100%; height: 260px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #dcdcdc;}
 .map_con .map_copy{font-size: 14px;
     line-height: 1.3;}
 .map_con .map_copy.store{font-weight: 600;
@@ -540,8 +542,9 @@ font-size: inherit;}
     transform: translate(-50%, -120%);
 }
 .bt_20{margin-bottom: 20px;}
-
-
+input,select{background-color: white;}
+.form_list{border-top: 2px solid #d1bb9e;
+    padding-top: 40px;}
 
 
 

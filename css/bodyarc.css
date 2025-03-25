@@ -289,7 +289,7 @@ footer{width: 100%;
     line-height: 1.2;}
 .gift_03 .title_box .gift_title em{color: #2f6cfd;
 font-size: inherit;}
-.gift_03 .gift_ref{    color: #747e8a;
+.gift_ref{    color: #747e8a;
     line-height: 1.2;
     font-size: 18px;}
 .agree_pop{position: fixed;
@@ -546,10 +546,21 @@ input,select{background-color: white;}
 .form_list{border-top: 2px solid #d1bb9e;
     padding-top: 40px;}
 
-
-
-
-
+.store_list{display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 40px;
+    margin-bottom: 20px;}
+.store_list .store{font-size: 16px;
+    border: 1px solid #9c836a;
+    color: #9c836a;
+    height: 30px;
+    align-items: center;
+    display: flex;
+    padding: 0 20px;
+    border-radius: 20px;}
+.store_list .store.act{color: white;
+    background-color: #9c836a;}
 
 
 
@@ -787,7 +798,7 @@ input,select{background-color: white;}
     .privacy_copy{line-height: 1.2;}
     .euro_icon_list{padding: 40px 0;}
     .gift_03 .title_box .gift_title{font-size: 18px;}
-    .gift_03 .gift_ref{font-size: 12px;}
+    .gift_ref{font-size: 12px;}
     .gift_03 .title_box{margin-bottom: 6px;}
     .agree_pop .inner{padding: 30px}
     .agree_pop .inner .agree_list .unit .tit_box .pop_tit{font-size: 12px;

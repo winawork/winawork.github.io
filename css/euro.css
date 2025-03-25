@@ -287,9 +287,10 @@ footer{width: 100%;
     line-height: 1.2;}
 .gift_03 .title_box .gift_title em{color: #2f6cfd;
 font-size: inherit;}
-.gift_03 .gift_ref{    color: #747e8a;
+.gift_ref{    color: #747e8a;
     line-height: 1.2;
     font-size: 18px;}
+.gift_02 .gift_ref{margin-top: 10px;}
 .agree_pop{position: fixed;
     top: 0;
     left: 50%;
@@ -485,6 +486,7 @@ font-size: inherit;}
     margin-top: 5px;
     word-break: keep-all;}
 
+input, select{background-color: white;}
 
 
 
@@ -564,7 +566,7 @@ font-size: inherit;}
     .privacy_copy{line-height: 1.2;}
     .euro_icon_list{padding: 40px 0;}
     .gift_03 .title_box .gift_title{font-size: 18px;}
-    .gift_03 .gift_ref{font-size: 12px;}
+    .gift_ref{font-size: 12px;}
     .gift_03 .title_box{margin-bottom: 6px;}
     .agree_pop .inner{padding: 30px}
     .agree_pop .inner .agree_list .unit .tit_box .pop_tit{font-size: 12px;

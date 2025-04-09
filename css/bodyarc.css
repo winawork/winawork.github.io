@@ -602,11 +602,10 @@ input,select{background-color: white;}
     text-align: center;
     font-size: 12px;}
 .mt10{margin-top: 10px;}
-
-
-
-
-
+.txt_l{text-align: left;}
+em{color:inherit;}
+em.point_color{color: #e65a1e;}
+.mt60{margin-top: 60px;}
 
 
 

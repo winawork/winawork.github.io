@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/landing.css">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/bodyarc.css">
+
+    <script src="/js/jquery-3.5.1.min.js"></script>
+    <script src="/js/bodyarc.js"></script>
+
+    <script>
+
+        $(function () {
+
+
+            $.initView = function () {
+
+            };
+            $.initView();
+
+        })
+ 
+
+
+    </script>
+
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=odw0psvj8n"></script>
+
+</head>
+<body>
+    
+
+
+    <div class="content">
+        <div class="land_con">
+            <div class="page">
+                <div>
+                    <div class="land_cont">
+                        <div class="in">
+                            <div class="main_vod">
+                                <video class="arc_video"
+                                    src="https://winawork.github.io/images/bodyarc/home_back.mp4"
+                                    poster="https://winawork.github.io/images/bodyarc/brand_01.jpg"
+                                    autoplay
+                                    muted
+                                    loop>
+                                </video>
+                                <div class="vod_back"></div>
+                                <div class="main_con sa sa-up">
+                                    <img class="logo" src="https://winawork.github.io/images/bodyarc_logo.png">
+                                    <div class="main_copy_con">
+                                        <img class="com_img main_tit" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_01.png"/>
+                                        <img class="com_img" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_02.png"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_03.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_04.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250409_bodyarc_01.jpg"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250409_bodyarc_02.gif"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250409_bodyarc_04.jpg"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250409_bodyarc_05.jpg"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_06.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_07.gif"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_08.gif"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_09.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_10.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_11.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_12.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250304_arc_15.png">
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250304_arc_16.png">
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250304_arc_17.png">
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250304_arc_18.png">
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250304_arc_19.png">
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250304_arc_20.png">
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_13.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_14.png"/>
+                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250304_arc_22.png">
+
+                            <!-- 네이버 지도, 지점 -->
+                            <div class="map_con">
+                                <p class="map_tit">지점 안내</p>
+                                <p class="map_copy fw600 store">바디아크SPA&DIET 제주점</p>
+                                <p class="map_copy">제주 제주시 한라대학로 15 4층</p>
+                                <div class="map" id="map"></div>
+                               
+                            </div>
+
+                            <!-- <div class="faq_con">
+                                <p class="faq_tit">자주 묻는 질문 (FAQ)</p>
+                                <div class="list">
+                                    <div class="unit">
+                                        <p class="faq_q"><em>Q.</em> 예약 후 일정 변경이 가능한가요?</p>
+                                        <div class="faq_a_con">
+                                            <p class="faq_a">네! 방문 하루 전까지 일정 변경이 가능합니다. 갑작스러운 일정 변경이 필요하시면 미리 연락 주세요.<br>당일 취소 및 노쇼 시 예약금 환불이 어려울 수 있습니다.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="unit">
+                                        <p class="faq_q"><em>Q.</em> 체험 프로그램은 어떻게 진행되나요?</p>
+                                        <div class="faq_a_con">
+                                            <p class="faq_a">✔ 체험 시간은 30분~90분이며, 프로그램에 따라 관리 시간이 다릅니다.<br>
+                                                ✔ 방문 시 1:1 맞춤 상담 후 진행되며, 고객님의 고민과 컨디션을 반영하여 최적의 케어를 제공합니다.
+                                                <br><br>
+                                                🕒 체험 시간 (관리 시간 기준)<br>
+                                                3만원 입문 바디 케어: 30분<br>
+                                                5만원 부분 컨투어링 케어: 40분<br>
+                                                11만원 바디 밸런스 케어: 90분 (앞면 or 후면 선택)</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="unit">
+                                        <p class="faq_q"><em>Q.</em> 첫 방문 체험 후 체험가 이외의 추가 비용이 발생하나요?</p>
+                                        <div class="faq_a_con">
+                                            <p class="faq_a">아니요! 첫 방문 체험은 별도의 추가 결제 없이 체험가만 결제하시고 진행하실 수 있습니다. 체험 후, 고객님께 맞는 관리 프로그램을 추천해드리며 오픈 기념 한정 할인 혜택도 제공됩니다.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="unit">
+                                        <p class="faq_q"><em>Q.</em> 프로그램 효과는 언제부터 나타나나요?</p>
+                                        <div class="faq_a_con">
+                                            <p class="faq_a">개인차는 있지만, 많은 고객님들이 1~3회 차 관리부터 눈에 띄는 변화를 경험하고 있습니다. 체형, 부종, 셀룰라이트 개선을 위해 정기적으로 케어받는 것이 가장 효과적입니다.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="unit">
+                                        <p class="faq_q"><em>Q.</em> 어떤 프로그램이 나에게 맞을까요?</p>
+                                        <div class="faq_a_con">
+                                            <p class="faq_a">처음 방문하시면 전문가 1:1 상담 후, 고객님께 최적화된 프로그램을 추천해드립니다. 오셔서 상담 후 결정하셔도 되세요 :)<br>
+                                                ✔ 혈액순환 & 부종 완화가 필요하다면 → 입문 바디 케어<br>
+                                                ✔ 다이어트 & 체형 교정이 필요하다면 → 바디 컨투어링 케어<br>
+                                                ✔ 전신 리셋 & 밸런스 조절이 필요하다면 → 바디 밸런스 케어</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="unit">
+                                        <p class="faq_q"><em>Q.</em> 예약금이 필요한가요?</p>
+                                        <div class="faq_a_con">
+                                            <p class="faq_a">🚨 노쇼 방지를 위해 예약금이 필요합니다. 방문 하루 전까지 일정 변경은 가능하지만, 당일 취소 및 노쇼 시 예약금 환불이 어려울 수 있습니다.<br>
+                                                <br>
+                                                💳 예약금 정책<br>
+                                                10,000~30,000원 예약금</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> -->
+
+                        </div>
+                
+                        <div class="float_con">
+                            <span class="float_btn img">
+                                <img class="com_img" src="https://winawork.github.io/images/bodyarc/250407_bodyarc_15.png"/>
+                            </span>
+                        </div>
+                
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        // 지도를 표시할 div의 id 설정
+        var x_val = 33.4797907780099;
+        var y_val = 126.473679958722;
+
+        var bodyarcJejuLatLng = new naver.maps.LatLng(x_val, y_val);
+
+        // 1️⃣ 네이버 지도 생성
+        var map = new naver.maps.Map('map', {
+            center: bodyarcJejuLatLng,
+            zoom: 18
+        });
+
+        // 2️⃣ 마커 생성
+        var marker = new naver.maps.Marker({
+            position: bodyarcJejuLatLng,
+            map: map,
+            title: "바디아크 제주점"
+        });
+
+        // 3️⃣ 커스텀 오버레이 요소 생성
+        var overlayElement = document.createElement("div");
+        overlayElement.className = "customOverlay";
+        overlayElement.innerHTML = `
+            🏢 <b>바디아크 제주점</b>
+        `;
+
+        // 4️⃣ HTML 요소를 지도 위에 표시 (위치 조정 포함)
+        var overlay = new naver.maps.OverlayView();
+        overlay.onAdd = function() {
+            var pane = this.getPanes().overlayLayer;
+            pane.appendChild(overlayElement);
+        };
+
+        overlay.draw = function() {
+            var projection = this.getProjection();
+            var position = projection.fromCoordToOffset(bodyarcJejuLatLng);
+            overlayElement.style.left = position.x + "px";
+            overlayElement.style.top = (position.y - 30) + "px"; // 🎯 말풍선 위치를 위로 이동
+        };
+
+        overlay.setMap(map); // 지도에 추가
+
+        // 5️⃣ 마커 클릭 시 오버레이 표시/숨김 토글
+        naver.maps.Event.addListener(marker, "click", function() {
+            if (overlay.getMap()) {
+                overlay.setMap(null);
+            } else {
+                overlay.setMap(map);
+            }
+        });
+
+    </script>
+
+    <footer>
+        <div class="foot_in">
+            <div class="foot_logo">
+                <img class="com_img" src="https://winawork.github.io/images/bodyarc_logo.png">
+            </div>
+            <div class="foot_copy_con">
+                <p class="copy">상호명 : 바디아크 SPA&DIET</p>
+                <p class="copy">사업자등록번호 : 104-86-33976</p>
+                <p class="copy">대표자 : 현준범</p>
+                <p class="copy">주소 : 제주특별자치도 제주시 한라대학로 15, 4층(노형동)</p>
+                <p class="copy right">Copyright ⓒ 바디아크 Co.,Ltd. All rights reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -594,8 +594,14 @@ input,select{background-color: white;}
     flex-direction: column;
     justify-content: center;}
 .main_vod .main_con .main_copy_con .main_tit{margin-bottom: 10%;}
-
-
+.arc_ref{color: #9c836a;
+    padding: 0 5%;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 12px;}
+.mt10{margin-top: 10px;}
 
 
 

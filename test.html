@@ -1,210 +1,170 @@
-
-	<!DOCTYPE html>
-	<html lang="en">
-
-	<head>
-		<title>WELSTORY</title>
-		<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/bodium.css">
-
-		<style>
-			.birth_con{position: relative;}
-		input[type='date']::-webkit-calendar-picker-indicator {
-		  position: absolute;
-		  left: 0;
-		  top: 0;
-		  width: 100%;
-		  height: 100%;
-		  background: transparent; 
-		  color: transparent;
-		  cursor: pointer;
-		}
-		input[type='date']::before {
-			content: attr(placeholder);
-			color: #787878;
-			width: 100%;
-			height: 100%;
-			vertical-align: middle;
-			align-items: center;
-			display: flex;
-		}
-		input[type='date']:valid::before {
-		  display: none;
-		}
-		.com_input{width: 100%;
-			padding: 0 10px; height: 40px;
-			border: 1px solid #dcdcdc;
-			outline: none;}
-		.form_con{max-width: 500px;}
-		input::placeholder {
-		  color: #787878;
-		}
-		.unit{}
-        
-        .back_test{width: 100%;
-    height: 300px;}
-        .back_test .test{background-image: url('https://cdn.imweb.me/thumbnail/20231203/c75005c224165.png');}
-		</style>
-
-
-	</head>
-
-	<body>
-        
-		<!-- 본문 -->
-
-        <div class="back_test">
-            <div class="test">
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .calculator {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            width: 320px;
+        }
+        .display {
+            background-color: #222;
+            color: #fff;
+            font-size: 48px;
+            text-align: right;
+            padding: 20px;
+            height: 60px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .btn {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            font-size: 24px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #f9f9f9;
+        }
+        .btn.operator {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .btn.equal {
+            background-color: #4285f4;
+            color: #fff;
+            grid-column: span 2;
+        }
+        .btn.zero {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn operator" onclick="clearDisplay()">C</button>
+            <button class="btn operator" onclick="deleteLast()">DEL</button>
+            <button class="btn operator" onclick="appendOperator('/')">/</button>
+            <button class="btn operator" onclick="appendOperator('*')">*</button>
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operator" onclick="appendOperator('-')">-</button>
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn operator" onclick="appendOperator('+')">+</button>
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn equal" onclick="calculate()">=</button>
+            <button class="btn zero" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendDecimal()">.</button>
         </div>
-<div class="content">
-
-
-
-    <div style="padding-top:100px">
-        <a href="#">
-            <span style="display:block; width: 100%; height: 120px;"></span>
-        </a>
     </div>
 
+    <script>
+        const display = document.getElementById('display');
+        let currentInput = '0';
+        let operator = null;
+        let firstOperand = null;
 
+        function updateDisplay() {
+            display.textContent = currentInput;
+        }
 
-    <p><span style="font-size: 16px; letter-spacing: -1px; color: rgb(120, 120, 120); background-color:#f5f5f5;">한국 최초 바디움 단독 프로그램으로 울산점 및 서초본점에 선도입하여 울산점 6월 10일, 서초본점 6월 26일 이후에 만나보실 수 있습니다.</span></p>
-    
-    <footer>
-        <div class="footer_in">
-            <div class="foot_logo">
-                <img class="com_img" src="/image/logo.png">
-            </div>
-            <div class="foot_copy_con">
-                <p class="copy">상호명 : 주식회사 바디움</p>
-                <p class="copy">대표자 : 조준우 | 개인정보보호책임자 : 정진아</p>
-                <p class="copy">이메일 : service@bodium.co.kr</p>
-                <p class="copy">평일 10~17시, 주말, 공휴일 휴무</p>
-                <p class="copy">사업자등록번호 : 198-88-03210</p>
-                <p class="copy">주소 : 서울시 서초동 1555-2 트러스트힐 8층</p>
-                <p class="copy right">Copyright ⓒ BODIUM Co.,Ltd. All rights reserved. </p>
-                </p>
-            </div>
-        </div>
-    </footer>
+        function appendNumber(number) {
+            if (currentInput === '0') {
+                currentInput = number;
+            } else {
+                currentInput += number;
+            }
+            updateDisplay();
+        }
 
-    <MARQUEE class="grand_open">그랜드 오픈 서초본점, 울산점</MARQUEE>
+        function appendOperator(op) {
+            if (operator !== null) {
+                calculate();
+            }
+            firstOperand = parseFloat(currentInput);
+            operator = op;
+            currentInput = '0';
+        }
 
-    <!-- 페이지 -->
-     <div class="land_con">
-        <div class="in">
+        function appendDecimal() {
+            if (!currentInput.includes('.')) {
+                currentInput += '.';
+                updateDisplay();
+            }
+        }
 
-        </div>
-     </div>
+        function clearDisplay() {
+            currentInput = '0';
+            operator = null;
+            firstOperand = null;
+            updateDisplay();
+        }
 
-     <div class="form_con">
-        <!-- 입력폼 항목 -->
-        <div class="list">
-            
-            <!-- 이름 -->
-            <div class="unit">
-                <!-- required, 필수 여부에 따라 표기 -->
-                <p class="tit">이름<i class="required"></i></p>
-                <div class="items">
-                    <input class="com_input" type="text" placeholder="이름이요">
-                </div>
-            </div>
+        function deleteLast() {
+            currentInput = currentInput.slice(0, -1);
+            if (currentInput === '') {
+                currentInput = '0';
+            }
+            updateDisplay();
+        }
 
-             <!-- 연락처 -->
-             <div class="unit">
-                <p class="tit">연락처</p>
-                <div class="items">
-                    <input class="com_input" type="number">
-                </div>
-            </div>
+        function calculate() {
+            if (operator === null || firstOperand === null) {
+                return;
+            }
 
-            <!-- 셀렉트 -->
-            <div class="unit">
-                <p class="tit">상담희망지점</p>
-                <div class="items">
-                    <select class="com_select">
-                        <option value="place001">인천점</option>
-                        <option value="place002">잠실점</option>
-                    </select>
-                </div>
-            </div>
+            const secondOperand = parseFloat(currentInput);
+            let result = 0;
 
-            <!-- 셀렉트 -->
-            <div class="unit">
-                <p class="tit">체험유형</p>
-                <div class="items">
-                    <select class="com_select">
-                        <option value="exp001">무료 0원</option>
-                        <option value="exp002">퀵머슬 3만원</option>
-                    </select>
-                </div>
-            </div>
+            switch (operator) {
+                case '+':
+                    result = firstOperand + secondOperand;
+                    break;
+                case '-':
+                    result = firstOperand - secondOperand;
+                    break;
+                case '*':
+                    result = firstOperand * secondOperand;
+                    break;
+                case '/':
+                    if (secondOperand === 0) {
+                        alert("Can't divide by zero");
+                        clearDisplay();
+                        return;
+                    }
+                    result = firstOperand / secondOperand;
+                    break;
+            }
 
-            <!-- 생년월일 -->
-            <div class="unit">
-                <p class="tit">생년월일</p>
-                <div class="items">
-                    <div class="birth_con">
-                        <input class="com_input birth_input" type="date" placeholder="생년월일" required>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 라디오,체크 -->
-            <div class="unit">
-                <p class="tit">체크</p>
-                <div class="items">
-                    <div class="birth_con">
-                       <div class="item">
-                            <label>
-                                <input class="chk_input" type="radio">
-                                <span class="chk_icon">
-                                    <span class="core"></span>
-                                </span>
-                                <span class="chk_copy">체크1</span>
-                            </label>
-                       </div>
-                       <div class="item">
-                            <label>
-                                <input class="chk_input" type="radio">
-                                <span class="chk_icon">
-                                    <span class="core"></span>
-                                </span>
-                                <span class="chk_copy">체크2</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
-        <div class="agree_con">
-            <div class="in">
-                약관
-            </div>
-            <label>
-                <input class="chk_input" type="checkbox">
-                <span class="chk_icon">
-                    <span class="core"></span>
-                </span>
-                <span class="chk_copy">개인정보수집동의</span>
-            </label>
-        </div>
-
-        <div class="btn_con">
-            <button class="land_btn">신청하기</button>
-        </div>
-
-     </div>
-
-
-</div>
-
-	</body>
-
-	</html>
+            currentInput = result.toString();
+            operator = null;
+            firstOperand = null;
+            updateDisplay();
+        }
+    </script>
+</body>
+</html>

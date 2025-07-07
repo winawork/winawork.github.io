@@ -42,7 +42,7 @@ $(function () {
 	$.float_btn = function(){
 		$('.float_btn').on('click',function(){
 			const win_h = window.innerHeight;
-			const idx_01 = $('.form_box');
+			const idx_01 = $('.form');
 			const land_h = $(idx_01).offset().top;
 
 			const form_move = land_h-100;

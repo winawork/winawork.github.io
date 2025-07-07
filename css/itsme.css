@@ -251,8 +251,11 @@ em{font-size: inherit;}
     height: 100%;
     background-color: #505050;}
 .review_list{margin-top: 60px;}
+
+/* footer 복사 */
+.scs_logo{width: 200px;}
 footer{width: 100%;
-    background-color: #f2efeb;
+    background-color: #f5f5f5;
     padding: 0 5%;
     box-sizing: border-box;}
     footer .foot_in{    max-width: 1280px;
@@ -264,7 +267,7 @@ footer{width: 100%;
     padding: 30px 0;}
     footer .foot_in .foot_logo{width: 130px;
     margin-bottom: 20px;
-    margin-right: 0px;}
+    margin-right: 0px !important;}
     footer .foot_in .foot_copy_con{text-align: center;}
     footer .foot_in .foot_copy_con .copy{font-size: 14px;
     font-weight: 400;
@@ -272,6 +275,7 @@ footer{width: 100%;
     margin: 0;
     color: #787878;}
     footer .foot_in .foot_copy_con .copy.right{margin-top: 20px;}
+
 .news_img{
     overflow: hidden;
     margin: 0 auto;}
@@ -507,9 +511,9 @@ font-size: inherit;}
     box-sizing: border-box;
     width: 100%;}
 
-.chk_label .chk_box:checked+.chk_span{border-color: #9c836a;}
-.chk_label .chk_span .chk_act{background-color: #9c836a;}
-.form_btn{background-color: #9c836a;}
+.chk_label .chk_box:checked+.chk_span{border-color: #00c8b4;}
+.chk_label .chk_span .chk_act{background-color: #00c8b4;}
+.form_btn{background-color: #00c8b4;}
 
 .map_con{width: 100%; padding: 0 5%;
     margin-top: 40px;
@@ -543,7 +547,7 @@ font-size: inherit;}
 }
 .bt_20{margin-bottom: 20px;}
 input,select{background-color: white;}
-.form_list{border-top: 2px solid #d1bb9e;
+.form_list{border-top: 2px solid #00c8b4;
     padding-top: 40px;}
 
 .store_list{display: flex;

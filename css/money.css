@@ -98,7 +98,7 @@ em{font-size: inherit;}
     0% {background-position: 0%;}
     100% {background-position: 400%;}
 }
-main{margin-bottom: 120px;}
+.inside{margin-bottom: 80px;}
 .com_img{width: 100%;}
 .cont_btn_con{display: flex;
     align-items: center;

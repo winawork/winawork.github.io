@@ -5,82 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-        }
-        .calculator {
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-            width: 320px;
-        }
-        .display {
-            background-color: #222;
-            color: #fff;
-            font-size: 48px;
-            text-align: right;
-            padding: 20px;
-            height: 60px;
-        }
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-        .btn {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            font-size: 24px;
-            padding: 20px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .btn:hover {
-            background-color: #f9f9f9;
-        }
-        .btn.operator {
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        .btn.equal {
-            background-color: #4285f4;
-            color: #fff;
-            grid-column: span 2;
-        }
-        .btn.zero {
-            grid-column: span 2;
-        }
+        body{display: flex; flex-direction: column;}
+        .dib{}
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <div class="display" id="display">0</div>
-        <div class="buttons">
-            <button class="btn operator" onclick="clearDisplay()">C</button>
-            <button class="btn operator" onclick="deleteLast()">DEL</button>
-            <button class="btn operator" onclick="appendOperator('/')">/</button>
-            <button class="btn operator" onclick="appendOperator('*')">*</button>
-            <button class="btn" onclick="appendNumber('7')">7</button>
-            <button class="btn" onclick="appendNumber('8')">8</button>
-            <button class="btn" onclick="appendNumber('9')">9</button>
-            <button class="btn operator" onclick="appendOperator('-')">-</button>
-            <button class="btn" onclick="appendNumber('4')">4</button>
-            <button class="btn" onclick="appendNumber('5')">5</button>
-            <button class="btn" onclick="appendNumber('6')">6</button>
-            <button class="btn operator" onclick="appendOperator('+')">+</button>
-            <button class="btn" onclick="appendNumber('1')">1</button>
-            <button class="btn" onclick="appendNumber('2')">2</button>
-            <button class="btn" onclick="appendNumber('3')">3</button>
-            <button class="btn equal" onclick="calculate()">=</button>
-            <button class="btn zero" onclick="appendNumber('0')">0</button>
-            <button class="btn" onclick="appendDecimal()">.</button>
-        </div>
-    </div>
+
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/7ae618a92adfe.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/eed83c59671ad.png" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/f1809bf9a7583.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/b9a22e7032fdd.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/78702bf66bddc.png" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/1fb2e7cf27ab7.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/f78fb83c0633a.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/a7ac467529af4.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/1a19042656731.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/f85a56579eba5.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/dfba0d0cd6f21.png" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/76c1fbb46a5fa.png" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/a3670611c7050.gif" style="margin:0 auto;padding:0; margin-top:-1px;">
+<img class="fr-dib" src="https://cdn.imweb.me/upload/S20250703ab1ae6f518cf1/b4e6fb0f3072f.png" style="margin:0 auto;padding:0; margin-top:-1px;">
+
 
     <script>
         const display = document.getElementById('display');

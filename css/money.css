@@ -92,13 +92,14 @@ em{font-size: inherit;}
 .limit_con .tit em{color: #55e280;
     font-weight: 900;
     font-size: 44px;}
+    .foot-custom *{line-height: 1.4;}
 
 
 @keyframes huerotator {
     0% {background-position: 0%;}
     100% {background-position: 400%;}
 }
-.doz_sys .inside{margin-bottom: 80px;}
+#w2025071785bb4a5c015bd{margin-bottom: 80px;}
 .com_img{width: 100%;}
 .cont_btn_con{display: flex;
     align-items: center;
@@ -244,6 +245,10 @@ em{font-size: inherit;}
 
 
 .review_list{margin-top: 60px;}
+
+
+
+
 
 /* footer 복사 */
 .scs_logo{width: 200px;}
@@ -433,14 +438,14 @@ font-size: inherit;}
     margin: 0 auto;
     margin-bottom: 30px;}
 .scs_tit{font-size: 24px;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 10px;}
 .scs_copy{text-align: center;
     line-height: 1.4;
     font-size: 16px;
-    font-weight: 300;
-    color: #969696;}
+    font-weight: 400;
+    color: #787878;}
 .scs_copy.mt10{margin-top: 10px;}
 .scs_btn_con{    margin-top: 40px;
     display: flex;
@@ -462,6 +467,7 @@ font-size: inherit;}
     max-width: 180px;
     border-radius: 100px;
     margin: 0 auto;}
+
 .line_remove{display: flex;
     overflow: hidden;}
 .line_remove img{margin-bottom: -1px;

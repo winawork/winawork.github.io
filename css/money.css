@@ -426,7 +426,9 @@ font-size: inherit;}
     padding-bottom: 120px;}
 .refund_copy{line-height: 1.4;
     font-size: 14px;}
-
+.intro_flex_con{display: flex;
+    flex-direction: column;}
+.intro_flex_con img{margin-top: -1px;}
 
 
 /* success */

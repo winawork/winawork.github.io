@@ -420,7 +420,12 @@ font-size: inherit;}
     text-align: center;}
 .form_reco em{color: #747e8a;
     font-weight: 600;}
-
+.refund_con{max-width: 840px;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding-bottom: 120px;}
+.refund_copy{line-height: 1.4;
+    font-size: 14px;}
 
 
 

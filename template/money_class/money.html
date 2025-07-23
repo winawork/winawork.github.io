@@ -1,110 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="/css/landing.css">
-    <link rel="stylesheet" href="/css/slick.css">
-    <link rel="stylesheet" href="/css/itsme.css">
+    <link rel="stylesheet" href="/css/landing.css" />
+    <link rel="stylesheet" href="/css/slick.css" />
+    <link rel="stylesheet" href="/css/itsme.css" />
 
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/euro.js"></script>
 
     <script>
+      $(function () {
+        $.get_html = function () {
+          $(".header").load("list.html #1 .unit:nth-child(1n+2)");
+        };
 
-        $(function () {
-
-            $.get_html = function(){
-                $('.header').load('list.html #1 .unit:nth-child(1n+2)');
-            }
-
-
-            $.initView = function () {
-                $.get_html();
-            };
-            $.initView();
-
-        })
- 
-
+        $.initView = function () {
+          $.get_html();
+        };
+        $.initView();
+      });
     </script>
-
-</head>
-<body>
-    
-
-
-
+  </head>
+  <body>
     <div class="content">
-        <div class="land_con">
-            <div class="page">
-                <div>
+      <div class="land_con">
+        <div class="page">
+          <div>
+            <div class="land_cont">
+              <div class="in">
+                <img
+                  class="com_img"
+                  src="https://winawork.github.io/images/250714_01.png"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_02.png"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_03.gif"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_04.gif"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_05_1.gif"
+                />
+                <!-- <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_05_2.gif">                             -->
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_06.gif"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_07.gif"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_08.gif"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_09.gif"
+                />
+                <!-- <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_10.gif"
+                /> -->
 
-                    
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/money_250723_01.png"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/money_250723_02.png"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/money_250723_03.png"
+                />
 
-                    <div class="land_cont">
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/money_bt_250721_11.gif"
+                />
+                <!-- <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/money_new_250721_01.png"
+                /> -->
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/money_250723_04.png"
+                />
 
-                        <div class="in">
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_11.png"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_11-2.gif"
+                />
+                <!-- <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_12.gif"
+                /> -->
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/money_250723_05.png"
+                />
 
-                            <img class="com_img" src="https://winawork.github.io/images/250714_01.png">                            
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_02.png">                            
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_03.gif">                            
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_04.gif">                            
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_05_1.gif">                            
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_05_2.gif">                            
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_06.gif">                            
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_07.gif">      
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_08.gif">      
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_09.gif">      
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_10.gif">   
-                            
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/money_bt_250721_11.gif">
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/money_new_250721_01.png">   
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_13.png"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_14.gif"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_15.png"
+                />
+                <img
+                  class="com_img sa sa-up"
+                  src="https://winawork.github.io/images/250714_16.png"
+                />
+                <div class="form_bottom"></div>
+              </div>
 
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_11.png">    
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_11-2.gif">    
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_12.gif">      
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_13.png">      
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_14.gif">   
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_15.png">    
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/250714_16.png">   
-                            <div class="form_bottom"></div>
-                        
-
-                        </div>
-                
-                        <div class="float_con">
-                            <span class="float_btn img">
-                                <img class="com_img" src="https://winawork.github.io/images/250714_17.gif"> 
-                            </span>
-                        </div>
-                
-                    </div>
-
-
-                </div>
+              <div class="float_con">
+                <span class="float_btn img">
+                  <img
+                    class="com_img"
+                    src="https://winawork.github.io/images/250714_17.gif"
+                  />
+                </span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-
     <footer>
-        <div class="foot_in">
-            <!-- <div class="foot_logo">
+      <div class="foot_in">
+        <!-- <div class="foot_logo">
                 <img class="com_img" src="https://winawork.github.io/images/footer_logo.png">
             </div> -->
-            <div class="foot_copy_con">
-                <p class="copy">상호명 : (주)유로프랜드</p>
-                <p class="copy">사업자등록번호 : 134-88-00204</p>
-                <p class="copy">대표자 : 장성언                </p>
-                <p class="copy">이메일 : eurojsu@naver.com</p>
-                <p class="copy">주소 : 서울시 도봉구 노해로 389 제일빌딩 701호</p>
-                <p class="copy right">Copyright ⓒ (주)유로프랜드 Co.,Ltd. All rights reserved. </p>
-            </div>
+        <div class="foot_copy_con">
+          <p class="copy">상호명 : (주)유로프랜드</p>
+          <p class="copy">사업자등록번호 : 134-88-00204</p>
+          <p class="copy">대표자 : 장성언</p>
+          <p class="copy">이메일 : eurojsu@naver.com</p>
+          <p class="copy">주소 : 서울시 도봉구 노해로 389 제일빌딩 701호</p>
+          <p class="copy right">
+            Copyright ⓒ (주)유로프랜드 Co.,Ltd. All rights reserved.
+          </p>
         </div>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

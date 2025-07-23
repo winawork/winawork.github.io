@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자 카운트 애니메이션</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 50px;
+        background-color: #f5f5f5;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .counter-container {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .digit-box {
+        background-color: #e0e0e0;
+        border-radius: 8px;
+        width: 60px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: #333;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .digit {
+        transition: all 0.1s ease-in-out;
+      }
+
+      .comma {
+        font-size: 36px;
+        color: #666;
+        margin: 0 4px;
+      }
+
+      @media (max-width: 768px) {
+        .digit-box {
+          width: 45px;
+          height: 60px;
+          font-size: 36px;
+        }
+
+        .comma {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <div class="counter-container">
+        <div class="digit-box">
+          <span class="digit" id="digit-0">0</span>
+        </div>
+        <div class="digit-box">
+          <span class="digit" id="digit-1">0</span>
+        </div>
+        <div class="digit-box">
+          <span class="digit" id="digit-2">0</span>
+        </div>
+        <div class="comma">,</div>
+        <div class="digit-box">
+          <span class="digit" id="digit-3">0</span>
+        </div>
+        <div class="digit-box">
+          <span class="digit" id="digit-4">0</span>
+        </div>
+        <div class="digit-box">
+          <span class="digit" id="digit-5">0</span>
+        </div>
+        <div class="comma">,</div>
+        <div class="digit-box">
+          <span class="digit" id="digit-6">0</span>
+        </div>
+        <div class="digit-box">
+          <span class="digit" id="digit-7">0</span>
+        </div>
+        <div class="digit-box">
+          <span class="digit" id="digit-8">0</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const finalNumber = "10000000"; // 최종 표시할 숫자
+      const animationDuration = 3000; // 3초 랜덤 카운트
+      const finalDisplayDuration = 3000; // 최종 숫자 표시 3초
+      const totalCycleDuration = animationDuration + finalDisplayDuration; // 총 6초
+
+      function startCountAnimation() {
+        const digits = document.querySelectorAll(".digit");
+        const intervals = [];
+
+        // 랜덤 카운트 시작 전 모든 숫자를 검정색으로 초기화
+        digits.forEach((digit) => {
+          digit.style.color = "#333";
+          digit.style.opacity = "1";
+        });
+
+        // 3초 동안 랜덤 숫자 카운트 (회전 효과 없이, 모든 자릿수 검정색)
+        digits.forEach((digit, index) => {
+          const interval = setInterval(() => {
+            const randomNum = Math.floor(Math.random() * 10);
+            digit.textContent = randomNum;
+            digit.style.color = "#333"; // 랜덤 카운트 중에는 모두 검정색
+            digit.style.opacity = "1";
+          }, 80 + index * 5); // 각 자릿수마다 약간씩 다른 속도
+
+          intervals.push(interval);
+        });
+
+        // 3초 후 최종 숫자로 변경
+        setTimeout(() => {
+          // 모든 랜덤 카운트 중지
+          intervals.forEach((interval) => clearInterval(interval));
+
+          // 9자리에서 실제 숫자 위치 계산
+          const paddedNumber = finalNumber.padStart(9, "0"); // "010000000"
+
+          digits.forEach((digit, index) => {
+            setTimeout(() => {
+              const digitValue = paddedNumber[index];
+
+              // 앞자리 0은 흐리게 표시
+              if (index < 9 - finalNumber.length) {
+                digit.textContent = "0";
+                digit.style.opacity = "0.3";
+                digit.style.color = "#999";
+              } else {
+                digit.textContent = digitValue;
+                digit.style.opacity = "1";
+
+                // 실제 숫자 부분만 강조 효과
+                digit.style.color = "#007bff";
+                setTimeout(() => {
+                  digit.style.color = "#333";
+                }, 300);
+              }
+            }, index * 50); // 각 자릿수마다 0.05초씩 지연
+          });
+        }, animationDuration);
+      }
+
+      // 페이지 로드 시 즉시 시작하고 자동 반복
+      window.addEventListener("load", () => {
+        startCountAnimation();
+
+        // 6초마다 반복 실행
+        setInterval(startCountAnimation, totalCycleDuration);
+      });
+    </script>
+  </body>
+</html>

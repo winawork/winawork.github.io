@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="/css/money.css">
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="/css/money.css" />
 
     <script src="/js/jquery-3.5.1.min.js"></script>
     <script src="/js/euro.js"></script>
 
     <script>
+      $(function () {
+        $.get_html = function () {
+          $(".header").load("list.html #1 .unit:nth-child(1n+2)");
+        };
 
-        $(function () {
-
-            $.get_html = function(){
-                $('.header').load('list.html #1 .unit:nth-child(1n+2)');
-            }
-
-
-            $.initView = function () {
-                $.get_html();
-            };
-            $.initView();
-
-        })
- 
-
+        $.initView = function () {
+          $.get_html();
+        };
+        $.initView();
+      });
     </script>
-
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="content">
-        <div class="land_con">
-            <div class="success_con">
-                <div class="success_in">
-                    <p class="scs_tit">머니클래스 신청이<br>완료되었습니다.</p>
-                    <p class="scs_copy">참여 신청에 감사드리며,<br>입금 확인 후 좌석이 최종 확정됩니다.<br>
-                        머니클래스에서 뵐 수 있기를 기대하겠습니다.</p>
-                </div>
+      <div class="land_con">
+        <div class="success_con">
+          <div class="success_in">
+            <p class="scs_tit">머니클래스 신청이<br />완료되었습니다.</p>
+            <p class="scs_copy">
+              단, 좌석이 한정되어 있어<br />예약금 입금 확인 시 최종 확정됩니다
+              :)<br />
+            </p>
+            <div class="cost_info">
+              <p class="scs_copy txt_l">입금계좌 : 국민은행 646801-01-543769</p>
+              <p class="scs_copy txt_l">예금주: 지에이치아크 주식회사</p>
+              <p class="scs_copy txt_l">입금액 : 10,000원</p>
             </div>
+
+            <!-- <p class="scs_copy mt10">
+              머니클래스에서 뵐 수 있기를 기대하겠습니다.
+            </p> -->
+          </div>
         </div>
+      </div>
     </div>
 
     <footer>
-        <div class="foot_in">
-            <!-- <div class="foot_logo">
+      <div class="foot_in">
+        <!-- <div class="foot_logo">
                 <img class="com_img" src="https://winawork.github.io/images/footer_logo.png">
             </div> -->
-            <div class="foot_copy_con">
-                <p class="copy">상호명 : (주)유로프랜드</p>
-                <p class="copy">사업자등록번호 : 134-88-00204</p>
-                <p class="copy">대표자 : 장성언                </p>
-                <p class="copy">이메일 : eurojsu@naver.com</p>
-                <p class="copy">주소 : 서울시 도봉구 노해로 389 제일빌딩 701호</p>
-                <p class="copy right">Copyright ⓒ (주)유로프랜드 Co.,Ltd. All rights reserved. </p>
-            </div>
+        <div class="foot_copy_con">
+          <p class="copy">상호명 : (주)유로프랜드</p>
+          <p class="copy">사업자등록번호 : 134-88-00204</p>
+          <p class="copy">대표자 : 장성언</p>
+          <p class="copy">이메일 : eurojsu@naver.com</p>
+          <p class="copy">주소 : 서울시 도봉구 노해로 389 제일빌딩 701호</p>
+          <p class="copy right">
+            Copyright ⓒ (주)유로프랜드 Co.,Ltd. All rights reserved.
+          </p>
         </div>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

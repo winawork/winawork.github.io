@@ -52,11 +52,16 @@ $(function () {
 		})
 	}
 
-
+	$.mediaSet = function(){
+		const urlParams = new URLSearchParams(window.location.search);
+		const mediaPath = urlParams.get('mediaPath');
+		$('#input_txt_1i18P1563x').val(mediaPath);
+	}
 	
 
 	$.initView = function () {
 		$.float_btn();
+		$.mediaSet();
 
 	};
 	$.initView();

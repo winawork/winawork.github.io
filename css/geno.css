@@ -60,6 +60,9 @@ html, body{height: 100%;}
 *{line-height: 1;}
 p{margin: 0px;}
 em{font-size: inherit;}
+.review_slide{width: 100%;}
+.slide_unit{}
+.geno_slide{}
 
 .back_con{display: flex;
     flex-wrap: wrap;}

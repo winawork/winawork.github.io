@@ -12,8 +12,6 @@ $(function () {
         const land_h = $(idx_01).height();
         const h_01 = idx_01.innerHeight();
 
-		console.log(scr_top);
-
 		if(land_h<scr_top+win_h){
             $('.float_con').hide();
         }else{

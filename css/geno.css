@@ -1,4 +1,60 @@
 
+.sa {
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.dy1 {
+     transition-delay: .1s;
+}
+
+.dy2 {
+     transition-delay: .2s;
+}
+
+.dy3 {
+     transition-delay: .3s;
+}
+.dy4 {
+    transition-delay: .4s;
+}
+.dy5 {
+    transition-delay: .5s;
+}
+.dy6 {
+    transition-delay: .6s;
+}
+.sa-up {
+    transform: translate(0, 100px);
+  }
+.sa-down {
+    transform: translate(100px, 100px);
+    transform: scale(1.4);
+  }
+.sa-scale {
+    transform: scale(1.4);
+}
+
+.sa-ro-sc{
+    transform: scale(1.4);
+    transform: perspective();
+}
+
+.sa-flip{
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.sa.show {
+        opacity: 1;
+        transform: none;
+      }
+
+
+
+
+
 html{font-size: 16px;}
 html, body{height: 100%;}
 *{line-height: 1;}
@@ -20,10 +76,13 @@ em{font-size: inherit;}
     border-radius: 20px;
     overflow: hidden;}
 
-._input_form_submit{   background-color: #12691e !important;
+._input_form_submit{    background-color: #312816 !important;
     font-size: 20px !important;
-    padding: 15px 45px !important;
-    border-radius: 100px !important;}
+    padding: 10px 45px !important;
+    border-radius: 100px !important;
+    color: #c8b497 !important;
+    width: 240px;
+    margin-top: 20px;}
 .form_bottom{padding-bottom: 120px;}
 
 .land_cont{width: 100%;
@@ -257,14 +316,6 @@ em{font-size: inherit;}
 .simul_box .simul_rs .rs_unit .rs_con.blue{color: #2f6cfd;}
 .simul_money{margin-top: 40px;}
 
-.line{display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    margin: 30px 0;}
-.line .line_in{width: 1px;
-    height: 100%;
-    background-color: #505050;}
 .review_list{margin-top: 60px;}
 
 /* footer 복사 */
@@ -483,10 +534,6 @@ font-size: inherit;}
     max-width: 180px;
     border-radius: 100px;
     margin: 0 auto;}
-.line_remove{display: flex;
-    overflow: hidden;}
-.line_remove img{margin-bottom: -1px;
-    margin-left: 1px;}
 
 
 .faq_con{width: 100%;
@@ -837,8 +884,6 @@ em.point_color{color: #e65a1e;}
     .simul_box .simul_rs .rs_unit .rs_title .rs_dot{min-width: 4px;
         min-height: 4px;
         margin-right: 8px;}
-    .line{height: 80px;
-        margin: 20px 0;}
     .review_list{margin-top: 30px;}
     .form_bottom{padding-bottom: 60px;}
     footer .foot_in{flex-wrap: wrap;}

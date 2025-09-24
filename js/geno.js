@@ -5,12 +5,14 @@ $(function () {
 	$.scrollEvent = function(){
 		var saTriggerMargin = 200;
         var saElementList = $('.sa');
-		const scr_top = $(window).scrollTop();
+		const scr_top = $('html,body').scrollTop();
 		const win_h = window.innerHeight;
 
-		const idx_01 = $('.page');
+		const idx_01 = $('.land_cont');
         const land_h = $(idx_01).height();
         const h_01 = idx_01.innerHeight();
+
+		console.log(scr_top);
 
 		if(land_h<scr_top+win_h){
             $('.float_con').hide();
@@ -30,7 +32,6 @@ $(function () {
             }
         })
 
-
 	}
 	$.scrollEvent();
 
@@ -42,10 +43,11 @@ $(function () {
 	$.float_btn = function(){
 		$('.float_btn').on('click',function(){
 			const win_h = window.innerHeight;
-			const idx_01 = $('.form');
-			const land_h = $(idx_01).offset().top;
+			const idx_01 = $('.land_cont');
+			const land_h = $(idx_01).height();
 
-			const form_move = land_h-100;
+			const form_move = land_h;
+			console.log('form_move='+form_move)
 
 			$('body, html').animate({scrollTop : form_move}, 400);
 

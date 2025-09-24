@@ -52,11 +52,24 @@ $(function () {
 		})
 	}
 
+	// for meta
+	$.utm_set_meta = function(){
+		const urlParams = new URL(location.href).searchParams;
+		const mediaName = urlParams.get('media');
+		const landId = urlParams.get('land_id');
 
+		console.log('mediaName ='+mediaName+', landId = '+landId);
+
+		// 매체
+		$('#input_txt_05gTv4E4U8').val(mediaName);
+		// 랜딩
+		$('#input_txt_nNM51c74I6').val(landId);
+	}
 	
 
 	$.initView = function () {
 		$.float_btn();
+		$.utm_set_meta();
 
 	};
 	$.initView();

@@ -3,9 +3,12 @@
 
 
 
+.land_cont .in .com_img{margin: 0px;
+    max-width: initial;}
+.land_cont .in{margin-inline:initial}
 
-
-
+.shop-content.shop-style-b .goods_form{padding: 0px;}
+.goods_form .categorize-mobile .mobile_media_no_space *:where(:has(> img), :has(> .fr-video > iframe), :not(.fr-video):has(> iframe)){margin-inline: initial !important;}
 
 
 

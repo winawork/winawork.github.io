@@ -8,7 +8,7 @@ $(function () {
 		const scr_top = $('html,body').scrollTop();
 		const win_h = window.innerHeight;
 
-		const idx_01 = $('.land_cont');
+		const idx_01 = $('.float_guide');
         const land_h = $(idx_01).height();
         const h_01 = idx_01.innerHeight();
 
@@ -41,10 +41,13 @@ $(function () {
 	$.float_btn = function(){
 		$('.float_btn').on('click',function(){
 			const win_h = window.innerHeight;
-			const idx_01 = $('.land_cont');
-			const land_h = $(idx_01).height();
+			const idx_01 = $('.float_guide');
+			const land_h_01 = $(idx_01).height();
 
-			const form_move = land_h;
+			const idx_02 = $('.float_spare');
+			const land_h_02 = $(idx_02).height();
+
+			const form_move = land_h_01+land_h_02;
 			console.log('form_move='+form_move)
 
 			$('body, html').animate({scrollTop : form_move}, 400);

@@ -691,8 +691,12 @@ em.point_color{color: #e65a1e;}
 .mt60{margin-top: 60px;}
 .mt80{margin-top: 80px;}
 
-
-
+/* 
+.popup-banner-wrap{position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;} */
 
 
 

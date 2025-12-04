@@ -725,7 +725,12 @@ em.point_color{color: #e65a1e;}
   transform: rotateY(180deg);}
 
 .sa2{opacity: 1;}
-
+.map_con{width: 100%;
+    padding: 0 4%;
+    margin-top: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 10px;}
 
 
 

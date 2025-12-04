@@ -24,8 +24,11 @@ $(function () {
                 if($(item).data('type') == 'main'){
                     margin = 0;
                 }
-                if(window.innerHeight > item.getBoundingClientRect().top+margin){
+				if(window.innerHeight > item.getBoundingClientRect().top+margin){
                     $(item).addClass('show');
+					if($(item).data('type') == 'turn'){
+						$(item).addClass('turn'); 
+					}
                 }
             }
         })

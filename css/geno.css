@@ -75,7 +75,8 @@ p{margin: 0px;}
 em{font-size: inherit;}
 .slide_box{width: 100%; padding: 0 30px; box-sizing: border-box;}
 .review_slide{width: 100%;}
-.slide_unit{}
+.slide_unit{padding: 0 2px;
+    box-sizing: border-box;}
 .geno_slide{}
 
 .back_con{display: flex;

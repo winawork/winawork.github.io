@@ -26,9 +26,9 @@ $(function () {
                 }
 				if(window.innerHeight > item.getBoundingClientRect().top+margin){
                     $(item).addClass('show');
-					if($(item).data('type') == 'turn'){
-						$(item).addClass('turn'); 
-					}
+					// if($(item).data('type') == 'turn'){
+					// 	$(item).addClass('turn'); 
+					// }
                 }
             }
         })
@@ -71,11 +71,18 @@ $(function () {
 		// 랜딩
 		$('#input_txt_nNM51c74I6').val(landId);
 	}
+
+	$.card_unit = function(){
+		$('.card_unit').on('click',function(){
+			$(this).addClass('turn');
+		})
+	}
 	
 
 	$.initView = function () {
 		$.float_btn();
 		$.utm_set_meta();
+		$.card_unit();
 
 	};
 	$.initView();

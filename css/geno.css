@@ -699,7 +699,8 @@ em.point_color{color: #e65a1e;}
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 3;} */
 
-.grp{}
+.grp{display: flex;
+    flex-wrap: wrap;}
 .grp.card{padding: 0 5%;
     box-sizing: border-box;
     display: grid;

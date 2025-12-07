@@ -8,7 +8,7 @@ $(function () {
 		const scr_top = $('html,body').scrollTop();
 		const win_h = window.innerHeight;
 
-		const idx_01 = $('.float_guide');
+		const idx_01 = $('.land_cont');
         const land_h = $(idx_01).height();
         const h_01 = idx_01.innerHeight();
 

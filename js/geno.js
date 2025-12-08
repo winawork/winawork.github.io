@@ -44,13 +44,10 @@ $(function () {
 	$.float_btn = function(){
 		$('.float_btn').on('click',function(){
 			const win_h = window.innerHeight;
-			const idx_01 = $('.float_guide');
-			const land_h_01 = $(idx_01).height();
+			const idx_01 = $('.land_cont');
+			const land_h = $(idx_01).height();
 
-			const idx_02 = $('.float_spare');
-			const land_h_02 = $(idx_02).height();
-
-			const form_move = land_h_01+land_h_02;
+			const form_move = land_h;
 			console.log('form_move='+form_move)
 
 			$('body, html').animate({scrollTop : form_move}, 400);
@@ -72,17 +69,11 @@ $(function () {
 		$('#input_txt_nNM51c74I6').val(landId);
 	}
 
-	$.card_unit = function(){
-		$('.card_unit').on('click',function(){
-			$(this).addClass('turn');
-		})
-	}
 	
 
 	$.initView = function () {
 		$.float_btn();
 		$.utm_set_meta();
-		$.card_unit();
 
 	};
 	$.initView();

@@ -750,7 +750,17 @@ em.point_color{color: #e65a1e;}
   height:100%;}
 
 
-
+.faq{background-color: rgba(242, 239, 235, 0.6);
+    padding: 20px;
+    margin: 0 10px;}
+.faq_tit{font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px;}
+.faq .faq_list{}
+.faq .faq_list .unit{margin-top: 15px;}
+.faq .faq_list .unit .faq_copy{font-size: 14px;
+    line-height: 1.5;}
+.fw600{font-weight: 600;}
 
 
 

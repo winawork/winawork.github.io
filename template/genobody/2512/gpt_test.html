@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>제노바디 | 산후 리커버리 다이어트</title>
+  <meta name="description" content="복직을 앞둔 여성을 위한 회복·정렬·감량 프로그램. 산후 2년 이내 여성 전용 리커버리 가능 여부 체크." />
+  <style>
+    :root{
+      --bg:#fbf7f1;
+      --paper:#ffffff;
+      --ink:#1f1a16;
+      --sub:#5b524b;
+      --muted:#877a70;
+      --line:#ece2d6;
+      --card:#fffdf9;
+      --brand:#2a211b;
+      --accent:#caa76a;
+      --accent2:#6f5a43;
+      --shadow: 0 10px 30px rgba(31,26,22,.08);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 820px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 600px at 50% -50%, rgba(202,167,106,.22), transparent 60%),
+                  radial-gradient(900px 500px at 20% 10%, rgba(111,90,67,.10), transparent 50%),
+                  var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 120px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 4px; position:sticky; top:0; z-index:20;
+      background: linear-gradient(to bottom, rgba(251,247,241,.92), rgba(251,247,241,.72), rgba(251,247,241,0));
+      backdrop-filter: blur(8px);
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: conic-gradient(from 180deg, var(--accent), #e2c89a, #b88d4a, var(--accent));
+      box-shadow: 0 6px 16px rgba(202,167,106,.25);
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:999px;
+      border:1px solid rgba(236,226,214,.9);
+      background: rgba(255,255,255,.55);
+      color:var(--accent2);
+      font-weight:700;
+    }
+    .chip small{font-weight:700; color:var(--muted)}
+    .hero{
+      margin-top:8px;
+      border-radius:var(--radius2);
+      overflow:hidden;
+      background:
+        radial-gradient(900px 480px at 80% 20%, rgba(202,167,106,.35), transparent 55%),
+        linear-gradient(120deg, rgba(42,33,27,.95), rgba(42,33,27,.78));
+      color:#fff;
+      box-shadow: var(--shadow);
+      position:relative;
+    }
+    .hero-inner{padding:28px 18px 18px;}
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      background: rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      font-weight:800;
+    }
+    .kicker span{color:#ffe9c1}
+    h1{
+      margin:14px 0 10px;
+      font-size:30px; line-height:1.18;
+      letter-spacing:-.6px;
+    }
+    .hero p{
+      margin:0;
+      color:rgba(255,255,255,.85);
+      font-size:15px; line-height:1.7;
+    }
+    .pillrow{
+      margin-top:16px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      font-weight:800;
+      font-size:13px;
+      color: rgba(255,255,255,.92);
+      backdrop-filter: blur(6px);
+    }
+    .hero-bottom{
+      display:grid; gap:12px;
+      padding:16px 18px 18px;
+      background: linear-gradient(to top, rgba(0,0,0,.18), transparent);
+    }
+    .hero-quote{
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:18px;
+      padding:14px 14px;
+      color:rgba(255,255,255,.90);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .hero-cta{
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .btn{
+      flex:1 1 180px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 16px;
+      border-radius:16px;
+      font-weight:900;
+      letter-spacing:.2px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.12);
+      color:#fff;
+    }
+    .btn.primary{
+      border-color: rgba(202,167,106,.55);
+      background: linear-gradient(180deg, rgba(202,167,106,.95), rgba(184,141,74,.92));
+      color:#201a14;
+      box-shadow: 0 12px 24px rgba(202,167,106,.28);
+    }
+    .btn svg{width:18px; height:18px}
+    .section{margin-top:18px;}
+    .card{
+      background: rgba(255,255,255,.82);
+      border:1px solid rgba(236,226,214,.95);
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .pad{padding:20px 18px;}
+    .title{
+      font-size:22px; line-height:1.25;
+      letter-spacing:-.3px;
+      margin:0 0 10px;
+      font-weight:950;
+      color:var(--brand);
+    }
+    .desc{
+      margin:0;
+      color:var(--sub);
+      line-height:1.8;
+      font-size:15px;
+    }
+    .hr{height:1px; background:var(--line); margin:16px 0;}
+    .grid2{
+      display:grid; gap:12px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width:720px){
+      h1{font-size:40px}
+      .wrap{padding:22px 20px 120px}
+      .hero-inner{padding:34px 26px 20px}
+      .hero-bottom{padding:18px 26px 22px}
+      .grid2{grid-template-columns:1fr 1fr}
+    }
+    .callout{
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(202,167,106,.12), rgba(255,255,255,.55));
+      border:1px solid rgba(202,167,106,.35);
+      padding:14px 14px;
+      color:var(--sub);
+      line-height:1.75;
+      font-weight:700;
+    }
+    .steps{
+      display:grid; gap:12px;
+    }
+    .step{
+      background: var(--card);
+      border:1px solid rgba(236,226,214,.95);
+      border-radius:22px;
+      padding:16px 14px;
+      display:grid; gap:10px;
+    }
+    .step-top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .step-no{
+      font-weight:950;
+      font-size:12px;
+      letter-spacing:.6px;
+      color:var(--accent2);
+      background: rgba(202,167,106,.16);
+      border:1px solid rgba(202,167,106,.25);
+      padding:7px 10px;
+      border-radius:999px;
+    }
+    .step-name{
+      font-weight:950;
+      font-size:18px;
+      color:var(--brand);
+    }
+    .bullets{
+      margin:0; padding-left:18px;
+      color:var(--sub);
+      line-height:1.8;
+      font-weight:650;
+    }
+    .warn{
+      margin-top:12px;
+      border-radius:18px;
+      background: rgba(42,33,27,.06);
+      border:1px dashed rgba(42,33,27,.18);
+      padding:14px 14px;
+      color:var(--sub);
+      line-height:1.8;
+      font-weight:750;
+    }
+    .timeline{
+      display:grid; gap:12px;
+    }
+    .t-item{
+      display:grid; gap:10px;
+      padding:16px 14px;
+      border-radius:22px;
+      background: var(--card);
+      border:1px solid rgba(236,226,214,.95);
+      position:relative;
+    }
+    .t-badge{
+      display:inline-flex; width:max-content;
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(111,90,67,.10);
+      border:1px solid rgba(111,90,67,.18);
+      color:var(--accent2);
+      font-weight:900;
+      font-size:12px;
+    }
+    .t-title{margin:0; font-weight:950; color:var(--brand); font-size:16px;}
+    .t-desc{margin:0; color:var(--sub); line-height:1.75; font-weight:650;}
+    .table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid rgba(236,226,214,.95);
+      background: rgba(255,255,255,.7);
+    }
+    .table th, .table td{
+      padding:14px 12px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:14px;
+      line-height:1.6;
+    }
+    .table th{
+      background: rgba(202,167,106,.10);
+      color:var(--brand);
+      font-weight:950;
+      text-align:left;
+      width:26%;
+    }
+    .table tr:last-child th, .table tr:last-child td{border-bottom:none}
+    .profile{
+      display:grid; gap:12px;
+    }
+    .profile .name{
+      font-weight:950; font-size:16px; color:var(--brand);
+    }
+    .profile .meta{
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .tag{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(236,226,214,.95);
+      background: rgba(255,255,255,.72);
+      color:var(--sub);
+      font-weight:850;
+      font-size:12px;
+    }
+    .imgph{
+      width:100%;
+      aspect-ratio: 16/10;
+      background:
+        radial-gradient(600px 240px at 40% 20%, rgba(202,167,106,.32), transparent 60%),
+        linear-gradient(135deg, rgba(42,33,27,.10), rgba(255,255,255,.0));
+      border:1px solid rgba(236,226,214,.95);
+      border-radius:22px;
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(91,82,75,.8);
+      font-weight:900;
+      letter-spacing:.2px;
+      text-align:center;
+      padding:16px;
+    }
+    .review{
+      display:grid; gap:10px;
+    }
+    .stars{
+      display:flex; align-items:center; gap:10px;
+      padding:14px 14px;
+      border-radius:22px;
+      background: rgba(42,33,27,.06);
+      border:1px solid rgba(236,226,214,.95);
+    }
+    .stars b{font-size:26px; color:var(--brand)}
+    .stars span{color:var(--sub); font-weight:800}
+    .quote{
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(236,226,214,.95);
+      border-radius:22px;
+      padding:16px 14px;
+      color:var(--sub);
+      line-height:1.8;
+      font-weight:700;
+    }
+    .footer-cta{
+      margin-top:18px;
+      background:
+        radial-gradient(900px 420px at 70% 20%, rgba(202,167,106,.30), transparent 60%),
+        linear-gradient(120deg, rgba(42,33,27,.95), rgba(42,33,27,.80));
+      color:#fff;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .footer-cta .pad{padding:22px 18px;}
+    .footer-cta h2{margin:0 0 8px; font-size:22px; letter-spacing:-.3px}
+    .footer-cta p{margin:0; color:rgba(255,255,255,.85); line-height:1.8}
+    .form{
+      margin-top:14px;
+      display:grid; gap:10px;
+    }
+    .input{
+      width:100%;
+      padding:14px 14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.10);
+      color:#fff;
+      outline:none;
+      font-weight:800;
+    }
+    .input::placeholder{color:rgba(255,255,255,.60)}
+    .consent{
+      font-size:12px;
+      color:rgba(255,255,255,.70);
+      line-height:1.7;
+    }
+    .sticky{
+      position:fixed; left:0; right:0; bottom:0;
+      background: rgba(251,247,241,.85);
+      backdrop-filter: blur(10px);
+      border-top:1px solid rgba(236,226,214,.95);
+      z-index:30;
+    }
+    .sticky .inner{
+      max-width:var(--max); margin:0 auto; padding:10px 16px;
+      display:flex; gap:10px; align-items:center;
+    }
+    .sticky .mini{
+      display:flex; flex-direction:column; gap:2px;
+      min-width:0;
+    }
+    .sticky .mini b{font-size:13px; color:var(--brand)}
+    .sticky .mini span{font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .sticky .go{
+      flex:0 0 auto;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:950;
+      border:1px solid rgba(202,167,106,.45);
+      background: linear-gradient(180deg, rgba(202,167,106,.95), rgba(184,141,74,.92));
+      color:#201a14;
+      box-shadow: 0 10px 18px rgba(202,167,106,.22);
+    }
+    .note{
+      font-size:12px; color:var(--muted);
+      line-height:1.6;
+      margin-top:10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <div style="font-size:14px; font-weight:950;">제노바디</div>
+        <div style="font-size:12px; color:var(--muted); font-weight:800;">산후 리커버리 다이어트</div>
+      </div>
+    </div>
+    <div class="chip">
+      <small>산후 2년 이내</small> <span>여성 전용</span>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <!-- 1) HERO -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <div class="kicker"><span>복직 전</span> 지금이 타이밍입니다</div>
+        <h1>복직을 앞둔 지금,<br/>몸부터 다시 준비해야 합니다</h1>
+        <p>
+          출산 후 2년 이내 엄마의 <b>복부·골반·허리 구조 변화</b>를 기준으로 설계한<br/>
+          <b>산후 리커버리 & 다이어트 프로그램</b>
+        </p>
+
+        <div class="pillrow" aria-label="핵심 포인트">
+          <div class="pill">여성 물리치료사 100% 상주</div>
+          <div class="pill">산후 해부학 구조 기반</div>
+          <div class="pill">회복 → 정렬 → 감량 순서</div>
+          <div class="pill">맞춤형 산후 회복 & 다이어트 설계</div>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <div class="hero-quote">
+          제노바디는 단순히 ‘예뻐지는 관리’가 아닌,<br/>
+          다시 일상으로 돌아가기 위한 몸을 준비하는 <b>회복의 공간</b>입니다.
+        </div>
+        <div class="hero-cta">
+          <a class="btn primary" href="#apply">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.65-7 10-7 10Z" stroke="currentColor" stroke-width="2"/></svg>
+            산후 리커버리 상담 신청
+          </a>
+          <a class="btn" href="#logic">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9Z" stroke="currentColor" stroke-width="2"/></svg>
+            프로그램 로직 보기
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) 문제 정의 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">산후의 몸은 일반적인 다이어트 대상이 아닙니다</h2>
+          <p class="desc">
+            산후 경험이 있는 몸은 단순히 살이 찐 상태가 아니라 <b>해부학 구조가 바뀐 상태</b>입니다.<br/><br/>
+            출산 후 몸은 체중보다 먼저 <b>사용 방식 자체</b>가 달라집니다.
+            복직근이 벌어져 코어에 힘 전달이 되지 않고,
+            골반 중심이 앞으로 무너지고,
+            그로 인해 허리·승모근에 부담이 집중됩니다.<br/><br/>
+            이 상태에서 살만 빼기 위한 무리한 다이어트 식단이나 과격한 운동, 인위적인 시술을 먼저 시작하면
+            겉모습은 잠시 좋아질 수 있어도,
+            육아 혹은 복직 후 일상에서, 그리고 10년 뒤에는 <b>아픈 몸</b>이 되어 건강이 쉽게 무너질 수 있습니다.<br/><br/>
+            그래서 산후 관리에는 정확하게 장기 안쪽에서부터 <b>해부학적으로 ‘관리 순서’</b>가 필요합니다.
+          </p>
+          <div class="hr"></div>
+          <div class="callout">
+            ✅ 산후 관리의 핵심은 “빼는 것”이 아니라<br/>
+            <b>다시 ‘쓸 수 있는 몸’으로 회복시키는 것</b>입니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) 해결 구조 -->
+    <section class="section" id="logic">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">제노바디는 몸이 망가진 순서를 먼저 회복합니다</h2>
+
+          <div class="steps" style="margin-top:12px;">
+            <div class="step">
+              <div class="step-top">
+                <div class="step-no">STEP 1</div>
+                <div class="step-name">회복</div>
+              </div>
+              <ul class="bullets">
+                <li>출산 후 신체의 과도한 긴장 해소</li>
+                <li>복부·골반 안정화</li>
+              </ul>
+            </div>
+
+            <div class="step">
+              <div class="step-top">
+                <div class="step-no">STEP 2</div>
+                <div class="step-name">정렬</div>
+              </div>
+              <ul class="bullets">
+                <li>틀어진 체형 패턴 교정</li>
+                <li>잘못된 근육 힘 분산 개선</li>
+              </ul>
+            </div>
+
+            <div class="step">
+              <div class="step-top">
+                <div class="step-no">STEP 3</div>
+                <div class="step-name">감량 · 근육 활성화</div>
+              </div>
+              <ul class="bullets">
+                <li>필요한 부위에만 정확한 근육 활성화</li>
+                <li>지방 감량 + 라인 균형 회복</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="warn">
+            ⚠️ 이 순서를 지키지 않으면 산후 관리 효과는 <b>일시적</b>일 수밖에 없습니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) 타임라인 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">출산 후, 시점에 따라 회복 방향은 달라집니다</h2>
+
+          <div class="timeline" style="margin-top:12px;">
+            <div class="t-item">
+              <div class="t-badge">0–6개월</div>
+              <h3 class="t-title">영양 & 회복이 가장 중요한 시기</h3>
+              <p class="t-desc">복부·골반 안정화 우선 / 무리한 감량 ❌</p>
+            </div>
+
+            <div class="t-item">
+              <div class="t-badge">6–12개월</div>
+              <h3 class="t-title">체형 정렬 + 기초 회복 단계</h3>
+              <p class="t-desc">잘못된 사용 패턴 교정 필요 / 부분적 감량 가능</p>
+            </div>
+
+            <div class="t-item">
+              <div class="t-badge">12–24개월</div>
+              <h3 class="t-title">회복이 지연되기 쉬운 시기</h3>
+              <p class="t-desc">구조를 바로잡지 않으면 고착화 위험 / 리커버리 다이어트 핵심 타이밍</p>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+          <div class="callout">
+            산후 리커버리 프로그램은 <b>출산 후 2년 이내</b>,<br/>
+            몸을 다시 되돌리기 위해 필요한 ‘정리 기간’입니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) 대표 설계 배경 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">이 프로그램은 대표 본인의 회복을 위해 만들어졌습니다</h2>
+          <div class="profile">
+            <div>
+              <div class="name">안녕하세요. 제노바디 대표 이예진입니다.</div>
+              <p class="desc" style="margin-top:6px;">
+                저는 출산 17개월 차, 한 아이의 엄마입니다. 난임클리닉을 다니며 아이를 얻었고
+                자영업자였기에 출산 후에도 바로 일상으로 복귀해야 했습니다.<br/><br/>
+                산후조리원을 선택할 수 없는 현실에서 필요했던 것은 감각적인 위로가 아니라
+                <b>현실적으로 다시 일상에 쓸 수 있는 몸의 회복 구조</b>였습니다.<br/><br/>
+                그래서 제노바디의 산후 리커버리 다이어트는 제 몸에 먼저 적용되고
+                검증된 방식만 남아 있습니다.<br/><br/>
+                이 프로그램은 ‘다시 나를 만나고 싶었던’ 대한민국의 수많은 엄마들을 위해 설계되었습니다.
+              </p>
+            </div>
+
+            <div class="meta">
+              <div class="tag">산후 2년 이내 설계</div>
+              <div class="tag">회복 → 정렬 → 감량</div>
+              <div class="tag">복직 전 집중 추천</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) 물리치료사 차별화 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">제노바디의 물리치료사 출신 전문가들은 다릅니다</h2>
+          <p class="desc">
+            제노바디 전문가는 <b>복합 역량 기반 전문 케어팀</b>으로 구성되어 있습니다.
+          </p>
+
+          <div class="hr"></div>
+
+          <div class="grid2">
+            <div class="callout">
+              ✅ 물리치료사 면허 보유<br/>
+              ✅ 도수·병원 임상 경력 2년 이상<br/>
+              ✅ 재활 마사지 자격증 보유
+            </div>
+            <div class="callout">
+              ✅ 재활 필라테스 자격증 보유<br/>
+              ✅ 피부관리사 국가자격증 보유<br/>
+              ✅ 산후 구조 기반 맞춤 설계
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) 왜 이 구조가 필요한가 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">산후 몸은 한 가지 관리 기술로 회복되지 않습니다</h2>
+          <p class="desc">
+            출산 후에는 구조, 근육, 연부조직, 피부 반응이 동시에 얽혀 있는 상태입니다.<br/><br/>
+            제노바디는 몸의 구조를 이해하고 움직임을 분석해 근육 비대칭을 개선하고,
+            부위별 자극 강도를 판단하며, 피부·연부조직 반응까지 함께 고려해
+            산후 회복이 일상으로 복귀한 이후에도 끊기지 않도록 설계합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8) 비교 표 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">일반 관리와의 비교</h2>
+          <table class="table" role="table" aria-label="비교 표">
+            <tr>
+              <th>구분</th>
+              <td><b>에스테틱</b></td>
+              <td><b>병원</b></td>
+              <td><b>제노바디</b></td>
+            </tr>
+            <tr>
+              <th>기준</th>
+              <td>미용 중심</td>
+              <td>치료 중심</td>
+              <td><b>산후 구조 중심</b></td>
+            </tr>
+            <tr>
+              <th>접근</th>
+              <td>감각</td>
+              <td>통증</td>
+              <td><b>회복 + 정렬 + 감량</b></td>
+            </tr>
+            <tr>
+              <th>자격</th>
+              <td>단일</td>
+              <td>단일</td>
+              <td><b>복합</b></td>
+            </tr>
+            <tr>
+              <th>연계</th>
+              <td>단절</td>
+              <td>단절</td>
+              <td><b>하나의 흐름</b></td>
+            </tr>
+          </table>
+
+          <div class="hr"></div>
+          <div class="callout">
+            그래서 제노바디에서는 어떤 전문가를 만나더라도 결과가 흔들리지 않습니다.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9) 키즈 정책 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">제노바디는 아이와 함께 방문하실 수 있는 공간입니다</h2>
+          <p class="desc">
+            웰컴 키즈존을 만든 이유는 엄마의 편의만을 위해서가 아니라
+            <b>관리를 끝까지 이어가기 위해서</b>입니다.
+          </p>
+
+          <div class="hr"></div>
+
+          <div class="grid2">
+            <div class="callout">
+              ✅ 아이 동반 가능<br/>
+              ✅ 케어룸 내 함께 대기 가능<br/>
+              ✅ 아빠·조부모 동반 가능
+            </div>
+            <div class="callout">
+              엄마가 몸에 집중하려면<br/>
+              <b>아이 걱정을 하지 않아야</b> 합니다.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10) 공간 설계 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">공간 설계 기준</h2>
+
+          <div class="grid2">
+            <div class="step">
+              <div class="step-top">
+                <div class="step-no">SAFETY</div>
+                <div class="step-name">안전·품질 기준</div>
+              </div>
+              <ul class="bullets">
+                <li>E0 등급 인테리어 자재 사용</li>
+                <li>Made In Korea 제품 100%</li>
+                <li>KC 인증 기기 사용</li>
+              </ul>
+            </div>
+            <div class="step">
+              <div class="step-top">
+                <div class="step-no">FAMILY</div>
+                <div class="step-name">가족 동반 기준</div>
+              </div>
+              <ul class="bullets">
+                <li>아이 동반 기준 설계</li>
+                <li>학원가 & 메디컬센터 중심 입지</li>
+                <li>“카페 전전” 없이 회복에 집중</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="note">※ 실제 인테리어/공간 사진은 아래 “공간 이미지” 블록에 업로드해 교체하세요.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11) 산후조리원 차별화 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">단순 ‘산후 조리’가 아닌, 완벽한 ‘산후 복귀 준비’</h2>
+          <p class="desc">
+            여성 물리치료사 출신 전문가여야 안전한 다이어트가 가능한 이유는,
+            감각 중심 마사지나 원시적인 산후조리 방법이 아닌
+            <b>출산 후 바뀐 몸의 해부학적 구조</b>를 가장 잘 이해한 여성 전문가 기준으로
+            다시 일상에 쓸 수 있는 몸을 제대로, 완벽하게 만들 수 있기 때문입니다.
+          </p>
+
+          <div style="margin-top:14px;" class="imgph">
+            (여기: 커리어우먼/자기관리 이미지 배경)<br/>
+            16:10 비율 권장 · 실제 촬영 이미지로 교체
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12) 가격&프로그램 안내(기능 유지) -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">복직 전 관리가 더 현실적인 이유</h2>
+
+          <div class="grid2" style="margin-top:12px;">
+            <div class="callout">
+              ✅ 시간 확보 가능<br/>
+              ✅ 체력 회복 여지 있음<br/>
+              ✅ 관리 지속 가능성 높음
+            </div>
+            <div class="callout">
+              복직 후 관리는 이미 굳어진 몸 위에서 시작하게 됩니다.<br/>
+              그래서 제노바디는 <b>복직 전 충분한 관리</b>를 권장합니다.
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="step">
+            <div class="step-top">
+              <div class="step-no">PROGRAM</div>
+              <div class="step-name">가격·패키지 영역</div>
+            </div>
+            <p class="t-desc" style="margin:0;">
+              여기는 대표님이 운영 중인 “산후 리커버리 패키지(예: 2개월/10회/회당 70분 등)”를 넣는 자리입니다.<br/>
+              <b>가격표/혜택/유의사항</b>을 카드 형태로 추가하면 전환이 가장 좋아요.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13) 후기 & 평점 -->
+    <section class="section">
+      <div class="card">
+        <div class="pad review">
+          <h2 class="title">후기 & 평점</h2>
+
+          <div class="stars">
+            <b>4.6</b>
+            <span>산후 회복 기준 후기 중심 (네이버 발췌)</span>
+          </div>
+
+          <div class="quote">“복부에 힘이 다시 들어오는 느낌이 처음이에요. 체중보다 라인이 먼저 정리됐어요.”</div>
+          <div class="quote">“무작정 빼는 게 아니라 골반/허리 사용법부터 잡아주니까 육아하면서도 덜 아파요.”</div>
+          <div class="quote">“복직 전에 확실히 정리하고 가고 싶었는데, 상담부터 ‘순서’가 달라서 신뢰가 생겼어요.”</div>
+
+          <div class="imgph">(여기: 네이버 리뷰 캡처 이미지 2~3장 슬라이드로 교체)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 공간 이미지 블록 (레퍼런스 느낌) -->
+    <section class="section">
+      <div class="card">
+        <div class="pad">
+          <h2 class="title">공간 이미지</h2>
+          <p class="desc">“아이와 함께 와도 불편하지 않도록” 회복을 위한 동선으로 설계했습니다.</p>
+          <div style="margin-top:12px;" class="grid2">
+            <div class="imgph">(공간 사진 1)</div>
+            <div class="imgph">(공간 사진 2)</div>
+            <div class="imgph">(공간 사진 3)</div>
+            <div class="imgph">(공간 사진 4)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14) 최종 CTA -->
+    <section class="section footer-cta" id="apply">
+      <div class="pad">
+        <h2>지금의 몸 상태를 전문가와 함께 정확하게 확인하세요</h2>
+        <p>
+          산후 2년 이내 여성 전용 · 리커버리 가능 여부 체크<br/>
+          <b>“지금 가능한 회복 범위”</b>부터 현실적으로 안내드립니다.
+        </p>
+
+        <!-- 폼: 실제 연결은 action URL 교체 -->
+        <form class="form" action="#" method="post">
+          <input class="input" name="name" placeholder="성함" required />
+          <input class="input" name="phone" placeholder="연락처 (예: 010-1234-5678)" required />
+          <input class="input" name="month" placeholder="출산 시점 (예: 출산 10개월차)" />
+          <button class="btn primary" type="submit">산후 리커버리 상담 신청</button>
+          <div class="consent">
+            신청 시 개인정보 수집·이용에 동의한 것으로 간주됩니다. (상담 안내 목적 / 보관기간 및 파기정책은 운영 정책에 따름)
+          </div>
+        </form>
+
+        <div class="hr" style="background:rgba(255,255,255,.14)"></div>
+        <p style="margin:0; color:rgba(255,255,255,.85); line-height:1.85;">
+          제노바디는 모든 여성을 위한 힐링 공간이자<br/>
+          엄마를 위한 <b>‘회복의 공간’</b>입니다.<br/>
+          지금 다시 ‘나’를 만나는 시간을 경험해보세요.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sticky bottom CTA -->
+  <div class="sticky">
+    <div class="inner">
+      <div class="mini">
+        <b>산후 리커버리 상담</b>
+        <span>산후 2년 이내 · 복직 전 집중 추천</span>
+      </div>
+      <a class="go" href="#apply">상담 신청</a>
+    </div>
+  </div>
+
+</body>
+</html>

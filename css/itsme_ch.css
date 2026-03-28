@@ -613,15 +613,17 @@ em.point_color{color: #e65a1e;}
 .mt80{margin-top: 80px;}
 
 .lif_list{display: flex;
+    max-width: 840px;
     flex-wrap: wrap;
     gap: 14px;
     background: linear-gradient(0deg, #d2d2ff, #f5f5ff);
-    padding: 12px;
+    padding: 3%;
     box-sizing: border-box;
     border-radius: 30px;}
 .lif_unit{    display: flex;
     overflow: hidden;
-    border-radius: 22px;
+    width: 100%;
+    border-radius: clamp(22px, 4vw, 44px);
     box-shadow: 0 0 10px 0 rgba(100, 100, 255, 0.5);}
 
 

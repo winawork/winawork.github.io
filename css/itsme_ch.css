@@ -614,9 +614,15 @@ em.point_color{color: #e65a1e;}
 
 .lif_list{display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    background: linear-gradient(0deg, #d2d2ff, #f5f5ff);}
-.lif_unit{}
+    gap: 14px;
+    background: linear-gradient(0deg, #d2d2ff, #f5f5ff);
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 30px;}
+.lif_unit{    display: flex;
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 0 10px 0 rgba(100, 100, 255, 0.5);}
 
 
 

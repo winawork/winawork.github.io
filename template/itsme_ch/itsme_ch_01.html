@@ -42,11 +42,12 @@
             <div class="page">
                 <div>
 
-                    
+                   
 
                     <div class="land_cont">
 
-
+                         <!-- 개인/일반 통합 -->
+                         <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=7nboalt22q"></script>
 
                         <div class="in">
                             <!-- 메인 -->
@@ -60,7 +61,7 @@
                             
                             <!-- 리프팅 찾기 -->
                              <div class="lif_list">
-                                <img class="com_img sa sa-up" src="https://winawork.github.io/images/itsme_ch/its_ch_06.png"> 
+                                <img class="com_img sa sa-up" style="padding-bottom: 20px;" src="https://winawork.github.io/images/itsme_ch/its_ch_06.png"> 
                                 <div class="lif_unit sa sa-up">
                                     <img class="com_img" src="https://winawork.github.io/images/itsme_ch/its_ch_07.gif"> 
                                 </div>
@@ -115,6 +116,34 @@
                                 <div class="map" id="map"></div>
                             </div>
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/itsme_ch/its_ch_35.png"> 
+
+                             <!-- 카카오 app key -->
+                            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=817245a2c8d4c6dba8b8da968cfd09cc"></script>
+
+                            <!-- map script -->
+                            <script>
+                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                                mapOption = { 
+                                    center: new kakao.maps.LatLng(37.5261711787565, 127.038830776688), // 지도의 중심좌표
+                                    level: 3 // 지도의 확대 레벨
+                                };
+
+                            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                            // 마커가 표시될 위치입니다 
+                            var markerPosition  = new kakao.maps.LatLng(37.5261711787565, 127.038830776688); 
+
+                            // 마커를 생성합니다
+                            var marker = new kakao.maps.Marker({
+                                position: markerPosition
+                            });
+
+                            // 마커가 지도 위에 표시되도록 설정합니다
+                            marker.setMap(map);
+
+                            // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+                            // marker.setMap(null);    
+                            </script>
 
                             <!-- 한시적 이벤트 -->
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/itsme_ch/its_ch_36.png"> 

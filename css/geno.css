@@ -764,11 +764,20 @@ em.point_color{color: #e65a1e;}
 
 
 
+.re_body_price{background-color: #1a1b20;
+    border-radius: 30px;}
 
 
-
-
-
+.re_lsat{}
+.re_lsat .top_con{display: flex;
+    flex-wrap: wrap;}
+.re_lsat .top_con .unit{position: relative;
+    width: 100%;
+    display: flex;}
+.re_lsat .top_con .unit .txt{position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;}
 
 
 

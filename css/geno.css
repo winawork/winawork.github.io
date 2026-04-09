@@ -767,6 +767,54 @@ em.point_color{color: #e65a1e;}
 .re_body_price{background-color: #1a1b20;
     border-radius: 30px;}
 
+.rw_list{
+    width: 100%;
+    padding: 26px 0 34px;
+    overflow: visible;
+}
+.rw_list .slick-list{
+    overflow: visible;
+    padding-bottom: 20px;
+}
+.rw_list .slick-track{
+    display: flex;
+    align-items: stretch;
+}
+.rw_list .slick-slide{
+    height: auto;
+}
+.rw_list .slick-slide > div{
+    height: 100%;
+}
+.rw_unit{
+    padding: 0 14px;
+    box-sizing: border-box;
+    cursor: grab;
+}
+.rw_unit:active{
+    cursor: grabbing;
+}
+.rw_unit img{
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(22, 19, 16, 0.2);
+}
+.rw_list .slick-dots{
+    bottom: 0;
+}
+.rw_list .slick-dots li{
+    margin: 0 2px;
+}
+.rw_list .slick-dots li button:before{
+    font-size: 10px;
+    color: rgba(61, 49, 37, 0.28);
+    opacity: 1;
+}
+.rw_list .slick-dots li.slick-active button:before{
+    color: #8f765e;
+    opacity: 1;
+}
 
 .re_lsat{}
 .re_lsat .top_con{display: flex;
@@ -920,4 +968,11 @@ em.point_color{color: #e65a1e;}
     .gift_02{margin-top: 30px;}
     .form_reco{font-size: 14px;
         margin-top: 8px;}
+    .rw_list{
+        padding: 18px 0 28px;
+    }
+    .rw_unit{
+        padding: 0 8px;
+    }
+
 }

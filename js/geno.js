@@ -69,11 +69,44 @@ $(function () {
 		$('#input_txt_nNM51c74I6').val(landId);
 	}
 
+	$.geno_review_2026 = function(){
+		var $reviewList = $('.rw_list');
+
+		if ($reviewList.length && !$reviewList.hasClass('slick-initialized')) {
+			$reviewList.slick({
+				arrows: false,
+				dots: true,
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				centerMode: true,
+				centerPadding: '72px',
+				autoplay: true,
+				autoplaySpeed: 2500,
+				speed: 500,
+				swipe: true,
+				touchMove: true,
+				draggable: true,
+				pauseOnHover: false,
+				pauseOnFocus: false,
+				responsive: [
+					{
+						breakpoint: 580,
+						settings: {
+							centerPadding: '24px'
+						}
+					}
+				]
+			});
+		}
+	}
+
 	
 
 	$.initView = function () {
 		$.float_btn();
 		$.utm_set_meta();
+		$.geno_review_2026();
 
 	};
 	$.initView();

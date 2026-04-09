@@ -96,13 +96,14 @@ em{font-size: inherit;}
     border-radius: 20px;
     overflow: hidden;}
 
-._input_form_submit{    background-color: #312816 !important;
+._input_form_submit{background-color: #26272b !important;
     font-size: 20px !important;
     padding: 10px 45px !important;
     border-radius: 100px !important;
-    color: #c8b497 !important;
+    color: white !important;
     width: 240px;
-    margin-top: 20px;}
+    margin-top: 20px;
+    border: none;}
 .form_bottom{padding-bottom: 120px;}
 
 .land_cont{width: 100%;
@@ -818,7 +819,8 @@ em.point_color{color: #e65a1e;}
 
 .re_lsat{}
 .re_lsat .top_con{display: flex;
-    flex-wrap: wrap;}
+    flex-wrap: wrap;
+    background-color: #1a1b20;}
 .re_lsat .top_con .unit{position: relative;
     width: 100%;
     display: flex;}
@@ -831,7 +833,12 @@ em.point_color{color: #e65a1e;}
     flex-wrap: wrap;
     gap: 2px;}
 
-
+.address{padding: 0 5%;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.4;
+    font-size: 15px;}
 
 
 

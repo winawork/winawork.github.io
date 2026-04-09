@@ -84,7 +84,7 @@
 
                             <!-- 리뷰 -->
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/2026/geno_re_21.png">
-                            <div class="rw_list review_slide">
+                            <div class="rw_list review_slide sa sa-up">
                                 <div class="rw_unit">
                                     <img class="com_img" src="https://winawork.github.io/images/geno/2026/geno_re_review_01.png">
                                 </div>
@@ -122,8 +122,41 @@
                                 </div>
                             </div>
 
-                            <!-- 마무리 멘트 -->
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/geno_0924_24.jpg">  
+                            <!-- 지도 -->
+                            <div class="map_con">
+                                <div class="map" id="map"></div>
+                            </div>
+                            <p class="address"><strong>제노바디 웰니스센터</strong><br>인천광역시 연수구 첨단대로 40, B동 803호</p>
+
+                             <!-- 카카오 app key -->
+                            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=817245a2c8d4c6dba8b8da968cfd09cc"></script>
+
+                            <!-- map script -->
+                            <script>
+                            var x = 37.3700260777107;
+                            var y = 126.650355172176;
+                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                                mapOption = { 
+                                    center: new kakao.maps.LatLng(x, y), // 지도의 중심좌표
+                                    level: 3 // 지도의 확대 레벨
+                                };
+
+                            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                            // 마커가 표시될 위치입니다 
+                            var markerPosition  = new kakao.maps.LatLng(x, y); 
+
+                            // 마커를 생성합니다
+                            var marker = new kakao.maps.Marker({
+                                position: markerPosition
+                            });
+
+                            // 마커가 지도 위에 표시되도록 설정합니다
+                            marker.setMap(map);
+
+                            // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+                            // marker.setMap(null);    
+                            </script>
 
                             <div class="form_bottom"></div>
 

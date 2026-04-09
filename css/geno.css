@@ -779,6 +779,9 @@ em.point_color{color: #e65a1e;}
     left: 0;
     width: 100%;}
 
+.interior_list{    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;}
 
 
 

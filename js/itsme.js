@@ -53,9 +53,21 @@ $(function () {
 	}
 
 
+	$.url_set = function(){
+		var targetUrl = 'http://itsme-clinic-dj.kr/lp';
+
+		try {
+			window.history.replaceState(window.history.state, '', targetUrl);
+		} catch (error) {
+			console.warn('$.url_set failed. replaceState requires the same origin as the current page.', error);
+		}
+	}
+
+
 	
 
 	$.initView = function () {
+		$.url_set();
 		$.float_btn();
 
 	};

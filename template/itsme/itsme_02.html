@@ -46,9 +46,6 @@
 
                     <div class="land_cont">
 
-                        <!-- 개인/일반 통합 -->
-                         <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=7nboalt22q"></script>
-
                         <div class="in">
 
                             <video class="com_img" src="https://winawork.github.io/images/itsme/250920_bk_01.mp4" muted autoplay loop></video>
@@ -65,65 +62,41 @@
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/itsme/250920_bk_12.png"> 
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/itsme/250920_bk_13.png">                    
 
+                            <!-- 지도 -->
                             <div class="map_con">
                                 <div class="map" id="map"></div>
                             </div>
                             <img class="com_img" src="https://winawork.github.io/images/itsme_250622_19.jpg"> 
                             <div class="form_bottom"></div>
 
+                             <!-- 카카오 app key -->
+                            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=817245a2c8d4c6dba8b8da968cfd09cc"></script>
+
                             <!-- map script -->
                             <script>
-                                // 지도를 표시할 div의 id 설정
-                                var x_val = 36.3529106;
-                                var y_val = 127.3788486;
-                        
-                                var itsmeLatLng = new naver.maps.LatLng(x_val, y_val);
-                        
-                                // 1️⃣ 네이버 지도 생성
-                                var map = new naver.maps.Map('map', {
-                                    center: itsmeLatLng,
-                                    zoom: 18
-                                });
-                        
-                                // 2️⃣ 마커 생성
-                                var marker = new naver.maps.Marker({
-                                    position: itsmeLatLng,
-                                    map: map,
-                                    title: "잇츠미의원 대전"
-                                });
-                        
-                                // 3️⃣ 커스텀 오버레이 요소 생성
-                                var overlayElement = document.createElement("div");
-                                overlayElement.className = "customOverlay";
-                                overlayElement.innerHTML = `
-                                    🏢 <b>잇츠미의원 대전</b>
-                                `;
-                        
-                                // 4️⃣ HTML 요소를 지도 위에 표시 (위치 조정 포함)
-                                var overlay = new naver.maps.OverlayView();
-                                overlay.onAdd = function() {
-                                    var pane = this.getPanes().overlayLayer;
-                                    pane.appendChild(overlayElement);
+                            var x = 36.3529083201445;
+                            var y = 127.378839658662;
+                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                                mapOption = { 
+                                    center: new kakao.maps.LatLng(x, y), // 지도의 중심좌표
+                                    level: 3 // 지도의 확대 레벨
                                 };
-                        
-                                overlay.draw = function() {
-                                    var projection = this.getProjection();
-                                    var position = projection.fromCoordToOffset(itsmeLatLng);
-                                    overlayElement.style.left = position.x + "px";
-                                    overlayElement.style.top = (position.y - 30) + "px"; // 🎯 말풍선 위치를 위로 이동
-                                };
-                        
-                                overlay.setMap(map); // 지도에 추가
-                        
-                                // 5️⃣ 마커 클릭 시 오버레이 표시/숨김 토글
-                                naver.maps.Event.addListener(marker, "click", function() {
-                                    if (overlay.getMap()) {
-                                        overlay.setMap(null);
-                                    } else {
-                                        overlay.setMap(map);
-                                    }
-                                });
-                        
+
+                            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                            // 마커가 표시될 위치입니다 
+                            var markerPosition  = new kakao.maps.LatLng(x, y); 
+
+                            // 마커를 생성합니다
+                            var marker = new kakao.maps.Marker({
+                                position: markerPosition
+                            });
+
+                            // 마커가 지도 위에 표시되도록 설정합니다
+                            marker.setMap(map);
+
+                            // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+                            // marker.setMap(null);    
                             </script>
                         
 

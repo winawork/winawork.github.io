@@ -611,7 +611,17 @@ em{color:inherit;}
 em.point_color{color: #e65a1e;}
 .mt60{margin-top: 60px;}
 .mt80{margin-top: 80px;}
-
+.notice{width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #dcdcdc;
+    margin: 0 5%;
+    margin-top: 40px;}
+.notice .tit{font-weight: 600;}
+.notice p{font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #787878;}
 
 
 

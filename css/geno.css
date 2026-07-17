@@ -842,12 +842,24 @@ em.point_color{color: #e65a1e;}
 
 
 
+.main.mom{height: 100vh;
+    width: 100%;
+    position: relative;}
 
+.mom_logo{position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 0;}
+.main.mom .con{display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-bottom: 100px;
+    box-sizing: border-box;}
 
-
-
-
-
+.main.mom .con .ttl{margin-bottom: 30px;}
 
 
 

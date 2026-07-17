@@ -22,7 +22,69 @@
         $(function () {
 
             $.initView = function () {
+                const focusLists = document.querySelectorAll('.change_list, .reco_list');
+                const scrollSections = document.querySelectorAll('[data-scroll-section]');
+                const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+                if (!focusLists.length && !scrollSections.length) {
+                    return;
+                }
+
+                const setFocusedUnit = () => {
+                    const viewportCenter = window.innerHeight / 2;
+                    focusLists.forEach((list) => {
+                        const units = list.querySelectorAll('.ch_unit, .reco_unit');
+                        let activeUnit = units[0];
+                        let closestDistance = Infinity;
+
+                        units.forEach((unit) => {
+                            const bounds = unit.getBoundingClientRect();
+                            const distance = Math.abs(bounds.top + bounds.height / 2 - viewportCenter);
+
+                            if (distance < closestDistance) {
+                                closestDistance = distance;
+                                activeUnit = unit;
+                            }
+                        });
+
+                        units.forEach((unit) => {
+                            unit.classList.toggle('is-active', unit === activeUnit);
+                        });
+                    });
+                };
+
+                const setSectionScrollMotion = () => {
+                    if (reduceMotionQuery.matches) {
+                        return;
+                    }
+
+                    scrollSections.forEach((section) => {
+                        const bounds = section.getBoundingClientRect();
+                        const progress = Math.min(1, Math.max(0, (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height)));
+                        const titleOffset = Math.round((0.5 - progress) * 24);
+                        const titleScale = (1.015 - Math.abs(0.5 - progress) * 0.03).toFixed(3);
+
+                        section.style.setProperty('--title-offset', `${titleOffset}px`);
+                        section.style.setProperty('--title-scale', titleScale);
+                    });
+                };
+
+                let animationFrame;
+                const requestFocusedUnit = () => {
+                    if (animationFrame) {
+                        return;
+                    }
+
+                    animationFrame = window.requestAnimationFrame(() => {
+                        animationFrame = undefined;
+                        setFocusedUnit();
+                        setSectionScrollMotion();
+                    });
+                };
+
+                window.addEventListener('scroll', requestFocusedUnit, { passive: true });
+                window.addEventListener('resize', requestFocusedUnit);
+                requestFocusedUnit();
             };
             $.initView();
 
@@ -84,17 +146,19 @@
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/2026/mom/mom_12.png">
 
                             <!-- 출산 후 변화 -->
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/2026/mom/mom_13.png">
-                            <div class="change_list">
-                                <p class="ch_unit"><span class="point">젤리같은 아랫배</span>가 안없어진다</p>
-                                <p class="ch_unit"><span class="point">복부 처짐</span>이 심하다</p>
-                                <p class="ch_unit"><span class="point">목·어깨 허리</span>가 자주 뭉친다</p>
-                                <p class="ch_unit"><span class="point">생리통</span>이 심하고 <span class="point">질염</span>이 자주 생긴다</p>
-                                <p class="ch_unit"><span class="point">허벅지 및 엉덩이 셀룰라이트</span>가 심하다</p>
-                                <p class="ch_unit"><span class="point">손, 발 끝</span>까지 붓기가 빠지지 않는다</p>
-                                <p class="ch_unit"><span class="point">한 끼만</span> 먹어도 살이 찐다</p>
-                                <p class="ch_unit"><span class="point">운동과 식단</span>을 해도 라인이 달라지지 않는다</p>
-                            </div>
+                            <section class="mom-scroll-section" data-scroll-section>
+                                <img class="com_img sa sa-up section-title-motion" src="https://winawork.github.io/images/geno/2026/mom/mom_13.png">
+                                <div class="change_list">
+                                    <p class="ch_unit"><span class="point">젤리같은 아랫배</span>가 안없어진다</p>
+                                    <p class="ch_unit"><span class="point">복부 처짐</span>이 심하다</p>
+                                    <p class="ch_unit"><span class="point">목·어깨 허리</span>가 자주 뭉친다</p>
+                                    <p class="ch_unit"><span class="point">생리통</span>이 심하고 <span class="point">질염</span>이 자주 생긴다</p>
+                                    <p class="ch_unit"><span class="point">허벅지 및 엉덩이 셀룰라이트</span>가 심하다</p>
+                                    <p class="ch_unit"><span class="point">손, 발 끝</span>까지 붓기가 빠지지 않는다</p>
+                                    <p class="ch_unit"><span class="point">한 끼만</span> 먹어도 살이 찐다</p>
+                                    <p class="ch_unit"><span class="point">운동과 식단</span>을 해도 라인이 달라지지 않는다</p>
+                                </div>
+                            </section>
 
                             <!-- 산후 리커버리 케어 -->
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/2026/mom/mom_14.png">
@@ -144,17 +208,19 @@
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/2026/mom/mom_47.png">
                              
                             <!-- 이런 분께 추천 -->
-                            <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/2026/mom/mom_48.png">
-                            <div class="reco_list">
-                                <p class="reco_unit"><span class="point">안전한 산후 회복</span>을 경험하고 싶은 분</p>
-                                <p class="reco_unit"><span class="point">출산 후 체형</span>이 변하신 분</p>
-                                <p class="reco_unit"><span class="point">임신 전 몸</span>을 회복하고 싶으신 분</p>
-                                <p class="reco_unit"><span class="point">복직근 이개</span>가 걱정되시는 분</p>
-                                <p class="reco_unit"><span class="point">허리·목·어깨 통증</span>이 있으신 분</p>
-                                <p class="reco_unit"><span class="point">골반</span>이 틀어지신 분</p>
-                                <p class="reco_unit"><span class="point">붓기</span>가 심하신 분</p>
-                                <p class="reco_unit"><span class="point">운동</span>을 해도 변화가 없으신 분</p>
-                            </div>
+                            <section class="mom-scroll-section" data-scroll-section>
+                                <img class="com_img sa sa-up section-title-motion" src="https://winawork.github.io/images/geno/2026/mom/mom_48.png">
+                                <div class="reco_list">
+                                    <p class="reco_unit"><span class="point">안전한 산후 회복</span>을 경험하고 싶은 분</p>
+                                    <p class="reco_unit"><span class="point">출산 후 체형</span>이 변하신 분</p>
+                                    <p class="reco_unit"><span class="point">임신 전 몸</span>을 회복하고 싶으신 분</p>
+                                    <p class="reco_unit"><span class="point">복직근 이개</span>가 걱정되시는 분</p>
+                                    <p class="reco_unit"><span class="point">허리·목·어깨 통증</span>이 있으신 분</p>
+                                    <p class="reco_unit"><span class="point">골반</span>이 틀어지신 분</p>
+                                    <p class="reco_unit"><span class="point">붓기</span>가 심하신 분</p>
+                                    <p class="reco_unit"><span class="point">운동</span>을 해도 변화가 없으신 분</p>
+                                </div>
+                            </section>
 
                             <!-- 프로모션 02 -->
                             <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/2026/mom/mom_49.gif">
@@ -167,7 +233,7 @@
                 
                         <div class="float_con">
                             <span class="float_btn img">
-                                <img class="com_img sa sa-up" src="https://winawork.github.io/images/geno/2026/mom/mom_cta.gif">
+                                <img class="com_img" src="https://winawork.github.io/images/geno/2026/mom/mom_cta.png">
                             </span>
                         </div>
                 

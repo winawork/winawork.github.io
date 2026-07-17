@@ -16,7 +16,8 @@
 
 .sa {
     opacity: 0;
-    transition: all .5s ease;
+    transition: opacity .55s ease;
+    will-change: opacity;
 }
 
 .dy1 {
@@ -40,7 +41,7 @@
     transition-delay: .6s;
 }
 .sa-up {
-    transform: translate(0, 100px);
+    transform: none;
   }
 .sa-down {
     transform: translate(100px, 100px);
@@ -63,8 +64,7 @@
 
 .sa.show {
         opacity: 1;
-        transform: none;
-      }
+    }
 .sa.turn{transform: rotateY(180deg);}
 
 
@@ -860,6 +860,138 @@ em.point_color{color: #e65a1e;}
     box-sizing: border-box;}
 
 .main.mom .con .ttl{margin-bottom: 30px;}
+
+.main.mom .con.sa{
+    filter: blur(8px);
+    transform: scale(1.025);
+    transition: opacity .55s ease, transform .9s cubic-bezier(.22, 1, .36, 1), filter .7s ease;
+    will-change: opacity, transform, filter;
+}
+.main.mom .con.sa.show{
+    filter: blur(0);
+    transform: none;
+}
+
+.mom-scroll-section{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.mom-scroll-section .section-title-motion{
+    transform: translate3d(0, var(--title-offset, 0px), 0) scale(var(--title-scale, 1));
+    transform-origin: center;
+    will-change: transform;
+}
+.mom-scroll-section .section-title-motion.sa{
+    clip-path: inset(6% 0);
+    filter: blur(6px);
+    transition: opacity .45s ease, filter .65s ease, clip-path .75s cubic-bezier(.22, 1, .36, 1);
+}
+.mom-scroll-section .section-title-motion.sa.show{
+    filter: blur(0);
+    clip-path: inset(0);
+}
+
+.land_cont .in img[src*=".gif"]{
+    display: block;
+    vertical-align: top;
+    clip-path: inset(0 0 3px);
+    margin-bottom: -3px;
+    position: relative;
+    z-index: 1;
+}
+
+.change_list{
+    width: 100%;
+    min-height: 100svh;
+    padding: 7svh 5% 12svh;
+    box-sizing: border-box;
+    display: grid;
+    align-content: center;
+    gap: clamp(24px, 4.8svh, 56px);
+}
+.change_list .ch_unit{
+    margin: 0;
+    color: #aaa5a3;
+    font-size: clamp(22px, 6.2vw, 48px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.075em;
+    text-align: center;
+    opacity: 0.5;
+    transform: scale(.9) translateY(10px);
+    transition: color .3s ease, opacity .35s ease, transform .65s cubic-bezier(.22, 1, .36, 1);
+    will-change: color, opacity, transform;
+}
+.change_list .ch_unit.is-active{
+    color: #463934;
+    opacity: 1;
+    transform: scale(1.07) translateY(0);
+}
+.change_list .ch_unit .point{color: inherit;}
+.change_list .ch_unit.is-active .point{color: #ff3512;}
+
+.reco_list{
+    width: 100%;
+    padding: 4svh 4.2% 12svh;
+    box-sizing: border-box;
+    display: grid;
+    gap: clamp(10px, 1.8svh, 18px);
+}
+.reco_list .reco_unit{
+    min-height: clamp(66px, 12.5svh, 112px);
+    margin: 0;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    border-radius: clamp(22px, 5vw, 48px);
+    background-color: #f8f8f8;
+    color: #a8a3a1;
+    font-size: clamp(20px, 5.3vw, 42px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.075em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .55;
+    transform: scale(.94) translateY(10px);
+    transition: background-color .35s ease, color .35s ease, opacity .35s ease, transform .65s cubic-bezier(.22, 1, .36, 1), box-shadow .35s ease;
+    will-change: background-color, color, opacity, transform;
+}
+.reco_list .reco_unit.is-active{
+    background-color: #463934;
+    color: #fff;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    box-shadow: 0 14px 28px rgba(70, 57, 52, .2);
+}
+.reco_list .reco_unit .point{color: inherit;}
+.reco_list .reco_unit.is-active .point{color: #ddc8af;}
+.reco_list .reco_unit.is-active .point::after{
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: 2px;
+    background-color: currentColor;
+    transform-origin: left;
+    animation: point-line .7s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes point-line{
+    from{transform: scaleX(0);}
+    to{transform: scaleX(1);}
+}
+
+@media (prefers-reduced-motion: reduce){
+    .sa,
+    .main.mom .con.sa,
+    .mom-scroll-section .section-title-motion.sa,
+    .change_list .ch_unit,
+    .reco_list .reco_unit{transition: none;}
+    .mom-scroll-section .section-title-motion{transform: none;}
+    .reco_list .reco_unit.is-active .point::after{animation: none;}
+}
 
 
 

@@ -872,22 +872,24 @@ em.point_color{color: #e65a1e;}
 }
 .main_copy_box .copy_con .retry{
     opacity: 0;
-    transform: scale(.35);
-    will-change: opacity, transform;
+    transform: translateY(-28px) scale(1.7);
+    filter: blur(14px);
+    will-change: opacity, transform, filter;
 }
 .main_copy_box.show .copy_con .retry{
-    animation: mom-retry-pop .42s cubic-bezier(.18, 1.35, .42, 1) both;
+    animation: mom-retry-impact .46s cubic-bezier(.12, .78, .2, 1) both;
 }
-.main_copy_box.show .copy_con .retry_01{animation-delay: 1s;}
-.main_copy_box.show .copy_con .retry_02{animation-delay: 1.15s;}
+.main_copy_box.show .copy_con .retry_01{animation-delay: .2s;}
+.main_copy_box.show .copy_con .retry_02{animation-delay: .42s;}
 .main_copy_box .copy_con .retry_02{position: absolute;
     top: 0;
     left: 0;}
 
-@keyframes mom-retry-pop{
-    0%{opacity: 0; transform: scale(.35);}
-    62%{opacity: 1; transform: scale(1.13);}
-    100%{opacity: 1; transform: scale(1);}
+@keyframes mom-retry-impact{
+    0%{opacity: 0; transform: translateY(-28px) scale(1.7); filter: blur(14px);}
+    18%{opacity: 1; transform: translateY(-16px) scale(1.42); filter: blur(3px);}
+    68%{opacity: 1; transform: translateY(0) scale(.94); filter: blur(0);}
+    100%{opacity: 1; transform: translateY(0) scale(1); filter: blur(0);}
 }
 .main_copy_box__title{
     margin: 0;

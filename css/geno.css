@@ -913,19 +913,22 @@ em.point_color{color: #e65a1e;}
 .change_list .ch_unit{
     margin: 0;
     color: #aaa5a3;
-    font-size: clamp(22px, 6.2vw, 48px);
+    font-size: clamp(20px, 5.6vw, 44px);
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.075em;
     text-align: center;
     opacity: 0.5;
-    transform: scale(.9) translateY(10px);
     cursor: pointer;
     outline: none;
-    transition: color .3s ease, opacity .35s ease, transform .65s cubic-bezier(.22, 1, .36, 1);
-    will-change: color, opacity, transform;
+    transition: color .25s ease, opacity .25s ease;
+    will-change: color, opacity;
 }
-.change_list .ch_unit p{margin: 0;}
+.change_list .ch_unit p{
+    margin: 0;
+    line-height: inherit;
+}
+.change_list .ch_unit .point{line-height: inherit;}
 .change_list .ch_image{
     display: block;
     width: min(100%, 720px);
@@ -934,9 +937,7 @@ em.point_color{color: #e65a1e;}
     overflow: hidden;
     border-radius: clamp(14px, 3vw, 28px);
     opacity: 0;
-    transform: translateY(-12px) scale(.96);
-    transition: max-height .6s cubic-bezier(.22, 1, .36, 1), margin-top .45s ease, opacity .3s ease, transform .6s cubic-bezier(.22, 1, .36, 1);
-    will-change: max-height, opacity, transform;
+    will-change: max-height, opacity;
 }
 .change_list .ch_image img{
     display: block;
@@ -947,14 +948,13 @@ em.point_color{color: #e65a1e;}
 .change_list .ch_unit.is-active{
     color: #463934;
     opacity: 1;
-    transform: scale(1.07) translateY(0);
 }
 .change_list .ch_unit.is-active .ch_image,
 .change_list .ch_unit:focus-visible .ch_image{
     max-height: 360px;
     margin-top: clamp(14px, 3vw, 28px);
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transition: max-height .42s cubic-bezier(.4, 0, .2, 1), margin-top .42s cubic-bezier(.4, 0, .2, 1), opacity .2s ease;
 }
 .change_list .ch_unit:focus-visible{box-shadow: 0 0 0 3px rgba(255, 53, 18, .35);}
 .change_list .ch_unit .point{color: inherit;}
@@ -973,7 +973,7 @@ em.point_color{color: #e65a1e;}
     padding: 14px clamp(16px, 4vw, 32px);
     box-sizing: border-box;
     position: relative;
-    border-radius: clamp(22px, 5vw, 48px);
+    border-radius: 20px;
     background-color: #f8f8f8;
     color: #a8a3a1;
     font-size: clamp(20px, 5.3vw, 42px);
@@ -992,8 +992,8 @@ em.point_color{color: #e65a1e;}
 }
 .reco_list .reco_icon{
     display: block;
-    width: 90px;
-    height: 90px;
+    width: 94px;
+    height: 94px;
     justify-self: center;
     background-color: #aaa5a3;
     -webkit-mask: var(--icon) center / contain no-repeat;
@@ -1018,36 +1018,18 @@ em.point_color{color: #e65a1e;}
 .reco_list .reco_copy{
     min-width: 0;
     text-align: center;
-    line-height: 1.8;
+    line-height: 1.6;
     word-break: keep-all;
     text-align: left;
 }
 .reco_list .reco_unit.is-active .reco_copy{color: #fff;}
 .reco_list .reco_unit .point{
-    position: relative;
-    display: inline-block;
     line-height: 1.2;
     color: inherit;
 }
 .reco_list .reco_unit.is-active .point{
     color: #ddc8af;
-}
-.reco_list .reco_unit.is-active .point::after{
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -.16em;
-    left: 0;
-    height: 2px;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: point-line .7s cubic-bezier(.22, 1, .36, 1) both;
-}
-
-@keyframes point-line{
-    from{transform: scaleX(0);}
-    to{transform: scaleX(1);}
+    font-weight: 700;
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -1059,7 +1041,6 @@ em.point_color{color: #e65a1e;}
     .reco_list .reco_unit,
     .reco_list .reco_icon{transition: none;}
     .mom-scroll-section .section-title-motion{transform: none;}
-    .reco_list .reco_unit.is-active .point::after{animation: none;}
 }
 
 

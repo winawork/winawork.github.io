@@ -864,11 +864,30 @@ em.point_color{color: #e65a1e;}
 /* Mom landing hero: image copy was replaced with accessible, responsive text. */
 .main_copy_box{
     width: 100%;
-    padding: 0 5%;
     margin-bottom: clamp(12px, 2.2vw, 20px);
     box-sizing: border-box;
-    text-align: center;
-    color: #403632;
+}
+.main_copy_box .copy_con{
+    position: relative;
+}
+.main_copy_box .copy_con .retry{
+    opacity: 0;
+    transform: scale(.35);
+    will-change: opacity, transform;
+}
+.main_copy_box.show .copy_con .retry{
+    animation: mom-retry-pop .42s cubic-bezier(.18, 1.35, .42, 1) both;
+}
+.main_copy_box.show .copy_con .retry_01{animation-delay: 1s;}
+.main_copy_box.show .copy_con .retry_02{animation-delay: 1.15s;}
+.main_copy_box .copy_con .retry_02{position: absolute;
+    top: 0;
+    left: 0;}
+
+@keyframes mom-retry-pop{
+    0%{opacity: 0; transform: scale(.35);}
+    62%{opacity: 1; transform: scale(1.13);}
+    100%{opacity: 1; transform: scale(1);}
 }
 .main_copy_box__title{
     margin: 0;
@@ -1126,9 +1145,13 @@ em.point_color{color: #e65a1e;}
     .reco_list .reco_icon{transition: none;}
     .mom-scroll-section .section-title-motion{transform: none;}
     .reco_list .reco_unit.is-active .point::after{animation: none;}
+    .main_copy_box .copy_con .retry{
+        opacity: 1;
+        transform: none;
+    }
 }
 
-
+.main_copy_box{}
 
 
 

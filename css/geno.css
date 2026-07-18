@@ -861,6 +861,74 @@ em.point_color{color: #e65a1e;}
 
 .main.mom .con .ttl{margin-bottom: 30px;}
 
+/* Mom landing hero: image copy was replaced with accessible, responsive text. */
+.main_copy_box{
+    width: 100%;
+    padding: 0 5%;
+    margin-bottom: clamp(12px, 2.2vw, 20px);
+    box-sizing: border-box;
+    text-align: center;
+    color: #403632;
+}
+.main_copy_box__title{
+    margin: 0;
+    font-family: inherit;
+    font-size: clamp(34px, 9.15vw, 77px);
+    font-weight: 800;
+    line-height: .98;
+    letter-spacing: -.095em;
+    word-break: keep-all;
+}
+.main_copy_box__accent,
+.main_copy_box__line{display: block;}
+.main_copy_box__accent{
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    color: #ff3b0b;
+    font-size: 1.25em;
+    margin: 0 auto clamp(30px, 4.1vw, 36px);
+}
+.main_copy_box__accent-hot{color: #ff3b0b;}
+.main_copy_box__accent-tail{color: #403632;}
+.main_copy_box__dots{
+    position: absolute;
+    right: 38%;
+    bottom: calc(100% + clamp(13px, 2vw, 17px));
+    left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.main_copy_box__dots i{
+    width: clamp(9px, 1.45vw, 12px);
+    height: clamp(9px, 1.45vw, 12px);
+    border-radius: 50%;
+    background: #ff3b0b;
+}
+.main_copy_box__rewind{
+    display: flex;
+    width: clamp(500px, 64vw, 548px);
+    margin: 0 auto clamp(13px, 2vw, 18px);
+    color: #403632;
+    font-size: 2.75em;
+    font-weight: 900;
+    line-height: .8;
+    letter-spacing: -.12em;
+}
+.main_copy_box__word{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.main_copy_box__line{
+    font-size: 1.06em;
+}
+
+@media (max-width: 479px){
+    .main_copy_box__title{font-size: 30px;}
+    .main_copy_box__rewind{width: min(90vw, 500px); font-size: 2.25em;}
+}
+
 .main.mom .con.sa{
     filter: blur(8px);
     transform: scale(1.025);
@@ -1021,12 +1089,31 @@ em.point_color{color: #e65a1e;}
 }
 .reco_list .reco_unit.is-active .reco_copy{color: #fff;}
 .reco_list .reco_unit .point{
+    position: relative;
+    display: inline-block;
     line-height: 1.2;
     color: inherit;
 }
 .reco_list .reco_unit.is-active .point{
     color: #ddc8af;
     font-weight: 700;
+}
+.reco_list .reco_unit.is-active .point::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -.16em;
+    left: 0;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: point-line .7s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes point-line{
+    from{transform: scaleX(0);}
+    to{transform: scaleX(1);}
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -1038,6 +1125,7 @@ em.point_color{color: #e65a1e;}
     .reco_list .reco_unit,
     .reco_list .reco_icon{transition: none;}
     .mom-scroll-section .section-title-motion{transform: none;}
+    .reco_list .reco_unit.is-active .point::after{animation: none;}
 }
 
 

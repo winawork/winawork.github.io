@@ -885,6 +885,26 @@ em.point_color{color: #e65a1e;}
     top: 0;
     left: 0;}
 
+.cert_con{
+    position: relative;
+    overflow: hidden;
+}
+.cert_con .cert{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-28px) scale(1.7);
+    filter: blur(14px);
+    will-change: opacity, transform, filter;
+}
+.cert_con.show .cert{
+    animation: mom-retry-impact .46s cubic-bezier(.12, .78, .2, 1) both;
+}
+.cert_con.show .cert:nth-of-type(2){animation-delay: .18s;}
+.cert_con.show .cert:nth-of-type(3){animation-delay: .4s;}
+.cert_con.show .cert:nth-of-type(4){animation-delay: .62s;}
+
 @keyframes mom-retry-impact{
     0%{opacity: 0; transform: translateY(-28px) scale(1.7); filter: blur(14px);}
     18%{opacity: 1; transform: translateY(-16px) scale(1.42); filter: blur(3px);}
@@ -1150,6 +1170,11 @@ em.point_color{color: #e65a1e;}
     .main_copy_box .copy_con .retry{
         opacity: 1;
         transform: none;
+    }
+    .cert_con .cert{
+        opacity: 1;
+        transform: none;
+        filter: none;
     }
 }
 

@@ -932,12 +932,12 @@ em.point_color{color: #e65a1e;}
 .change_list .ch_image{
     display: block;
     width: min(100%, 720px);
-    max-height: 0;
-    margin: 0 auto;
+    margin: clamp(14px, 3vw, 28px) auto 0;
     overflow: hidden;
     border-radius: clamp(14px, 3vw, 28px);
-    opacity: 0;
-    will-change: max-height, opacity;
+    opacity: .5;
+    transition: opacity .25s ease;
+    will-change: opacity;
 }
 .change_list .ch_image img{
     display: block;
@@ -951,10 +951,7 @@ em.point_color{color: #e65a1e;}
 }
 .change_list .ch_unit.is-active .ch_image,
 .change_list .ch_unit:focus-visible .ch_image{
-    max-height: 360px;
-    margin-top: clamp(14px, 3vw, 28px);
     opacity: 1;
-    transition: max-height .42s cubic-bezier(.4, 0, .2, 1), margin-top .42s cubic-bezier(.4, 0, .2, 1), opacity .2s ease;
 }
 .change_list .ch_unit:focus-visible{box-shadow: 0 0 0 3px rgba(255, 53, 18, .35);}
 .change_list .ch_unit .point{color: inherit;}

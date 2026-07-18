@@ -126,12 +126,10 @@
                         setActiveUnit(list, unit);
                         window.requestAnimationFrame(() => {
                             const focusText = unit.querySelector('p') || unit;
-                            const bounds = focusText.getBoundingClientRect();
-                            const targetTop = window.scrollY + bounds.top + bounds.height / 2 - window.innerHeight / 2;
-
-                            window.scrollTo({
-                                top: Math.max(0, targetTop),
-                                behavior: reduceMotionQuery.matches ? 'auto' : 'smooth'
+                            focusText.scrollIntoView({
+                                behavior: reduceMotionQuery.matches ? 'auto' : 'smooth',
+                                block: 'center',
+                                inline: 'nearest'
                             });
                             releaseClickFocus();
                         });
@@ -204,11 +202,11 @@
                                 <div class="change_list">
                                     <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">젤리같은 아랫배</span>가 안없어진다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_01.png" alt="아랫배 고민을 표현한 이미지"></span></div>
                                     <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">목·어깨 허리</span>가 자주 뭉친다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_02.png" alt="목과 허리 불편함을 표현한 이미지"></span></div>
-                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">생리통</span>이 심하고 <span class="point">질염</span>이 자주 생긴다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_07.png" alt="생리통 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">생리통</span>이 심하고 <span class="point">질염</span>이 자주 생긴다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_03.png" alt="생리통 고민을 표현한 이미지"></span></div>
                                     <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">허벅지 및 엉덩이 셀룰라이트</span>가 심하다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_04.png" alt="허벅지 셀룰라이트 고민을 표현한 이미지"></span></div>
                                     <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">손, 발 끝</span>까지 붓기가 빠지지 않는다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_05.png" alt="다리 붓기 고민을 표현한 이미지"></span></div>
-                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">한 끼만</span> 먹어도 살이 찐다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_03.png" alt="체중 변화 고민을 표현한 이미지"></span></div>
-                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">운동과 식단</span>을 해도<br>라인이 달라지지 않는다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_06.png" alt="운동과 식단 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">한 끼만</span> 먹어도 살이 찐다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_06.png" alt="체중 변화 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">운동과 식단</span>을 해도<br>라인이 달라지지 않는다</p><span class="ch_image"><img src="/images/geno/2026/mom/chg_07.png" alt="운동과 식단 고민을 표현한 이미지"></span></div>
                                 </div>
                             </section>
 

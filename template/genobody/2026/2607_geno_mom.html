@@ -49,6 +49,7 @@
 
                         units.forEach((unit) => {
                             unit.classList.toggle('is-active', unit === activeUnit);
+                            unit.setAttribute('aria-expanded', unit === activeUnit ? 'true' : 'false');
                         });
                     });
                 };
@@ -149,14 +150,15 @@
                             <section class="mom-scroll-section" data-scroll-section>
                                 <img class="com_img sa sa-up section-title-motion" src="https://winawork.github.io/images/geno/2026/mom/mom_13.png">
                                 <div class="change_list">
-                                    <p class="ch_unit"><span class="point">젤리같은 아랫배</span>가 안없어진다</p>
-                                    <p class="ch_unit"><span class="point">복부 처짐</span>이 심하다</p>
-                                    <p class="ch_unit"><span class="point">목·어깨 허리</span>가 자주 뭉친다</p>
-                                    <p class="ch_unit"><span class="point">생리통</span>이 심하고 <span class="point">질염</span>이 자주 생긴다</p>
-                                    <p class="ch_unit"><span class="point">허벅지 및 엉덩이 셀룰라이트</span>가 심하다</p>
-                                    <p class="ch_unit"><span class="point">손, 발 끝</span>까지 붓기가 빠지지 않는다</p>
-                                    <p class="ch_unit"><span class="point">한 끼만</span> 먹어도 살이 찐다</p>
-                                    <p class="ch_unit"><span class="point">운동과 식단</span>을 해도 라인이 달라지지 않는다</p>
+                                    <!-- change_01~08.jpg: 문장 순서에 맞춰 원본 이미지를 추가하세요. -->
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">젤리같은 아랫배</span>가 안없어진다</p><span class="ch_image"><img src="/images/geno/2026/mom/change_01.jpg" alt="아랫배 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">복부 처짐</span>이 심하다</p><span class="ch_image"><img src="/images/geno/2026/mom/change_02.jpg" alt="복부 처짐 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">목·어깨 허리</span>가 자주 뭉친다</p><span class="ch_image"><img src="/images/geno/2026/mom/change_03.jpg" alt="목과 허리 불편함을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">생리통</span>이 심하고 <span class="point">질염</span>이 자주 생긴다</p><span class="ch_image"><img src="/images/geno/2026/mom/change_04.jpg" alt="생리통 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">허벅지 및 엉덩이 셀룰라이트</span>가 심하다</p><span class="ch_image"><img src="/images/geno/2026/mom/change_05.jpg" alt="허벅지 셀룰라이트 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">손, 발 끝</span>까지 붓기가 빠지지 않는다</p><span class="ch_image"><img src="/images/geno/2026/mom/change_06.jpg" alt="다리 붓기 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">한 끼만</span> 먹어도 살이 찐다</p><span class="ch_image"><img src="/images/geno/2026/mom/change_07.jpg" alt="체중 변화 고민을 표현한 이미지"></span></div>
+                                    <div class="ch_unit" tabindex="0" aria-expanded="false"><p><span class="point">운동과 식단</span>을 해도 라인이 달라지지 않는다</p><span class="ch_image"><img src="/images/geno/2026/mom/change_08.jpg" alt="운동과 식단 고민을 표현한 이미지"></span></div>
                                 </div>
                             </section>
 
@@ -211,14 +213,13 @@
                             <section class="mom-scroll-section" data-scroll-section>
                                 <img class="com_img sa sa-up section-title-motion" src="https://winawork.github.io/images/geno/2026/mom/mom_48.png">
                                 <div class="reco_list">
-                                    <p class="reco_unit"><span class="point">안전한 산후 회복</span>을 경험하고 싶은 분</p>
-                                    <p class="reco_unit"><span class="point">출산 후 체형</span>이 변하신 분</p>
-                                    <p class="reco_unit"><span class="point">임신 전 몸</span>을 회복하고 싶으신 분</p>
-                                    <p class="reco_unit"><span class="point">복직근 이개</span>가 걱정되시는 분</p>
-                                    <p class="reco_unit"><span class="point">허리·목·어깨 통증</span>이 있으신 분</p>
-                                    <p class="reco_unit"><span class="point">골반</span>이 틀어지신 분</p>
-                                    <p class="reco_unit"><span class="point">붓기</span>가 심하신 분</p>
-                                    <p class="reco_unit"><span class="point">운동</span>을 해도 변화가 없으신 분</p>
+                                    <p class="reco_unit"><span class="reco_icon" style="--icon: url('/images/geno/2026/mom/reco-body-change.svg')" aria-hidden="true"></span><span class="reco_copy"><span class="point">출산 후 체형</span>이 변하신 분</span></p>
+                                    <p class="reco_unit"><span class="reco_icon" style="--icon: url('/images/geno/2026/mom/reco-body-recovery.svg')" aria-hidden="true"></span><span class="reco_copy"><span class="point">임신 전 몸</span>을<br>회복하고 싶으신 분</span></p>
+                                    <p class="reco_unit"><span class="reco_icon" style="--icon: url('/images/geno/2026/mom/reco-diastasis.svg')" aria-hidden="true"></span><span class="reco_copy"><span class="point">복직근 이개</span>가<br>걱정되시는 분</span></p>
+                                    <p class="reco_unit"><span class="reco_icon" style="--icon: url('/images/geno/2026/mom/reco-pain.svg')" aria-hidden="true"></span><span class="reco_copy"><span class="point">허리·목·어깨 통증</span>이<br>있으신 분</span></p>
+                                    <p class="reco_unit"><span class="reco_icon" style="--icon: url('/images/geno/2026/mom/reco-pelvis.svg')" aria-hidden="true"></span><span class="reco_copy"><span class="point">골반</span>이 틀어지신 분</span></p>
+                                    <p class="reco_unit"><span class="reco_icon" style="--icon: url('/images/geno/2026/mom/reco-exercise.svg')" aria-hidden="true"></span><span class="reco_copy"><span class="point">붓기</span>가 심하신 분</span></p>
+                                    <p class="reco_unit"><span class="reco_icon" style="--icon: url('/images/geno/2026/mom/reco-swelling.svg')" aria-hidden="true"></span><span class="reco_copy"><span class="point">운동</span>을 해도<br>변화가 없으신 분</span></p>
                                 </div>
                             </section>
 

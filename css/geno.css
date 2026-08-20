@@ -1064,7 +1064,7 @@ em.point_color{color: #e65a1e;}
 }
 .change_list .ch_unit:focus-visible{box-shadow: 0 0 0 3px rgba(255, 53, 18, .35);}
 .change_list .ch_unit .point{color: inherit;}
-.change_list .ch_unit.is-active .point{color: #ff3512;}
+.change_list .ch_unit.is-active .point{color: #ff6e73;}
 
 .reco_list{
     width: 100%;

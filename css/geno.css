@@ -6,7 +6,8 @@
 
 
 .land_cont .in .com_img{margin: 0px;
-    max-width: initial;}
+    max-width: initial;
+    display: flex;}
 .land_cont .in{margin-inline:initial}
 
 .shop-content.shop-style-b .goods_form{padding: 0px;}
@@ -1180,7 +1181,7 @@ em.point_color{color: #e65a1e;}
 
 .main_copy_box{}
 
-
+.year_dark{background-color: #302317;}
 
 
 

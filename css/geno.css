@@ -1195,10 +1195,10 @@ em.point_color{color: #e65a1e;}
   display: block;
 
   width: calc(100% + 4px);
-  max-width: none;
+  max-width: none !important;
   height: auto;
 
-  margin: -2px;
+  margin: -2px !important;
 
   object-fit: cover;
 }

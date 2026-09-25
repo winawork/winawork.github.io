@@ -1194,11 +1194,11 @@ em.point_color{color: #e65a1e;}
 .video-crop video {
   display: block;
 
-  width: calc(100% + 2px);
+  width: calc(100% + 4px);
   max-width: none;
   height: auto;
 
-  margin: -1px;
+  margin: -2px;
 
   object-fit: cover;
 }

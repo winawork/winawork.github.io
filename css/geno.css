@@ -1194,7 +1194,7 @@ em.point_color{color: #e65a1e;}
 .video-crop video, .crop img {
   display: block;
 
-  width: calc(100% + 4px);
+  width: calc(100% + 4px) !important;
   max-width: none !important;
   height: auto;
 

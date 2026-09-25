@@ -1185,13 +1185,13 @@ em.point_color{color: #e65a1e;}
 
 .hero_vod{position: relative;}
 .cover{}
-.video-crop {
+.video-crop, .crop {
   width: 100%;
   overflow: hidden;
   line-height: 0;
 }
 
-.video-crop video {
+.video-crop video, .crop img {
   display: block;
 
   width: calc(100% + 4px);

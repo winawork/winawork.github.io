@@ -5,10 +5,15 @@ html, body{height: 100%;}
 p{margin: 0px;}
 em{font-size: inherit;}
 
-._input_form_submit{   background-color: #12691e !important;
+._input_form_submit{   background-color: #e5602d !important;
     font-size: 20px !important;
     padding: 15px 45px !important;
-    border-radius: 100px !important;}
+    color: white !important;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px !important;
+    margin-top:30px;
+    }
 .form_bottom{padding-bottom: 120px;}
 
 .land_cont{width: 100%;
@@ -242,11 +247,11 @@ em{font-size: inherit;}
 .simul_box .simul_rs .rs_unit .rs_con.blue{color: #2f6cfd;}
 .simul_money{margin-top: 40px;}
 
-.line{display: flex;
+/* .line{display: flex;
     align-items: center;
     justify-content: center;
     height: 120px;
-    margin: 30px 0;}
+    margin: 30px 0;} */
 .line .line_in{width: 1px;
     height: 100%;
     background-color: #505050;}
@@ -256,7 +261,6 @@ em{font-size: inherit;}
 .scs_logo{width: 200px;}
 footer{width: 100%;
     background-color: #f5f5f5;
-    padding: 0 5%;
     box-sizing: border-box;}
     footer .foot_in{    max-width: 1280px;
     align-items: center;
@@ -624,9 +628,9 @@ em.point_color{color: #e65a1e;}
     color: #787878;}
 
 
-
-
-
+#event-period{color: #787878;}
+#input_061ks1T7G8{display: none;}
+#itsme-floating-actions{display: none !important;}
 
 
 
@@ -832,8 +836,8 @@ em.point_color{color: #e65a1e;}
     .simul_box .simul_rs .rs_unit .rs_title .rs_dot{min-width: 4px;
         min-height: 4px;
         margin-right: 8px;}
-    .line{height: 80px;
-        margin: 20px 0;}
+    /* .line{height: 80px;
+        margin: 20px 0;} */
     .review_list{margin-top: 30px;}
     .form_bottom{padding-bottom: 60px;}
     footer .foot_in{flex-wrap: wrap;}

@@ -1,5 +1,21 @@
 $(function () {
 
+	$.setEventPeriod = function(){
+		var startDate = new Date();
+		var endDate = new Date(startDate);
+		endDate.setDate(endDate.getDate() + 30);
+
+		var formatDate = function(date){
+			var year = date.getFullYear();
+			var month = String(date.getMonth() + 1).padStart(2, '0');
+			var day = String(date.getDate()).padStart(2, '0');
+
+			return year + '.' + month + '.' + day;
+		};
+
+		$('#event-period').text(formatDate(startDate) + ' ~ ' + formatDate(endDate));
+	}
+
 
 
 	$.scrollEvent = function(){
@@ -8,7 +24,7 @@ $(function () {
 		const scr_top = $(window).scrollTop();
 		const win_h = window.innerHeight;
 
-		const idx_01 = $('.page');
+		const idx_01 = $('.land_cont');
         const land_h = $(idx_01).height();
         const h_01 = idx_01.innerHeight();
 
@@ -42,33 +58,36 @@ $(function () {
 	$.float_btn = function(){
 		$('.float_btn').on('click',function(){
 			const win_h = window.innerHeight;
-			const idx_01 = $('.form');
-			const land_h = $(idx_01).offset().top;
+			const idx_01 = $('.land_cont');
+			const land_h = $(idx_01).height();
 
-			const form_move = land_h-100;
+			const form_move = land_h;
+			console.log('form_move='+form_move)
 
 			$('body, html').animate({scrollTop : form_move}, 400);
 
 		})
 	}
 
+	$.utm_set_meta = function(){
+		const urlParams = new URL(location.href).searchParams;
+		const mediaName = urlParams.get('media');
 
-	$.url_set = function(){
-		var targetUrl = 'http://itsme-clinic-dj.kr/lp';
+		console.log('mediaName ='+mediaName);
 
-		try {
-			window.history.replaceState(window.history.state, '', targetUrl);
-		} catch (error) {
-			console.warn('$.url_set failed. replaceState requires the same origin as the current page.', error);
-		}
+		// 매체
+		$('#input_txt_05gTv4E4U8').val(mediaName);
+		// 랜딩
+		// $('#input_txt_nNM51c74I6').val(landId);
 	}
 
 
 	
 
 	$.initView = function () {
-		$.url_set();
+		$.setEventPeriod();
 		$.float_btn();
+		$.utm_set_meta();
 
 	};
 	$.initView();

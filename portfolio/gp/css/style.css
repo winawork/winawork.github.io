@@ -73,7 +73,32 @@ layout
 .btn_ghost:active,
 .btn_ghost:hover{color:#243f90;font-weight:900;background-color:#fff;}
 
-.footer{position:relative;padding:10px 0;text-align:center;background-color:#12182a;}
+.footer{position:relative;padding:32px 0 24px;background:#12182a;color:#b4bccd;}
+.footer > .inner{width:calc(100% - 64px);max-width:1200px;}
+.footer-main{display:flex;align-items:flex-start;gap:56px;}
+.footer-brand{flex:0 0 210px;}
+.footer-brand > a{display:inline-block;color:#f1f4fa;font-size:23px;font-weight:700;letter-spacing:.04em;line-height:1.3;}
+.footer-brand span{display:block;margin-top:8px;color:#8895b0;font-size:12px;font-weight:400;letter-spacing:0;line-height:1.6;}
+.footer-info{padding-top:2px;min-width:0;}
+.footer-address{margin:0;color:#c6cddd;font-size:13px;line-height:1.8;word-break:keep-all;overflow-wrap:anywhere;}
+.footer-contact{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:8px;}
+.footer-contact p,.footer-contact a{margin:0;color:#b4bccd;font-size:13px;line-height:1.8;}
+.footer-contact span{margin-right:6px;color:#77849d;font-size:11px;letter-spacing:.04em;}
+.footer-contact a:hover,.footer-contact a:focus-visible{color:#fff;}
+.footer a:focus-visible{outline:2px solid #93aee7;outline-offset:5px;}
+.footer-copyright{margin:24px 0 0;padding-top:16px;border-top:1px solid #293147;color:#7f8ba3;font-size:11px;line-height:1.7;letter-spacing:.01em;}
+.footer .publishing-notice{margin:12px 0 0;color:#7f8ba3;font-size:11px;line-height:1.7;}
+.footer .publishing-notice a{color:#a8b7d4;text-decoration:underline;text-underline-offset:3px;}
+@media(max-width:839px){
+ .footer{padding:28px 0 22px;}
+ .footer > .inner{width:calc(100% - 40px);}
+ .footer-main{flex-direction:column;gap:20px;}
+ .footer-brand{flex-basis:auto;}
+ .footer-brand > a{font-size:21px;}
+ .footer-contact{gap:5px 18px;}
+ .footer-copyright{margin-top:22px;}
+}
+@media(max-width:479px){.footer-contact{flex-direction:column;gap:4px;}.footer-address{font-size:12px;}}
 .footer .logo{display:inline-block;position:absolute;top:0;left:0;width:110px;height:40px;vertical-align:top;background:url(../images/client/sprite_web.png) 0 -60px;}
 .footer .value{vertical-align:top;color:#898c95;font-size:13px;line-height:23px;}
 

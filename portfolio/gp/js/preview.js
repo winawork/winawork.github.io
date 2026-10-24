@@ -109,14 +109,14 @@
     });
     if (document.querySelector('form, .board_list_box, .board_write_box, .root_daum_roughmap')) {
       var notice = document.createElement('p');
-      notice.style.cssText = 'clear:both;text-align:center;margin:0;padding:18px 20px;background:#f7f7f7;color:#666;font:13px/1.6 sans-serif;';
+      notice.className = 'publishing-notice';
       notice.textContent = english ? 'Static portfolio preview · ' : '퍼블리싱 포트폴리오 미리보기 · ';
       var pages = document.createElement('a');
       pages.href = 'pages.html';
       pages.textContent = english ? 'All pages' : '전체 화면 보기';
-      pages.style.textDecoration = 'underline';
       notice.appendChild(pages);
-      document.body.appendChild(notice);
+      var footer = document.querySelector('.footer > .inner');
+      if (footer) footer.appendChild(notice);
     }
     if (window.AOS && typeof window.AOS.init === 'function') window.AOS.init({ once: true });
   }

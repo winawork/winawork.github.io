@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/common.css">
+<script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/main_jquery.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="in">
+
+            <div class="header_con">
+                <div class="logo"><a href="index.html" aria-label="메인으로">
+                    <img class="com_img switch_1" src="images/logo_up.png">
+                    <img class="com_img switch_2" src="images/footer_logo.png">
+                </a></div>
+                <div class="menu_list">
+                    <a href="corporation.html" class="menu cate_2">회사소개</a>
+                    <a href="brand.html" class="menu cate_2">브랜드소개</a>
+                    <a href="product.html" class="menu cate_2">제품안내</a>
+                    <a href="board.html" class="menu cate_2">새소식</a>
+                    <a href="#" class="menu cate_2" data-preview-unavailable="true">쇼핑몰</a>
+                </div>
+                <div class="header_remote">
+                    <div class="header_lang">
+                        <a href="index.html" class="head_txt cate_3 on">KR</a>
+                        <a href="#" class="head_txt cate_3" data-preview-unavailable="true">EN</a>
+                     </div>
+                    <span class="mo_icon">
+                        <span class="mo_line"></span>
+                        <span class="mo_line"></span>
+                        <span class="mo_line"></span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="navi_con">
+                <div class="navi_in">
+                    <div>
+                        <div class="navi_logo"><a href="index.html" aria-label="메인으로">
+                            <img class="com_img" src="images/logo_up.png">
+                        </a></div>
+                        <div class="navi_copy_right_con">
+                            <p class="navi_copy_right pc">Copyright © Noolerfood. All right reserved.</p>
+                            <p class="navi_copy_right mo">Copyright ©<br>Noolerfood. All right reserved.</p>
+                        </div>
+                        <div class="navi_menu_con">
+                            <div class="navi_menu_items">
+                                <a href="corporation.html" class="navi_menu_unit">
+                                    <span class="navi_menu tit_3">회사소개</span>
+                                    <img class="navi_icon" src="images/navi_icon.png">
+                                    <img class="navi_icon mo" src="images/Vector 13.png">
+                                </a>
+                                <a href="brand.html" class="navi_menu_unit">
+                                    <span class="navi_menu tit_3">브랜드소개</span>
+                                    <img class="navi_icon" src="images/navi_icon.png">
+                                    <img class="navi_icon mo" src="images/Vector 13.png">
+                                </a>
+                                <a href="product.html" class="navi_menu_unit">
+                                    <span class="navi_menu tit_3">제품안내</span>
+                                    <img class="navi_icon" src="images/navi_icon.png">
+                                    <img class="navi_icon mo" src="images/Vector 13.png">
+                                </a>
+                                <a href="board.html" class="navi_menu_unit">
+                                    <span class="navi_menu tit_3">새소식</span>
+                                    <img class="navi_icon" src="images/navi_icon.png">
+                                    <img class="navi_icon mo" src="images/Vector 13.png">
+                                </a>
+                                <a href="#" class="navi_menu_unit" data-preview-unavailable="true">
+                                    <span class="navi_menu tit_3">쇼핑몰</span>
+                                    <img class="navi_icon" src="images/navi_icon.png">
+                                    <img class="navi_icon mo" src="images/Vector 13.png">
+                                </a>
+                                <a href="contact.html" class="navi_menu_unit">
+                                    <span class="navi_menu tit_3">문의하기</span>
+                                    <img class="navi_icon" src="images/navi_icon.png">
+                                    <img class="navi_icon mo" src="images/Vector 13.png">
+                                </a>
+                            </div>
+                            <div class="navi_close">
+                                <img class="close_img pc" src="images/navi_close.png">
+                                <img class="close_img mo" src="images/Group 62.png">
+                            </div>
+                        </div>
+                        <div class="navi_lang">
+                            <a href="index.html" class="lang on">KR</a>
+                            <a href="#" class="lang" data-preview-unavailable="true">EN</a>
+                        </div>
+                    </div>
+
+                    <div class="navi_sns_list">
+                        <a href="#" class="sns_unit" data-preview-unavailable="true">
+                            <img class="com_img" src="images/sns_insta_w.png">
+                        </a>
+                        <a href="#" class="sns_unit" data-preview-unavailable="true">
+                            <img class="com_img" src="images/sns_facebook_w.png">
+                        </a>
+                        <a href="#" class="sns_unit" data-preview-unavailable="true">
+                            <img class="com_img" src="images/sns_kakao_w.png">
+                        </a>
+                        <a href="#" class="sns_unit" data-preview-unavailable="true">
+                            <img class="com_img" src="images/sns_blog_w.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="content">
+        <section class="main_sec" data-idx="1">
+
+            <div class="slide_text">
+                <div class="inner">
+                    <div class="tit_list">
+                        <div class="tit_unit on">
+                            <p class="cate_1">Convenient</p>
+                            <p class="tit_1">세상에서 가장 간편하게 먹을 수 있는 
+                                눌러밥을 소개합니다</p>
+                            <p class="body_2 gray_7">눌러밥과 함께하는 최고의 건강 간편식</p>
+                        </div>
+                        <div class="tit_unit">
+                            <p class="cate_1">Creative</p>
+                            <p class="tit_1">세상에 없는 새로운 간편식 눌러밥,
+                                맛있고 건강함을 약속드립니다</p>
+                            <p class="body_2 gray_7">신선하고 건강한 식재료와 함께하는 눌러밥</p>
+                        </div>
+                        <div class="tit_unit">
+                            <p class="cate_1">Creditable</p>
+                            <p class="tit_1">간편하고 맛있고 건강한
+                                최고의 간편식 눌러밥이 있습니다</p>
+                            <p class="body_2 gray_7">눌러밥과 함께 하는 행복하고 건강한 한 끼</p>
+                        </div>
+                    </div>
+
+                    <div class="slide_opt">
+                        <div class="btn_list">
+                            <button class="slide_btn pause hover">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </button>
+
+                            <button class="slide_btn prev">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </button>
+
+                            <button class="slide_btn next">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </button>
+                        </div>
+
+                        <div class="slide_bar">
+                            <p class="slide_num slide_now tit_7" data-idx="1">01</p>
+                            <div class="slide_back">
+                                <div class="slide_act"></div>
+                            </div>
+                            <p class="slide_num tit_7">03</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="unit on"></div>
+                <div class="unit"></div>
+                <div class="unit"></div>
+            </div>
+
+            <div class="down_con">
+                <div class="in">
+                    <span class="plus_icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </span>
+                    <a href="#" class="down_unit" data-preview-unavailable="true">
+                        <span class="tit">회사 소개서 다운로드</span>
+                        <img class="down_icon" src="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="scr_down">
+                <div class="in">
+                    <div class="src_img">
+                        <img class="com_img" src="images/scroll_down.png">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="sub_sec">
+            <div class="com_inner">
+
+                <div class="com_tit_con ">
+                    <div class="com_tit_unit">
+                        <p class="cate_1 green">Our Value</p>
+                        <p class="tit_1 green fw600">상상력과 혁신을 통한 새로운 식문화의 리더</p>
+                        <p class="body_2 gray_7">눌러푸드는 창의적인 아이디어와 끊임 없는 혁신을 통하여 그전에 존재하지 않았던 새로운 식문화 창조하겠습니다.</p>
+                    </div>
+                </div>
+
+                <div class="point_list">
+                    <div class="list">
+
+                        <div class="unit">
+                            <span class="point_img">
+                                <img class="img_obj" src="images/Rectangle 18.png">
+                            </span>
+                            <div class="point_txt_con">
+                                <img class="point_icon" src="images/icon_1.png">
+                                <p class="tit_2 gray_8 fw600">독창적인</p>
+                                <p class="tit_4 gray_5">Creative</p>
+                                <p class="body_2 gray_7">세상에서 가장 간편하고 맛있고 건강한 음식으로 세상에 기여합니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="unit reverse">
+                            <span class="point_img">
+                                <img class="img_obj" src="images/Rectangle 19.png">
+                            </span>
+                            <div class="point_txt_con">
+                                <img class="point_icon" src="images/icon_2.png">
+                                <p class="tit_2 gray_8 fw600">간편한</p>
+                                <p class="tit_4 gray_5">Convenient</p>
+                                <p class="body_2 gray_7">빠르고 편리한 먹거리로, 바쁜 일상 속에서도 식사를 즐길 수 있도록 합니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="unit">
+                            <span class="point_img">
+                                <img class="img_obj" src="images/Rectangle 17.png">
+                            </span>
+                            <div class="point_txt_con">
+                                <img class="point_icon" src="images/icon_3.png">
+                                <p class="tit_2 gray_8 fw600">신뢰할 수 있는</p>
+                                <p class="tit_4 gray_5">Creditable</p>
+                                <p class="body_2 gray_7">놀라운 상상력을 통한 가치 창출 및 새로운 식문화를 선도하는 글로벌 식품 기업입니다.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>                
+
+            </div>
+        </section>
+
+        <section class="sub_sec pd_0">
+            <div class="brand_con">
+                <div class="unit brand_back_1 slide_unit sub_sec">
+
+                    <div class="com_inner">
+                        <div class="com_tit_con ">
+                            <div class="com_tit_unit">
+                                <p class="cate_1 green">Our Brand</p>
+                                <p class="tit_1 green fw600 mb_0">눌러푸드 브랜드 이야기</p>
+                            </div>
+                        </div>
+
+                        <div class="list">
+                            <div class="item">
+                                <div class="list_con">
+                                    <div class="brand_img_con">
+                                        <img class="brand_img img_1 pc" src="images/brand_food_01.png">
+                                        <img class="brand_img img_1 mo" src="images/brand_food_02.png">
+                                        <div class="arrow_box mo">
+                                            <button class="arrow prev">
+                                                <img class="arrow_img" src="images/icon_L.png"> 
+                                            </button>
+                                            <button class="arrow next">
+                                                <img class="arrow_img" src="images/icon_L.png"> 
+                                            </button>
+                                        </div>
+                                        <div class="arrow_box pc">
+                                            <button class="arrow prev">
+                                                <img class="arrow_img" src="images/icon_L_green.png"> 
+                                            </button>
+                                            <button class="arrow next">
+                                                <img class="arrow_img" src="images/icon_L_green.png">  
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="txt_con">
+                                        <p class="brand_tit green">세상에서 가장 간편한 밥!</p>
+                                        <p class="tit_2 green">The easiest rice in the world!</p>
+                                        <div class="txt_unit">
+                                            <p class="txt green"><em>눌러밥</em>은 튜브컵 타입의 용기를 손으로 눌러 다른 도구 없이 바로 먹을 수 있는 즉석 식품입니다. 밥뿐만 아니라, 면, 샐러드, 간식, 반찬, 양념 등 매우 <em>다양한 확장성을 가진 아이디어 상품</em>입니다.</p>
+                                            <p class="txt green"><em>눌러밥</em>은 세계적인 먹거리 시장의 흐름에 맞춰 기획, 개발된 식품으로 낮은 가격, 적은 쓰레기 양, 한손으로 취식 가능, 손에 묻지 않는다는 장점을 가지고 있습니다.</p>
+                                            <p class="txt green"><em>눌러밥</em>은 국내 시장에 한정되지 않고, 세계 각 국의 다양한 현지 음식을 <em>눌러밥 시리즈</em>로 상품화 하여, 해외 시장으로 확장을 준비하고 있습니다.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="unit brand_back_2 sub_sec">
+                    <div class="com_inner">
+                        <div class="com_tit_con ">
+                            <div class="com_tit_unit">
+                                <p class="cate_1 white">Our Brand</p>
+                                <p class="tit_1 white fw600 mb_0">눌러푸드 브랜드 이야기</p>
+                            </div>
+                        </div>
+
+                        <div class="brand_img_con img_2">
+                            <img class="brand_img" src="images/brand_food_03.png">
+                            <div class="arrow_box">
+                                <button class="arrow prev">
+                                    <img class="arrow_img" src="images/icon_L.png"> 
+                                </button>
+                                <button class="arrow next">
+                                    <img class="arrow_img" src="images/icon_L.png"> 
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="txt_con txt_2">
+                            <p class="brand_tit white">언제 어디서든 간편하게 눌러봐!</p>
+                            <p class="tit_2 white">Push anytime, anywhere!</p>
+                            <div class="txt_unit ty_2">
+                                <p class="txt white">언제 어디서나 간편하게 손에 들고 눌러서 먹을 수 있는 <em>눌러밥</em>은 시간과 장소에 구애받지 않고 누구나 편리하게 즐길 수 있는 새로운 먹거리 혁신입니다.</p>
+                                <p class="txt white"><em>눌러밥</em>은 건강한 식재료와 맛있는 레시피를 바탕으로 만들어집니다. 약 210여가지의 새로운 메뉴를 지속적으로 개발하고 있습니다. </p>
+                                <p class="txt white"><em>눌러밥</em>은 한 입 먹음으로 다양한 문화와 맛을 경험할 수 있는 창구입니다. 글로벌 시장에서 다양한 문화를 반영한 눌러밥을 즐길 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> 
+        </section>
+
+        <section class="sub_sec sht_b pd_a0">
+            <div class="pd_05">
+                <div class="com_inner">
+                    <div class="com_tit_con ">
+                        <div class="com_tit_unit">
+                            <p class="cate_1 green">Products</p>
+                            <p class="tit_1 green fw600 mb_0">눌러밥 제품 안내</p>
+                        </div>
+                        <a href="product.html" class="btn_more com_btn" >
+                            <span class="cate_1">상세보기</span>
+                            <img class="more_img" src="images/icon-arrow-right-24.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="prod_list">
+                <div class="prod_in">
+                    <a class="unit long" href="product.html">
+                        <img class="com_img" src="images/prod_01.png">
+                        <img class="com_img mo" src="images/food_03.png">
+                    </a>
+                    <div class="prod_grp">
+                        <a class="unit" href="product.html">
+                            <img class="com_img pc" src="images/prod_02.png">
+                            <img class="com_img mo" src="images/food_03.png">
+                        </a>
+                        <a class="unit" href="product.html">
+                            <img class="com_img pc" src="images/prod_03.png">
+                            <img class="com_img mo" src="images/food_04.png">
+                        </a>
+                    </div>
+                    <a class="unit" href="product.html">
+                        <img class="com_img pc" src="images/prod_04.png">
+                        <img class="com_img mo" src="images/food_02.png">
+                    </a>
+                    <a class="unit" href="product.html">
+                        <img class="com_img pc" src="images/prod_05.png">
+                        <img class="com_img mo" src="images/food_01.png">
+                    </a>
+                    <a class="unit" href="product.html">
+                        <img class="com_img pc" src="images/prod_06.png">
+                        <img class="com_img mo" src="images/food_05.png">
+                    </a>
+                    <a class="unit" href="product.html">
+                        <img class="com_img pc" src="images/prod_07.png">
+                        <img class="com_img mo" src="images/food_06.png">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sub_sec sht_t sht_b new_sec">
+            <div class="com_inner">
+
+                <div class="com_tit_con ">
+                    <div class="com_tit_unit">
+                        <p class="cate_1 green">News</p>
+                        <p class="tit_1 green fw600 mb_0">눌러푸드 소식</p>
+                    </div>
+                    <a href="board.html" class="btn_more com_btn" >
+                        <span class="cate_1">상세보기</span>
+                        <img class="more_img" src="images/icon-arrow-right-24.png">
+                    </a>
+                </div>
+
+                <div class="new_list">
+                    <div class="unit">
+                         <div class="new_img">
+                            <img class="img_obj" src="images/news_01.png">
+                         </div>
+                         <div class="txt_con">
+                            <p class="cate_1 green">이벤트</p>
+                            <p class="new_tit tit_4">아주 간단한 간편식으로 가나다라 마바사</p>
+                            <p class="new_txt body_4 ">옥윤선아이디어그룹은 가족회사인 전북 정읍 소재 식품전문기업 F&T(FOOD&TIME)가 코로나19 여파와 1인 가구 및 맞벌이 부부 증가에 힘입어 빠른 속도로 성장하고 있는 즉석식품 시장을 겨냥해 한 손으로 밀어서 먹는 타입의 간편 식품 ‘눌러밥’을 출시한다고 밝혔다.
+
+                                즉석식품은 이름 그대로 즉석에서 간편하게 먹을 수 있는 조리된 식품이다. 일반인들은 편의점에서 쉽게 찾아볼 수 있으며, 관련시장이 급부상하면서 마트나 즉석식품을 전문적으로 판매하는 별도의 매장에서도 구입이 가능하다.</p>
+                            <p class="new_date cate_1">24.03.08</p>
+                         </div>
+                    </div>
+
+                    <div class="unit">
+                        <div class="new_img">
+                           <img class="img_obj" src="images/news_01.png">
+                        </div>
+                        <div class="txt_con">
+                           <p class="cate_1 green">이벤트</p>
+                           <p class="new_tit tit_4">아주 간단한 간편식으로 가나다라 마바사</p>
+                           <p class="new_txt body_4 ">옥윤선아이디어그룹은 가족회사인 전북 정읍 소재 식품전문기업 F&T(FOOD&TIME)가 코로나19 여파와 1인 가구 및 맞벌이 부부 증가에 힘입어 빠른 속도로 성장하고 있는 즉석식품 시장을 겨냥해 한 손으로 밀어서 먹는 타입의 간편 식품 ‘눌러밥’을 출시한다고 밝혔다.
+
+                            즉석식품은 이름 그대로 즉석에서 간편하게 먹을 수 있는 조리된 식품이다. 일반인들은 편의점에서 쉽게 찾아볼 수 있으며, 관련시장이 급부상하면서 마트나 즉석식품을 전문적으로 판매하는 별도의 매장에서도 구입이 가능하다.</p>
+                            <p class="new_date cate_1">24.03.08</p>
+                        </div>
+                    </div>
+
+                    <div class="unit">
+                        <div class="new_img">
+                            <img class="img_obj" src="images/news_01.png">
+                        </div>
+                        <div class="txt_con">
+                            <p class="cate_1 green">이벤트</p>
+                            <p class="new_tit tit_4">아주 간단한 간편식으로 가나다라 마바사</p>
+                            <p class="new_txt body_4 ">옥윤선아이디어그룹은 가족회사인 전북 정읍 소재 식품전문기업 F&T(FOOD&TIME)가 코로나19 여파와 1인 가구 및 맞벌이 부부 증가에 힘입어 빠른 속도로 성장하고 있는 즉석식품 시장을 겨냥해 한 손으로 밀어서 먹는 타입의 간편 식품 ‘눌러밥’을 출시한다고 밝혔다.
+
+                                즉석식품은 이름 그대로 즉석에서 간편하게 먹을 수 있는 조리된 식품이다. 일반인들은 편의점에서 쉽게 찾아볼 수 있으며, 관련시장이 급부상하면서 마트나 즉석식품을 전문적으로 판매하는 별도의 매장에서도 구입이 가능하다.</p>
+                            <p class="new_date cate_1">24.03.08</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="sub_sec sht_t ex">
+            <div class="pd_05">
+                <div class="com_inner">
+
+                    <div class="com_tit_con ">
+                        <div class="com_tit_unit">
+                            <p class="cate_1 green">Our Partners</p>
+                            <p class="tit_1 green fw600 mb_0">눌러푸드와 함께하는 협력사</p>
+                        </div>
+                        <a href="contact.html" class="btn_more com_btn" >
+                            <span class="cate_1">Contact us</span>
+                            <img class="more_img" src="images/icon-arrow-right-24.png">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="slide_list">
+                <div class="track animation_slide">
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_01.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_02.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_03.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_04.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_05.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_01.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_02.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_03.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_04.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_05.png">
+                    </div>
+                </div>
+                <div class="track animation_slide_2">
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_01.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_02.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_03.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_04.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_05.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_01.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_02.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_03.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_04.png">
+                    </div>
+                    <div class="item">
+                        <img class="slide_img" src="images/coop_05.png">
+                    </div>
+                </div>
+            </div>
+            
+
+        </section>
+
+        <section class="sub_sec last sht_t sht_b">
+            <div class="com_inner">
+
+                <div class="last_banner">
+                    <div class="banner_inner">
+                        <div class="banner_logo">
+                            <img class="com_img" src="images/logo_up.png">
+                        </div>
+                        <div class="banner_txt_con">
+                            <p class="banner_tit tit_2 white fw600">상상력과 혁신을 통한 새로운 식문화의 리더</p>
+                            <p class="banner_copy body_2 white">눌러푸드는 창의적인 아이디어와 끊임없는 혁신을 통하여
+                                그전에 존재하지 않았던 새로운 식문화를 창조하겠습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        
+    </div>
+
+    <footer>
+    
+            <div class="f_top">
+                <div class="in">
+                    <div class="f_menu_con">
+                        <div class="f_menu_in">
+                            <div class="list">
+                                <div class="unit">
+                                    <p class="f_menu_tit">아이디어/기획</p>
+                                    <div class="f_menus items">
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">(주)옥윤선아이디어그룹</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="unit">
+                                    <p class="f_menu_tit">식품</p>
+                                    <div class="f_menus items">
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">(주)눌러푸드</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">(주)눌러어묵</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">(주)눌러비빔밥</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">컵얼음</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="unit">
+                                    <p class="f_menu_tit">파트너스</p>
+                                    <div class="f_menus items">
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">(주)눌러푸드</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">컵얼음</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="unit">
+                                    <p class="f_menu_tit">글로벌 법인</p>
+                                    <div class="f_menus items">
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">(주)눌러푸드</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                        <a href="#" class="f_href" data-preview-unavailable="true">
+                                            <span class="f_menu white">컵얼음</span>
+                                            <img class="f_icon" src="images/link_icon_01.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f_top_con">
+                        <div class="priv_con">
+                            <a href="#" class="priv_txt" data-preview-unavailable="true">개인정보처리방침</a>
+                            <a href="#" class="priv_txt" data-preview-unavailable="true">이용약관</a>
+                        </div>
+                        <div class="family_btn">
+                            <p class="f_txt">Family Site</p>
+                            <img class="family_icon on" src="images/down_01.png">
+                        </div>
+                    </div> 
+                </div>
+            </div>
+      
+            <div class="f_bottom">
+                <div class="in">
+                    <div class="f_con">
+                        <div class="grp">
+                            <div class="f_logo">
+                                <img class="com_img" src="images/footer_logo.png">
+                            </div>
+                            <div class="f_txt_con">
+                                <p class="f_tit_logo">주식회사 옥윤선푸드그룹</p>
+                                <div class="f_info">
+                                    <div class="unit">
+                                        <p class="f_tit">대표자</p>
+                                        <p class="f_copy">옥윤선</p>
+                                    </div>
+                                    <div class="unit">
+                                        <p class="f_tit">주소</p>
+                                        <p class="f_copy">광주광역시 광산구 풍영정길 297-1, 물결가을 빌딩</p>
+                                    </div>
+                                    <div class="unit">
+                                        <p class="f_tit">E-mail</p>
+                                        <p class="f_copy">okyunsungroup@gmail.com</p>
+                                    </div>
+                                    <div class="unit">
+                                        <p class="f_tit">사업자 등록번호</p>
+                                        <p class="f_copy">860-86-03266</p>
+                                    </div>
+                                    <div class="unit">
+                                        <p class="f_tit">통신판매업신고번호</p>
+                                        <p class="f_copy">제 2024-광주광산-0571호</p>
+                                    </div>
+                                    <div class="unit">
+                                        <p class="f_tit">Tel.</p>
+                                        <p class="f_copy">070-4322-0254</p>
+                                    </div>
+                                    <div class="unit">
+                                        <p class="f_tit">고객센터</p>
+                                        <p class="f_copy">070-4322-0254</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="f_sns_list">
+                                <a class="sns_unit" href="#" data-preview-unavailable="true">
+                                    <img class="com_img" src="images/sns_insta.png">
+                                </a>
+                                <a class="sns_unit" href="#" data-preview-unavailable="true">
+                                    <img class="com_img" src="images/sns_facebook.png">
+                                </a>
+                                <a class="sns_unit" href="#" data-preview-unavailable="true">
+                                    <img class="com_img" src="images/sns_kakao.png">
+                                </a>
+                                <a class="sns_unit" href="#" data-preview-unavailable="true">
+                                    <img class="com_img" src="images/sns_blog.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="copy_right">
+                            <p class="copy">Copyright © Noolerfood. All right reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </footer>
+     
+</body>
+</html>

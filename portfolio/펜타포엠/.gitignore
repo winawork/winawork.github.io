@@ -1,0 +1,11 @@
+# Generated deployment output
+/dist/
+/.staging/
+/.omx/
+
+# Local editor and OS metadata
+.DS_Store
+._*
+.idea/
+.vscode/
+__pycache__/
